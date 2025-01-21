@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # django admin panel and all-auth authentication pages
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+
+    # public pages
+    path('', include('home.urls')),
 ]
