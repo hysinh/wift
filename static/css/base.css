@@ -12,8 +12,66 @@ body {
     font-size: medium;
 }
 
+/* TEXT STYLING */
+a, a:visited {
+    color: #647232;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #065a65;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+h4 {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: .5rem;
+}
+
 .text-green {
     color: #647232;
+}
+
+.text-blue {
+    color: #065a65;
+}
+
+/* Background colours */
+.bkgrd-green {
+    background-color: #647232;
+}
+
+.bkgrd-blue {
+    background-color: #647232;
+}
+
+.bkgrd-yellow {
+    background-color: #c68e07;
+}
+
+/* test styles */
+.test-blue {
+    background-color: blue;
+}
+
+.test-orange {
+    background-color: orange;
+}
+
+.test-red {
+    background-color: red;
+}
+
+.test-aqua {
+    background-color: aqua;
+}
+
+.test-purple {
+    background-color: purple;
 }
 
 /* Navigation */
@@ -59,11 +117,28 @@ body {
     position: relative;
 }
 
-/* Hero section */
+/* Featured Image section */
+.button-join-us {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    /* text-align: right; */
+    /* font-size: 130%; */
+    position: absolute;
+    right: 25px;
+    top: 90px;
+    width: auto;
+    padding: 10px;
+    border: none;
+    background-color: #065a65;
+}
 
-#cover-text {
-/* Final rgba value sets the opacity so it is semi-transparent */    
-    /*background-color: rgba(6, 90, 101, .5);*/
+.button-join-us :hover {
+    background-color: #647232;
+    cursor: pointer;
+}
+
+#cover-text {   
     font-family: Oswald, sans-serif;
     text-align: right;
     font-size: 130%;
@@ -85,9 +160,19 @@ body {
     color: #065a65;
 }
 
-/* #cover-text > h5 {
-    color: #fff;
-} */
+/* Home page subsection */
+.container-home-subsection {
+    margin: 25px 0px;
+}
+
+.card-subsection {
+    background-color: #fff;
+    border: .5px dotted #647232;
+}
+
+.color-block {
+    height: 80px;
+}
 
 /* Footer */
 footer {
