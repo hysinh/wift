@@ -12,7 +12,7 @@ body {
     font-size: medium;
 }
 
-/* TEXT STYLING */
+/* GLOBAL TEXT STYLING */
 a, a:visited {
     color: #647232;
     text-decoration: none;
@@ -22,14 +22,6 @@ a:hover {
     color: #065a65;
     cursor: pointer;
     text-decoration: none;
-}
-
-h4 {
-    font-family: Bebas Neue, sans-serif;
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    font-weight: normal;
-    letter-spacing: .5rem;
 }
 
 .text-green {
@@ -93,23 +85,21 @@ h4 {
 
 .dropdown-menu {
     border: none;
+    color: #fff;
+    background-color: #647232;
 }
 
 .button-login {
     background-color: #065a65;
     color: #eeebda;
-    
+    width: 150px;
     border: none;
-    margin: 0px 5px;
+    /* margin: 0px 5px; */
     padding: 5px 20px;
     border-radius: 5px;
 }
 
-/* Index Page */
-.featured-image-container {
-    padding: 0px;
-}
-
+/* Home Page */
 .home-image {
     background: url("/media/wift_home_1067x600.png") no-repeat bottom 0px right 0px/cover, #c68e07;
     height: 600px;
@@ -117,18 +107,20 @@ h4 {
     position: relative;
 }
 
-/* Featured Image section */
+/* Home page - Featured Image section */
+.featured-image-container {
+    padding: 0px;
+}
+
 .button-join-us {
     font-family: Poppins, sans-serif;
     color: #fff;
     text-transform: uppercase;
-    /* text-align: right; */
-    /* font-size: 130%; */
     position: absolute;
     right: 25px;
     top: 90px;
     width: auto;
-    padding: 10px;
+    padding: 10px 20px;
     border: none;
     background-color: #065a65;
 }
@@ -161,8 +153,18 @@ h4 {
 }
 
 /* Home page subsection */
+.container-card h4 {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: .5rem;
+    text-align: center;
+}
+
 .container-home-subsection {
     margin: 25px 0px;
+    
 }
 
 .card-subsection {
@@ -171,12 +173,128 @@ h4 {
 }
 
 .color-block {
-    height: 80px;
+    min-height: 120px;
+    min-width: 120px;
+    border-radius: 15px 15px 0px 0px;
 }
 
 /* Footer */
 footer {
     background-color: #065a65;
     padding: 50px 10px;
+    color: #fff;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a {
+    color: #fff !important;
+}
+
+footer a:hover {
+    color: #647232 !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer button {
+    background-color: #c68e07;
+    border: none;
+}
+
+/* Media query for mobile devices and later (375px and up) */
+@media screen and (min-width: 375px) {
+
+}
+
+/* Media query for tablet devices and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Home page */
+    .home-image {
+        background: url("/media/wift_home_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+    }
     
+    .button-join-us {
+        right: 360px;
+    }
+
+    #cover-text {   
+        right: 360px;
+        bottom: 180px;
+    }
+
+    #cover-text > h1 {
+        font-size: 4rem;
+    }
+
+    #cover-text > h2 {
+        font-size: 3rem;
+    }
+
+    #cover-text > h5 {
+        font-size: 2rem;
+    }
+
+    /* Home page - subsectioni */
+    .container-home-subsection {
+        margin: 0 auto;
+    }
+}
+
+/* larger devices - laptops, desktops, and up (992px and up)  */
+@media screen and (min-width: 992px) {
+    /* Navigation */
+    .button-login {
+        margin-left: 15px;
+    }
+
+    /* Home page */
+    .home-image {
+        background: url("/media/wift_home_1067x600.png") no-repeat bottom 0px right -50px/cover, #c68e07;
+    }
+
+    .button-join-us {
+        right: 460px;
+    }
+
+    #cover-text {   
+        right: 460px;
+        bottom: 180px;
+    }
+
+    /* Home page - subsection */
+    .container-card {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .container-card h4 {
+        text-align: left;
+    }
+
+    .color-block {
+        border-radius: 15px 0px 0px 15px;
+    }
+}
+
+/* larger devices - laptops, desktops, and up (1280px and up)  */
+@media screen and (min-width: 1280px) {
+    /* Home page */
+    .home-image {
+        background: url("/media/wift_home_1067x600.png") no-repeat center/cover, #c68e07;
+    }
+
+    .button-join-us {
+        right: 760px;
+    }
+
+    #cover-text {   
+        right: 760px;
+        bottom: 180px;
+    }
 }
