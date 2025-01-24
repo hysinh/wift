@@ -85,8 +85,11 @@ a:hover {
 
 .dropdown-menu {
     border: none;
-    color: #fff;
-    background-color: #647232;
+    background-color: #c68e07;
+}
+
+.dropdown-item {
+    color: #065a65 !important;
 }
 
 .button-login {
