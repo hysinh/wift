@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}WIFT - Contact Page{% endblock %}
+
+{% block content %}
+<div class="featured-image-container">
+    <div class="mentoring-image">
+      <div class="overlay-text-featured-img">
+        <h2>Contact Us</h2>
+      </div>
+    </div>
+</div>
+<div class="container-md container-home-subsection px-6 justify-content-center">
+  <div class="container-card my-4">
+      <div class="p-4 card-subsection">
+        <h4 class="text-green">WIFT Location:</h4>
+        <p>
+            WIFT is located conveniently in Dublin, Ireland. Our meeting space is lcoated at:
+
+        </p>
+        <p>
+            Telephone: 123-234-3546
+        </p>
+      </div>
+      <div>
+        <form action="">
+            <input type="name">
+            <input type="email">
+            <input type="message">
+            <button>send message</button>
+        </form>
+      </div>
+  </div>
+</div>
+{% endblock %}

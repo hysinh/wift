@@ -190,7 +190,7 @@ a:hover {
     align-items: center;
 }
 
-.overlay-text-about h2 {
+.overlay-text-featured-img h2 {
     background-color: rgb(6, 90, 101, .5);
     font-family: Bebas Neue, sans-serif;
     font-size: 3.0rem;
@@ -206,6 +206,23 @@ a:hover {
     top: 100px;
 }
 
+/* Fellowship page - Featured Image section */
+.fellowships-image {
+    background: url("/static/images/wift_fellowships_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Mentoring page - Featured Image section */
+.mentoring-image {
+    background: url("/static/images/wift_mentoring_1067x600.png") no-repeat center/cover, #c68e07;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Footer */
 footer {
@@ -235,9 +252,16 @@ footer button {
     border: none;
 }
 
-/* Media query for mobile devices and later (375px and up) */
-@media screen and (min-width: 375px) {
-
+/* Media query for mobile devices and later (520px and up) */
+@media screen and (min-width: 520px) {
+    /* Fellowship page - Featured Image section */
+    .fellowships-image {
+        background: url("/static/images/wift_fellowships_1067x600.png") center/cover, #c68e07;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 /* Media query for tablet devices and larger (768px and up) */
@@ -283,7 +307,7 @@ footer button {
 
     /* Home page */
     .home-image {
-        background-image: url("/static/images/wift_home_1067x600.png");
+        background-image: url("/static/images/wift_home_1600x900.png");
     }
 
     .button-join-us {
@@ -315,14 +339,15 @@ footer button {
         background: url("/static/images/wift_about_1600x900.png") no-repeat top/cover;
     }
 
-    /* .about-image {
-        background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
-        height: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
+    /* Fellowship page - Featured Image section */
+    .fellowships-image {
+        background: url("/static/images/wift_fellowships_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+    }
 
+    /* Mentoring page - Featured Image section */
+    .mentoring-image {
+        background: url("/static/images/wift_mentoring_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+    }
 }
 
 /* larger devices - laptops, desktops, and up (1280px and up)  */
