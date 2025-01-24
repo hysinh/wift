@@ -26,3 +26,7 @@ def events(request):
 def contact(request):
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
+
+def join(request):
+    """ A view to return the Join page """
+    return render(request, 'public/join.html')

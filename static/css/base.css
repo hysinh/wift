@@ -119,13 +119,16 @@ a:hover {
     font-family: Poppins, sans-serif;
     color: #fff;
     text-transform: uppercase;
-    position: absolute;
-    right: 25px;
-    top: 90px;
     width: auto;
     padding: 10px 20px;
     border: none;
     background-color: #065a65;
+}
+
+.button-home-page {
+    position: absolute;
+    right: 25px;
+    top: 90px;
 }
 
 .button-join-us :hover {
@@ -173,6 +176,7 @@ a:hover {
 .card-subsection {
     background-color: #fff;
     border: .5px dotted #647232;
+    width: 100%;
 }
 
 .color-block {
@@ -181,13 +185,37 @@ a:hover {
     border-radius: 15px 15px 0px 0px;
 }
 
-/* About page - Featured Image section */
-.about-image {
-    background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+/* Featured Image - applies to all pages except home page */
+.featured-image {
     height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Featured Image section on each page */
+.about-image {
+    background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+}
+
+.fellowships-image {
+    background: url("/static/images/wift_fellowships_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+}
+
+.mentoring-image {
+    background: url("/static/images/wift_mentoring_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+.events-image {
+    background: url("/static/images/wift_events_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+.contact-image {
+    background: url("/static/images/wift_contact_1067x600.png") no-repeat right/cover, #c68e07;
+}
+
+.join-image {
+    background: url("/static/images/wift_join_1067x600.png") no-repeat center/cover, #c68e07;
 }
 
 .overlay-text-featured-img h2 {
@@ -206,22 +234,20 @@ a:hover {
     top: 100px;
 }
 
-/* Fellowship page - Featured Image section */
-.fellowships-image {
-    background: url("/static/images/wift_fellowships_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Mentoring page - Featured Image section */
-.mentoring-image {
-    background: url("/static/images/wift_mentoring_1067x600.png") no-repeat center/cover, #c68e07;
-    height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.overlay-text-featured-img-join h2 {
+    background-color: rgb(6, 90, 101, .75);
+    font-family: Bebas Neue, sans-serif;
+    font-size: 3.0rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: .5rem;
+    color: #fff;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    top: 100px;
 }
 
 /* Footer */
@@ -257,10 +283,6 @@ footer button {
     /* Fellowship page - Featured Image section */
     .fellowships-image {
         background: url("/static/images/wift_fellowships_1067x600.png") center/cover, #c68e07;
-        height: 350px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }
 
@@ -334,20 +356,31 @@ footer button {
         border-radius: 15px 0px 0px 15px;
     }
 
-    /* About page */
+    /* Featured images at the top of each page */
     .about-image {
         background: url("/static/images/wift_about_1600x900.png") no-repeat top/cover;
     }
 
-    /* Fellowship page - Featured Image section */
     .fellowships-image {
         background: url("/static/images/wift_fellowships_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
     }
 
-    /* Mentoring page - Featured Image section */
     .mentoring-image {
         background: url("/static/images/wift_mentoring_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
     }
+
+    .events-image {
+        background: url("/static/images/wift_events_1600x900.png") no-repeat center/cover, #c68e07;
+    }
+
+    .contact-image {
+        background: url("/static/images/wift_contact_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+    }
+
+    .join-image {
+        background: url("/static/images/wift_join_1600x900.png") no-repeat center/cover, #c68e07;
+    }
+
 }
 
 /* larger devices - laptops, desktops, and up (1280px and up)  */
