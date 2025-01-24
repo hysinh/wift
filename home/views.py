@@ -10,3 +10,7 @@ def index(request):
 def about(request):
     """ A view to return the about page """
     return render(request, 'public/about.html')
+
+def fellowships(request):
+    """ A view to return the Programs page """
+    return render(request, 'public/fellowships.html')
