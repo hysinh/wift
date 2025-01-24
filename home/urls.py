@@ -3,6 +3,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    # django admin panel and all-auth authentication pages
+    # WIFT Public pages
     path('', views.index, name='home'),
+    path('about/', views.about, name='about'),
 ]
