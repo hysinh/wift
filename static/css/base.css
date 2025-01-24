@@ -183,24 +183,27 @@ a:hover {
 
 /* About page - Featured Image section */
 .about-image {
-    background: url("/static/images/wift_home_1067x600.png") no-repeat center/cover, #c68e07;
+    background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
     height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.overlay-text-about {
-    background-color: rgb(246, 250, 246, .5);
-    font-family: Poppins, sans-serif;
-    font-size: 200%;
-    letter-spacing: 10px;
+.overlay-text-about h2 {
+    background-color: rgb(6, 90, 101, .5);
+    font-family: Bebas Neue, sans-serif;
+    font-size: 3.0rem;
     text-transform: uppercase;
-    color: #065a65;
+    font-weight: normal;
+    letter-spacing: .5rem;
+    color: #fff;
     width: auto;
     height: auto;
     text-align: center;
     padding: 20px;
+    position: relative;
+    top: 100px;
 }
 
 
@@ -307,10 +310,18 @@ footer button {
         border-radius: 15px 0px 0px 15px;
     }
 
+    /* About page */
     .about-image {
-        background: url("/static/images/wift_home_1600x900.png") no-repeat top/cover;
+        background: url("/static/images/wift_about_1600x900.png") no-repeat top/cover;
     }
 
+    /* .about-image {
+        background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+        height: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
 
 }
 

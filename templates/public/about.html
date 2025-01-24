@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_title %}About WIFT{% endblock %}
+
 {% block content %}
 <div class="featured-image-container">
     <div class="about-image">
@@ -9,5 +11,28 @@
       </div>
     </div>
 </div>
-<h2></h2>
+<div class="container-md container-home-subsection px-6 justify-content-center">
+  <div class="container-card my-4">
+      <div class="p-4 card-subsection">
+        <h4 class="text-green">Advocacy</h4>
+        <p>
+          The Guild of Women in Film and Television Ireland is an advocacy organisation 
+          that supports and promotes a greater representation of women in the film and television 
+          industry both on screen and behind the camera. We are a voluntary body that is run by 
+          film and television professionals with international standing. 
+        </p>
+        <p>
+          The creative, business, and technical divisions of the art of moving pictures are all 
+          represented in our organisation from the committee members to the membership. 
+          Our committee members are internationally accredited and the recipients of 
+          industry-recognized awards.
+        </p>
+        <p>
+          As an organisation, we facilitate opportunities for women in the film and television 
+          industry to promote their work and to network with other women and professionals 
+          in the industry.
+        </p>
+      </div>
+  </div>
+</div>
 {% endblock %}
