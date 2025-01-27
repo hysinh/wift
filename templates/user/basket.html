@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block extra_title %}- Membership Registrations{% endblock %}
@@ -19,6 +20,8 @@
             <p>
                 Choose to proceed to complete you registration with WIFT 
             </p>
+
+            { form|crispy }
           </div>
     </div>
 

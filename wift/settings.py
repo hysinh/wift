@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'django_summernote',
+    'crispy_forms',
+    'crispy_bootstrap5',
     'membership',
     'basket',
 ]
@@ -95,6 +97,10 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/basket/'
+LOGOUT_REDIRECT_URL = ''
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
 
 WSGI_APPLICATION = 'wift.wsgi.application'
 
