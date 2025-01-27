@@ -6,7 +6,9 @@
     <div class="featured-image-container">
         <div class="home-image">
             <div>
-                <button class="button-join-us button-home-page">join us <i class="fa-solid fa-arrow-right-long"></i></button>
+                <a href="{% url 'join' %}">
+                    <button class="button-join-us button-home-page">join us <i class="fa-solid fa-arrow-right-long"></i></button>
+                </a>
             </div>
             <div id="cover-text">
                 <h1>Women</h1>
@@ -26,7 +28,7 @@
                     the year. A fantastic chance to meet other members of the WIFT
                     community. 
                 </p>
-                <a href="{% url 'join' %}">+ Join us at our next event!</a>
+                <a href="#">+ Join us at our next event!</a>
             </div>
         </div>
         <div class="container-card my-4">

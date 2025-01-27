@@ -22,7 +22,9 @@ urlpatterns = [
     # django admin panel and all-auth authentication pages
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('summernote/', include('django_summernote.urls')),
 
     # public pages
     path('', include('home.urls')),
+    path('', include('membership.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

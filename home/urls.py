@@ -10,5 +10,5 @@ urlpatterns = [
     path('mentoring/', views.mentoring, name='mentoring'),
     path('events/', views.events, name='events'),
     path('contact/', views.contact, name='contact'),
-    path('join/', views.join, name='join'),
+    # path('join/', views.join, name='join'),
 ]

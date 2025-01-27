@@ -17,10 +17,14 @@
         <div class="bkgrd-green color-block"></div>
         <div class="p-4 card-subsection">
             <h4 class="text-green">WIFT Membership</h4>
-            <p>Blurb
+            <p>
+                Joining our WIFT community gives you the access and support of our amazing WIFT
+                community. With exclusive members only access, build your network and skills to 
+                the next level with our unique networking opportunities and seminars designed to 
+                growth your unique career.
             </p>
             <a href="{% url 'account_signup' %}" aria-label="WIFT Sign up for membership" rel="noopener">
-                <button class="button-join-us">join today <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="button-join-us">register your membership now <i class="fa-solid fa-arrow-right-long"></i></button>
             </a>
         </div>
     </div>
@@ -28,14 +32,32 @@
         <div class="bkgrd-yellow color-block"></div>
         <div class="p-4 card-subsection">
             <h4 class="text-green">Global Benefits</h4>
+            <p>
+                Every membership level has access to the following benefits:
+            </p>
             <div>
                 <ul>
-                    <li>benefit</li>
-                    <li>benefit</li>
-                    <li>benefit</li>
-                    <li>benefit</li>
-                    <li>benefit</li>
-
+                    <li>
+                        Access to a large community of creative, accomplished Women through our
+                        exclusive Membership Directory and LinkedIn community
+                    </li>
+                    <li>
+                        Free admission to public, Members Only Events and screenings such as panel discussions,
+                        brown bag lunches, and seminars
+                    </li>
+                    <li>
+                        Discounted admission to partnered events
+                    </li>
+                    <li>
+                        Invitations to guild and studio screenings
+                    </li>
+                    <li>
+                        Access to professional development programs such as our Member Mentorship
+                        program and exclusive networking and skill-building events and workshops
+                    </li>
+                    <li>
+                        Discounted application fees for our public programs when applicable
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,8 +72,20 @@
                 you can gain access to the names and work of Ireland's WIFT community. 
                 Become a member to gain access to this incredible resource.
             </p>
+            {% for category in categories %}
+                <div class="container-membership pb-4">
+                    <hr>
+                    <h5>{{ category.name }}</h5>
+                    <p>
+                        {{ category.description|safe }}
+                    </p> 
+                    <p>
+                        <span class="price">Annual Dues: €{{ category.new_member_price }}</span>
+                    </p>
+                </div>
+            {% endfor %}
             <a href="{% url 'account_signup' %}" aria-label="WIFT Sign up for membership" rel="noopener">
-                <button class="button-join-us">join today <i class="fa-solid fa-arrow-right-long"></i></button>
+                <button class="button-join-us">register your membership now <i class="fa-solid fa-arrow-right-long"></i></button>
             </a>
         </div>
     </div>
