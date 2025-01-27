@@ -16,20 +16,42 @@
       <div class="p-4 card-subsection">
         <h4 class="text-green">WIFT Location:</h4>
         <p>
-            WIFT is located conveniently in Dublin, Ireland. Our meeting space is lcoated at:
-
+          WIFT is located conveniently in Dublin, Ireland.
         </p>
+        <p>
+          Our meeting space is lcoated at:
+        </p>  
         <p>
             Telephone: 123-234-3546
         </p>
-      </div>
-      <div>
-        <form action="">
-            <input type="name">
-            <input type="email">
-            <input type="message">
-            <button>send message</button>
-        </form>
+        <hr>
+        <div class="contact-form-container">
+          <form id="email-form" method="POST" action="£">
+            <!-- {% csrf_token %}
+            {% if messages %} -->
+    
+            <!-- <ul class="messages">
+              {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul> -->
+            <!-- {% endif %} -->
+            <!-- Container with Venues to select from -->
+            <div class="">
+                <h6>Complete the form below to contact us with any questions about WIFT:</h6>
+                <label for="name">Name:</label>
+                <input type="text"><br>
+                <label for="email">Email:</label>
+                <input type="text"><br>
+                <label for="message">Message:</label><br>
+                <input type="text">
+            </div>
+            <div>
+              <button class="btn btn-secondary" type="submit">Send</button>
+            </div>
+    
+          </form>
+        </div>
       </div>
   </div>
 </div>
