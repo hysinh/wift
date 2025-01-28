@@ -13,27 +13,42 @@
     </div>
 </div>
 
-<div class="container-md container-home-subsection px-6 justify-content-center">
+<div class="container-md container-basket px-6 justify-content-center">
     <div class="container-card my-4">
-        <div class="p-4 card-subsection">
+        <div class="p-4 card-subsection container-membership">
             <h4 class="text-green text-center">Choose your membership level</h4>
             <p>
-                Complete your WIFT registration below and gain exclusive access to our member's only programs and events!
+                Complete your WIFT registration below and gain exclusive access to our member's only programs and
+                events!
             </p>
+            <h5 class="text-center">Membership Levels:</h5>
             {% for category in categories %}
-                <div class="container-membership pb-4">
-                    <hr>
-                    <h5>{{ category.name }}</h5>
-                </div>
+            <div class="container-membership pb-1">
+                <span class="text-bold">{{ category.name }}</span>, Annual dues: €{{ category.new_member_price }}
+            </div>
             {% endfor %}
+            
             <!-- Registration form for Membership selection -->
-
-            VIEWING THE BASKET
-            {% csrf_token %}
-            {{ form | crispy }}
-          </div>
+            <div style="container-registration">
+                <form id="membership-form" method="POST" action="#"></form>
+                <p>
+                    <h5 class="text-center">Select desired level:</h5>
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}    
+                    </ul>
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                </p>
+                <div>
+                    <button class="button-join-us" type="submit">Purchase Membership</button>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
 
-    
+
 </div>
 {% endblock %}
