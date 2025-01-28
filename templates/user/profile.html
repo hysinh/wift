@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block extra_title %}- Membership Registrations{% endblock %}
+{% block extra_title %}- Member profile{% endblock %}
 
 {% block content %}
 <div class="featured-image-container">
@@ -31,13 +31,7 @@
     <div class="container-card my-4">
         <!-- <div class="bkgrd-blue color-block"></div> -->
         <div class="p-4 card-subsection">
-            <h4 class="text-green ">Membership Levels</h4>
-            <p>Our membership directory features all the top leaders and creative professionals
-                in Ireland. Whether you are just starting out, building your career, or
-                are a leader in the industry and are looking for creatives to build your team,
-                you can gain access to the names and work of Ireland's WIFT community. 
-                Become a member to gain access to this incredible resource.
-            </p>
+            <h4 class="text-green ">Member Profile</h4>
             {% for category in categories %}
                 <div class="container-membership pb-4">
                     <hr>

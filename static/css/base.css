@@ -218,6 +218,11 @@ a:hover {
     background: url("/static/images/wift_join_1067x600.png") no-repeat center/cover, #c68e07;
 }
 
+.registration-image {
+    background: url("/static/images/wift_registration_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+
 .overlay-text-featured-img h2 {
     background-color: rgb(6, 90, 101, .5);
     font-family: Bebas Neue, sans-serif;

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block extra_title %}- Membership Registrations{% endblock %}
+
+{% block content %}
+<div class="featured-image-container">
+    <div class="registration-image featured-image">
+      <div class="overlay-text-featured-img-join">
+        <h2>Membership Registration</h2>
+      </div>
+    </div>
+</div>
+
+<div class="container-md container-home-subsection px-6 justify-content-center">
+    <div class="container-card my-4">
+        <div class="p-4 card-subsection">
+            <h4 class="text-green text-center">Choose your membership level</h4>
+            <p>
+                Complete your WIFT registration below and gain exclusive access to our member's only programs and events!
+            </p>
+            {% for category in categories %}
+                <div class="container-membership pb-4">
+                    <hr>
+                    <h5>{{ category.name }}</h5>
+                </div>
+            {% endfor %}
+            <!-- Registration form for Membership selection -->
+
+            VIEWING THE BASKET
+            {% csrf_token %}
+            {{ form | crispy }}
+          </div>
+    </div>
+
+    
+</div>
+{% endblock %}
