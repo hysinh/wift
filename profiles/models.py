@@ -5,7 +5,7 @@ from membership.models import Category
 
 STATUS = ((0, "Inactive"), (1, "Active"))
 
-class MemberProfile_Private(models.Model):
+class Member_Data_Private(models.Model):
     """
     Stores a single Member's Profile Private data
     """
