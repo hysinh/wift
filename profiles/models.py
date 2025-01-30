@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from membership.models import Category
+from membership.models import MembershipCategory
 
 
 STATUS = ((0, "Inactive"), (1, "Active"))
@@ -10,7 +10,7 @@ class Member_Data_Private(models.Model):
     Stores a single Member's Profile Private data
     """
     member = models.OneToOneField(User, on_delete=models.CASCADE)
-    membership_level = models.ForeignKey(Category, on_delete=models.PROTECT)
+    membership_level = models.ForeignKey(MembershipCategory, on_delete=models.PROTECT)
     default_firstname = models.CharField(max_length=80, null=False, blank=False)
     default_lastname = models.CharField(max_length=80, null=False, blank=False)
     default_street_address1 = models.CharField(max_length=80, null=False, blank=False)

@@ -2,7 +2,7 @@ from django.db import models
 
 STATUS = ((0, "Inactive"), (1, "Active"))
 
-class Category(models.Model):
+class MembershipCategory(models.Model):
     """
     Stores a single membership category
     """
@@ -16,7 +16,7 @@ class Category(models.Model):
 
     class Meta:
         ordering = ['new_member_price', 'name']
-        verbose_name_plural = 'Categories'
+        verbose_name_plural = 'Membership Categories'
 
     def __str__(self):
         return f"{self.name}"

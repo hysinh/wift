@@ -1,6 +1,6 @@
 import uuid
 from django.db import models
-from membership.models import Category
+from membership.models import MembershipCategory
 from profiles.models import User
 
 
@@ -8,7 +8,7 @@ class MembershipPurchase(models.Model):
 
     purchase_number = models.CharField(max_length=32, null=False, editable=False)
     member = models.ForeignKey(User, on_delete=models.RESTRICT, null=False, blank=False)
-    membership_purchased = models.ForeignKey(Category, on_delete=models.RESTRICT, null=False, blank=False)
+    membership_purchased = models.ForeignKey(MembershipCategory, on_delete=models.RESTRICT, null=False, blank=False)
     purchase_date = models.DateTimeField(auto_now_add=True)
     purchase_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, default=0)
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')

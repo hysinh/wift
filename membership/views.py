@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Category
+from .models import MembershipCategory
 
 def all_categories(request):
     """ A view to show all the membership categories """
 
-    categories = Category.objects.all()
+    categories = MembershipCategory.objects.all()
     context = {
         'categories': categories,
     }
