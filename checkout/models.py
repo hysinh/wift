@@ -4,7 +4,7 @@ from membership.models import Category
 from profiles.models import User
 
 
-class membership_purchase(models.Model):
+class MembershipPurchase(models.Model):
 
     purchase_number = models.CharField(max_length=32, null=False, editable=False)
     member = models.ForeignKey(User, on_delete=models.RESTRICT, null=False, blank=False)
