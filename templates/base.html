@@ -77,19 +77,33 @@
               <a class="nav-link" href="{% url 'join' %}">join WIFT</a>
             </li>
             {% if user.is_authenticated %}
-            <li class="nav-item nav-link text-blue">
-              Logged in as {{ user }}
-            </li>
-            {% endif %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'account_logout' %}">log out</a>
             </li>
+            <li class="nav-item nav-link text-blue">
+              Logged in as {{ user }}
+            </li>
+            <a href="{% url 'account_login' %}">
+              <button class="button-login">Dashboard</button>
+            </a>
+            {% else %}
             <a href="{% url 'account_login' %}">
               <button class="button-login">LOGIN</button>
             </a>
+            {% endif %}
           </ul>
         </div>
     </nav>
+
+    {% if messages %}
+      <div class="message-container">
+        {% for message in messages %}
+          <!-- <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li> -->
+          {% include 'includes/toasts/toast_success.html' %}
+        {% endfor %}  
+      </div>
+    {% endif %}
+
 
     {% block page_header %}
     {% endblock %}

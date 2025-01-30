@@ -106,6 +106,28 @@ a:hover {
     border-radius: 5px;
 }
 
+/* Bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 72px;
+    right: 15px;
+    background: #fff;
+    border: 1px solid #647232;
+    padding: 2px;
+    border-radius: 4px;
+    font-size: smaller;
+    z-index: 999999999999
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* Home Page */
 .home-image {
     background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right 0px/cover, #c68e07;
