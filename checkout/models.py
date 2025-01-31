@@ -2,13 +2,15 @@ import uuid
 from django.db import models
 from membership.models import MembershipCategory
 from profiles.models import User
+from datetime import date
 
 
 class MembershipPurchase(models.Model):
 
     purchase_number = models.CharField(max_length=32, null=False, editable=False)
     member = models.ForeignKey(User, on_delete=models.RESTRICT, null=False, blank=False)
-    membership_purchased = models.ForeignKey(MembershipCategory, on_delete=models.RESTRICT, null=False, blank=False)
+    membership_purchased = models.ForeignKey(MembershipCategory, on_delete=models.RESTRICT,
+                                             null=False, blank=False)
     purchase_date = models.DateTimeField(auto_now_add=True)
     purchase_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
@@ -35,6 +37,16 @@ class MembershipPurchase(models.Model):
         """ Updates the purchase total dependent on the membership level selected """
         self.purchase_total = self.membership_purchased.new_member_price
         self.save()
+
+    # determines if the membership is active
+    @property
+    def is_active(self):
+        return date.today() >= self.purchase_date and date.today() < (self.purchase_date + 365)
+    
+    # determines if the membership is inactive
+    @property
+    def is_inactive(self):
+        return date.today() >= (self.purchase_date + 365)
     
     def __str__(self):
         return self.purchase_number
