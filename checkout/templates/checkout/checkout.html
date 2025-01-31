@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_title %}- Checkout{% endblock %}
+
+{% block content %}
+
+<div class="featured-image-container">
+    <div class="join-image featured-image">
+      <div class="overlay-text-featured-img-join">
+        <h2>Membership Registration</h2>
+      </div>
+    </div>
+</div>
+
+<div class="container-md container-home-subsection px-6 justify-content-center">
+    <div class="container-card my-4">
+        <div class="bkgrd-green color-block"></div>
+        <div class="p-4 card-subsection">
+            <h4 class="text-green">STEP 3: Purchase your annual membership</h4>
+            <p>
+                Membership level selected and cost totals
+            </p>
+            
+        </div>
+    </div>
+    <div class="container-card my-4">
+        <div class="bkgrd-yellow color-block"></div>
+        <div class="p-4 card-subsection">
+            <h4 class="text-green">Member Personal Details</h4>
+            <p>
+                form to enter member details
+            </p>
+            <div>
+                <ul>
+                    <li>
+                        Access to a large community of creative, accomplished Women through our
+                        exclusive Membership Directory and LinkedIn community
+                    </li>
+                    <li>
+                        Free admission to public, Members Only Events and screenings such as panel discussions,
+                        brown bag lunches, and seminars
+                    </li>
+                    <li>
+                        Discounted admission to partnered events
+                    </li>
+                    <li>
+                        Invitations to guild and studio screenings
+                    </li>
+                    <li>
+                        Access to professional development programs such as our Member Mentorship
+                        program and exclusive networking and skill-building events and workshops
+                    </li>
+                    <li>
+                        Discounted application fees for our public programs when applicable
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container-card my-4">
+        <div class="bkgrd-blue color-block"></div>
+        <div class="p-4 card-subsection">
+            <h4 class="text-green ">Payment Details</h4>
+            <p>
+                stripe payment details
+            </p>
+            <a href="#" aria-label="#" rel="noopener">
+                <button class="button-join-us">Purchase now <i class="fa-solid fa-arrow-right-long"></i></button>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

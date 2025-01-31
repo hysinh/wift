@@ -16,7 +16,7 @@
 <div class="container-md container-basket px-6 justify-content-center">
     <div class="container-card my-4">
         <div class="p-4 card-subsection container-membership">
-            <h4 class="text-green text-center">STEP 2: Choose your membership level</h4>
+            <h4 class="text-green text-center">STEP 1: Choose your membership level</h4>
             <p>
                 Complete your WIFT registration below and gain exclusive access to our member's only programs and
                 events!
@@ -30,7 +30,7 @@
             
             <!-- Registration form for Membership selection -->
             <div style="container-registration">
-                <form id="membership-form" method="POST" action="#"></form>
+                <form id="membership-form" method="POST" action="{% url 'checkout' %}"></form>
                 <p>
                     <h5 class="text-center">Select desired level:</h5>
                     <ul class="messages">
@@ -42,7 +42,9 @@
                     {{ form | crispy }}
                 </p>
                 <div>
-                    <button class="button-join-us" type="submit">Purchase Membership</button>
+                    <a href="{% url 'checkout' %}">
+                        <button class="button-join-us" type="submit">Purchase Membership</button>
+                    </a>
                 </div>
                 </form>
             </div>

@@ -27,7 +27,8 @@ urlpatterns = [
     # public pages
     path('', include('home.urls')),
     path('', include('membership.urls')),
+    path('', include('basket.urls')),
 
     # authorised user pages
-    path('', include('basket.urls')),
+    path('', include('checkout.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
