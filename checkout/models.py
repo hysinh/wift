@@ -29,13 +29,13 @@ class MembershipPurchase(models.Model):
         if not self.purchase_number:
             self.purchase_number = self._generate_purchase_number()
 
-        self.purchase_total = self.membership_purchased.new_member_price
+        # self.purchase_total = self.membership_purchased.new_member_price
         
         super().save(*args, **kwargs)
 
     def update_purchase_total(self):
         """ Updates the purchase total dependent on the membership level selected """
-        self.purchase_total = self.membership_purchased.new_member_price
+        self.purchase_total = Decimal(self.membership_purchased.new_member_price)
         self.save()
 
     # determines if the membership is active

@@ -82,11 +82,17 @@
                     <p>
                         <span class="price">Annual Dues: €{{ category.new_member_price }}</span>
                     </p>
+                    <div>
+                        <form action="{% url 'view_basket' %}" method="GET" id="{{ category.id}}">
+                            {% csrf_token %}
+                            <button type="submit" name="category" value="{{ category.id }}" form="{{ category.id }}"
+                                class="button-join-us" aria-label="Select {{ category.name }} Membership">
+                                Select {{ category.name }} Membership
+                            </button>
+                        </form>
+                    </div>
                 </div>
             {% endfor %}
-            <a href="{% url 'account_signup' %}" aria-label="WIFT Sign up for membership" rel="noopener">
-                <button class="button-join-us">register your membership now <i class="fa-solid fa-arrow-right-long"></i></button>
-            </a>
         </div>
     </div>
 </div>
