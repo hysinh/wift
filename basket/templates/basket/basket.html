@@ -6,10 +6,10 @@
 
 {% block content %}
 <div class="featured-image-container">
-    <div class="registration-image featured-image">
-      <div class="overlay-text-featured-img-join">
-        <h2>Membership Registration</h2>
-      </div>
+   <div class="registration-image featured-image">
+        <div class="overlay-text-featured-img-join">
+            <h2>Membership Registration</h2>
+        </div>
     </div>
 </div>
 
@@ -27,25 +27,38 @@
                 <span class="text-bold">{{ category.name }}</span>, Annual dues: €{{ category.new_member_price }}
             </div>
             {% endfor %}
-            
+
+            {% if basket_items %}
+                <div class="table-responsive rounded"></div>
+            {% else %}
+                <hr>
+                <p class="lead mb-5">Your basket is empty</p>
+                <a href="{% url 'join' %}">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Return to Join page</span>
+                </a>
+            {% endif %}
+
             <!-- Registration form for Membership selection -->
             <div style="container-registration">
-                <form id="membership-form" method="POST" action="{% url 'checkout' %}"></form>
-                <p>
+                <form id="membership-form" method="POST" action="#"></form>
+                    <p>
                     <h5 class="text-center">Select desired level:</h5>
                     <ul class="messages">
                         {% for message in messages %}
-                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                        {% endfor %}    
+                        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                            {% endfor %}
                     </ul>
                     {% csrf_token %}
                     {{ form | crispy }}
-                </p>
-                <div>
-                    <a href="{% url 'checkout' %}">
-                        <button class="button-join-us" type="submit">Purchase Membership</button>
-                    </a>
-                </div>
+                    </p>
+                    <div>
+                        <a href="{% url 'checkout' %}">
+                            <button class="button-join-us" type="submit">Purchase Membership</button>
+                        </a>
+                    </div>
                 </form>
             </div>
         </div>

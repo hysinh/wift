@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block extra_title %}- Join Us{% endblock %}
@@ -26,6 +27,40 @@
             <a href="{% url 'view_basket' %}" aria-label="WIFT Sign up for membership" rel="noopener">
                 <button class="button-join-us">register your membership now <i class="fa-solid fa-arrow-right-long"></i></button>
             </a>
+            <!-- Registration form for Membership selection -->
+            <div style="container-registration">
+                <form id="membership-form" method="POST" action="#"></form>
+                    <p>
+                    <h5 class="text-center">Select desired level:</h5>
+                    <ul class="messages">
+                        {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                            {% endfor %}
+                    </ul>
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    </p>
+                    <div>
+                        <a href="{% url 'checkout' %}">
+                            <button class="button-join-us" type="submit">Purchase Membership</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+            <form class="form" action="#" method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="form-row">
+                    <div class="col-12">
+                        <p class="mt-3"><strong>Membership Level:</strong></p>
+                        
+                    </div>
+                    <div class="col{% if s %}-12 mt-2{% endif %}">
+                        <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
+                    </div>
+                    <!-- <input type="hidden" name="redirect_url" value="{{ request.path }}"> -->
+                </div>
+            </form>
         </div>
     </div>
     <div class="container-card my-4">

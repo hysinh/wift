@@ -3,6 +3,7 @@ from django.db import models
 from membership.models import MembershipCategory
 from profiles.models import User
 from datetime import date
+from decimal import Decimal
 
 
 class MembershipPurchase(models.Model):
