@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from membership.models import MembershipCategory
-from membership.forms import MembershipLevelSelectionForm
+from membership.forms import RegistrationForm
 
 # Create your views here.
 
@@ -31,12 +31,26 @@ def contact(request):
 
 def join(request):
     """ A view to return the Join page """
-    form = MembershipLevelSelectionForm()
-    membership_level = MembershipCategory.objects.all()
+    form = RegistrationForm()
+    context = {}
     
+    categories = MembershipCategory.objects.all()
     context = {
-        'membership_level': membership_level,
         'form': form,
+        'categories': categories,
     }
-
+    
     return render(request, 'public/join.html', context)
+
+def join_test(request):
+    """ A view to return the Join page """
+    form = RegistrationForm()
+    context = {}
+    
+    categories = MembershipCategory.objects.all()
+    context = {
+        'form': form,
+        'categories': categories,
+    }
+    
+    return render(request, 'public/join_test.html', context)

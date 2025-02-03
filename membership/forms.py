@@ -1,7 +1,7 @@
 from django import forms
 from .models import MembershipCategory
 
-class MembershipLevelSelectionForm(forms.ModelForm):
+class RegistrationForm(forms.ModelForm):
     class Meta:
         model = MembershipCategory
         fields = ["name"]

@@ -85,9 +85,9 @@
                         <span class="price">Annual Dues: €{{ category.new_member_price }}</span>
                     </p>
                     <div>
-                        <form action="{% url 'view_basket' %}" method="GET" id="{{ category.id}}">
+                        <form action="{% url 'add_to_basket_test' category.id %}" method="POST" id="{{ category.id}}">
                             {% csrf_token %}
-                            <button type="submit" name="category" value="{{ category.id }}" form="{{ category.id }}"
+                            <button type="submit" name="category" value="{{ category.id }}" data-category_id='{{ category.id }}' form="{{ category.id }}"
                                 class="button-join-us" aria-label="Select {{ category.name }} Membership">
                                 Select {{ category.name }} Membership
                             </button>
