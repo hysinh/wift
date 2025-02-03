@@ -41,16 +41,3 @@ def join(request):
     }
     
     return render(request, 'public/join.html', context)
-
-def join_test(request):
-    """ A view to return the Join page """
-    form = RegistrationForm()
-    context = {}
-    
-    categories = MembershipCategory.objects.all()
-    context = {
-        'form': form,
-        'categories': categories,
-    }
-    
-    return render(request, 'public/join_test.html', context)

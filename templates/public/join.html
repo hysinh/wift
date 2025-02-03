@@ -24,7 +24,7 @@
                 the next level with our unique networking opportunities and seminars designed to 
                 growth your unique career.
             </p>
-            <a href="{% url 'view_basket' %}" aria-label="WIFT Sign up for membership" rel="noopener">
+            <a href="#membership-levels" aria-label="WIFT Sign up for membership" rel="noopener">
                 <button class="button-join-us">register your membership now <i class="fa-solid fa-arrow-right-long"></i></button>
             </a>
 
@@ -65,9 +65,9 @@
         </div>
     </div>
     <div class="container-card my-4">
-        <div class="bkgrd-blue color-block"></div>
+        <div class="bkgrd-blue color-block" id="membership-levels"></div>
         <div class="p-4 card-subsection">
-            <h4 class="text-green ">Membership Levels</h4>
+            <h4 class="text-green ">Step 1: Choose a membership level</h4>
             <p>Our membership directory features all the top leaders and creative professionals
                 in Ireland. Whether you are just starting out, building your career, or
                 are a leader in the industry and are looking for creatives to build your team,
@@ -85,9 +85,9 @@
                         <span class="price">Annual Dues: €{{ category.new_member_price }}</span>
                     </p>
                     <div>
-                        <form action="{% url 'view_basket' %}" method="GET" id="{{ category.id}}">
+                        <form action="{% url 'add_to_basket' category.id %}" method="POST" id="{{ category.id}}">
                             {% csrf_token %}
-                            <button type="submit" name="category" value="{{ category.id }}" form="{{ category.id }}"
+                            <button type="submit" name="category" value="{{ category.id }}" data-category_id='{{ category.id }}' form="{{ category.id }}"
                                 class="button-join-us" aria-label="Select {{ category.name }} Membership">
                                 Select {{ category.name }} Membership
                             </button>
