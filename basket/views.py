@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from membership.models import MembershipCategory
 from profiles.forms import RegistrationForm
+from django.contrib import messages
 
 
 def view_basket(request):
@@ -50,6 +51,8 @@ def add_to_basket(request, category_id):
     basket[category_id] = quantity
         
     request.session['basket'] = basket
+    messages.success(request, f'Added {selected_membership_level} membership to your basket')
+    
     print(request.session['basket'])
 
     return redirect('view_basket')
