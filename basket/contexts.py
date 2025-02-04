@@ -19,6 +19,7 @@ def basket_contents(request):
             'category_id': category_id,
             'quantity': quantity,
             'selected_membership_level': selected_membership_level,
+            'price': selected_membership_level.new_member_price
         })
 
     # if total < settings.FREE_DELIVERY_THRESHOLD:

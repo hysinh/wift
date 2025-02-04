@@ -21,13 +21,54 @@
                 Complete your WIFT registration below and gain exclusive access to our member's only programs and
                 events!
             </p>
-            <h5 class="text-center">Membership Level Selected:</h5>
-            {% if basket_items %}
-                <div class="table-responsive rounded">
-                    <p>
-                        {{ basket_items }}
-                    </p>
+            <h5 class="text-center">Your Basket:</h5>
+            <div class="row">
+                <div class="col">
+                    {% if basket_items %}
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Membership Level</th>
+                                    <th scope="col">Annual Cost</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                                {% for item in basket_items %}
+                                <tr>
+                                    <td class="py-3">
+                                        <p>
+                                            {{ item.selected_membership_level.name }}
+                                        </p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p>
+                                            €{{ item.price }}
+                                        </p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p>
+                                            {{ item.quantity }}
+                                        </p>
+                                    </td>
+                                    <td class="py-3">
+                                        <p>
+                                            €{{ total }}
+                                        </p>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </thead>
+                            <p>
+                                {{ basket_items }}
+                            </p>
+                        </table>
+                        
+                    </div>
                 </div>
+            </div>
+            
+                
                 <a href="{% url 'join' %}">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
