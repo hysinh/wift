@@ -302,9 +302,14 @@ a:hover {
 }
 
 /* Basket page */
-.button-remove {
+.button-remove button {
+    background-color: #fff;
     color: red;
     border: 0px;
+}
+
+.button-remove button:hover {
+    color: #647232;
 }
 
 /* Footer */

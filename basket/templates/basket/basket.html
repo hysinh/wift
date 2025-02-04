@@ -64,7 +64,7 @@
                                         <span class="icon">
                                             <i class="fa-solid fa-circle-chevron-left"></i>
                                         </span>
-                                        <span class="text-uppercase">Change your selection</span>
+                                        Change your selection
                                     </a>
                                 </td>
                                 <td>
@@ -72,8 +72,8 @@
                                     <form  class="form update-form" method="POST" action="{% url 'remove_from_basket' item.selected_membership_level.id %}">
                                         {% csrf_token %}
                                         <div class="form-group">
-                                            <div class="input-group">
-                                                <button class="button-remove" type="submit">
+                                            <div class="input-group button-remove">
+                                                <button type="submit">
                                                     <i class="fa-solid fa-trash-can"> </i>
                                                     Remove membership from basket
                                                 </button>
@@ -82,23 +82,26 @@
                                     </form>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <td>
+                                        <a href="{% url 'checkout' %}">
+                                            <span class="text-uppercase button-join-us icon">
+                                                Secure Checkout <i class="fas fa-lock"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </td>
+                            </tr>
                             {% endfor %}
-                            
-                            <p>
-                                {{ basket_items }}
-                            </p>
                         </table>
                         
                     </div>
                 </div>
             </div>
-            
-                
-                
             {% else %}
                 <hr>
-                <p class="lead mb-5">Your basket is empty</p>
-                
+                <p class="lead mb-5">Your basket is empty</p> 
             {% endif %}
         </div>
     </div>
