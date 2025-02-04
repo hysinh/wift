@@ -296,9 +296,15 @@ a:hover {
     color: #647232;
 }
 
-/* Registration page */
+/* Join page */
 .container-basket {
     text-align: left;
+}
+
+/* Basket page */
+.button-remove {
+    color: red;
+    border: 0px;
 }
 
 /* Footer */

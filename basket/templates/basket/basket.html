@@ -32,33 +32,58 @@
                                     <th scope="col">Membership Level</th>
                                     <th scope="col">Annual Cost</th>
                                     <th scope="col">Quantity</th>
-                                    <th scope="col">Total</th>
+                                    <th scope="col">Subtotal</th>
                                 </tr>
-                                {% for item in basket_items %}
-                                <tr>
-                                    <td class="py-3">
-                                        <p>
-                                            {{ item.selected_membership_level.name }}
-                                        </p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p>
-                                            €{{ item.price }}
-                                        </p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p>
-                                            {{ item.quantity }}
-                                        </p>
-                                    </td>
-                                    <td class="py-3">
-                                        <p>
-                                            €{{ total }}
-                                        </p>
-                                    </td>
-                                </tr>
-                                {% endfor %}
                             </thead>
+                            {% for item in basket_items %}
+                            <tr>
+                                <td class="py-3">
+                                    <p>
+                                        {{ item.selected_membership_level.name }}
+                                    </p>
+                                </td>
+                                <td class="py-3">
+                                    <p>
+                                        €{{ item.price }}
+                                    </p>
+                                </td>
+                                <td class="py-3">
+                                    <p>
+                                        {{ item.quantity }}
+                                    </p>
+                                </td>
+                                <td class="py-3">
+                                    <p>
+                                        €{{ total }}
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="{% url 'join' %}">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-circle-chevron-left"></i>
+                                        </span>
+                                        <span class="text-uppercase">Change your selection</span>
+                                    </a>
+                                </td>
+                                <td>
+                                    <!-- Remove membership from basket -->
+                                    <form  class="form update-form" method="POST" action="{% url 'remove_from_basket' item.selected_membership_level.id %}">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <button class="button-remove" type="submit">
+                                                    <i class="fa-solid fa-trash-can"> </i>
+                                                    Remove membership from basket
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            
                             <p>
                                 {{ basket_items }}
                             </p>
@@ -69,12 +94,7 @@
             </div>
             
                 
-                <a href="{% url 'join' %}">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Change your selection</span>
-                </a>
+                
             {% else %}
                 <hr>
                 <p class="lead mb-5">Your basket is empty</p>

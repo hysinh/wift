@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from membership.models import MembershipCategory
 from profiles.forms import RegistrationForm
 from django.contrib import messages
@@ -8,28 +8,6 @@ def view_basket(request):
     """ A view to display the basket """
     form = RegistrationForm()
     context = {}
-
-    # If user inputs a membership level by click on the corresponding
-    # button on the Join page, this will set the membership selection
-    # as the initial value in the membership registration form
-    if request.method == 'GET':
-        selected_membership = request.GET.get('category')
-        form = RegistrationForm(initial={'membership_level': selected_membership})
-
-    # if request.method == 'POST':
-    #     form = RegistrationForm(request.POST)
-    #     if form.is_valid():
-    #         registration = form.save(commit=False)
-    #         registration.save()
-
-    #         return redirect('checkout')
-    #     else:
-    #         context = {'form': form}
-
-    #         messages.error(
-    #         request, "Please choose a membership level to proceed")
-
-    #         return render(request, 'basket/basket.html', context)
 
     categories = MembershipCategory.objects.all()
     context = {
@@ -53,9 +31,23 @@ def add_to_basket(request, category_id):
     request.session['basket'] = basket
     messages.success(request, f'Added {selected_membership_level} membership to your basket')
     
-    print(request.session['basket'])
+    # print(request.session['basket'])
 
     return redirect('view_basket')
+
+
+def remove_from_basket(request, category_id):
+    """ Remove the membership from the basket"""
+    
+    selected_membership_level = get_object_or_404(MembershipCategory, pk=category_id)
+    basket = request.session.get('basket', {})
+    basket.pop(category_id)
+    request.session['basket'] = basket
+    messages.success(request, f'{selected_membership_level} membership removed from your basket')
+
+    return redirect(reverse('join'))
+
+    
 
 
 
