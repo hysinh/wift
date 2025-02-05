@@ -39,13 +39,18 @@ def add_to_basket(request, category_id):
 def remove_from_basket(request, category_id):
     """ Remove the membership from the basket"""
     
-    selected_membership_level = get_object_or_404(MembershipCategory, pk=category_id)
-    basket = request.session.get('basket', {})
-    basket.pop(category_id)
-    request.session['basket'] = basket
-    messages.success(request, f'{selected_membership_level} membership removed from your basket')
+    try:
+        selected_membership_level = get_object_or_404(MembershipCategory, pk=category_id)
+        basket = request.session.get('basket', {})
+        basket.pop(category_id)
+        request.session['basket'] = basket
+        messages.success(request, f'{selected_membership_level} membership removed from your basket')
 
-    return redirect('view_basket')
+        return redirect('view_basket') # USING HTTPRESPONSE HERE DOESN't WORK
+
+    except Exception as e:
+        messages.error(request, f'Error removing item; {e}')
+        return HttpResponse(status=500) # HOW DO YOU TEST THIS?
 
     
 
