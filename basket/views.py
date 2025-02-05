@@ -45,7 +45,7 @@ def remove_from_basket(request, category_id):
     request.session['basket'] = basket
     messages.success(request, f'{selected_membership_level} membership removed from your basket')
 
-    return redirect(reverse('join'))
+    return redirect('view_basket')
 
     
 

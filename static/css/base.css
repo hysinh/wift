@@ -312,6 +312,10 @@ a:hover {
     color: #647232;
 }
 
+.container-checkout-button {
+    text-align: center;
+}
+
 /* Footer */
 footer {
     background-color: #065a65;
@@ -345,6 +349,11 @@ footer button {
     /* Fellowship page - Featured Image section */
     .fellowships-image {
         background: url("/static/images/wift_fellowships_1067x600.png") center/cover, #c68e07;
+    }
+
+    /* Basket page */
+    .container-checkout-button {
+        text-align: right;
     }
 }
 
