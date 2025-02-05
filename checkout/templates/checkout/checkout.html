@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+
 
 {% block extra_title %}- Checkout{% endblock %}
 {% block content %}
@@ -13,11 +15,49 @@
 <div class="container-md container-home-subsection px-6 justify-content-center">
     <div class="container-card my-4">
         <div class="bkgrd-green color-block"></div>
-        <div class="p-4 card-subsection">
-            <h4 class="text-green">STEP 3: Purchase your annual membership</h4>
-            <p>
-                Membership level selected and cost totals
-            </p>
+        <div class="p-4 card-subsection container-membership">
+            <h4 class="text-green">STEP 4: Purchase your annual membership</h4>
+            {% if basket_items %}
+            <!-- <h5>Your Basket:</h5> -->
+                    <div class="table-responsive rounded">
+                        <table class="table table-sm table-borderless">
+                            <thead class="text-black">
+                                <tr>
+                                    <th scope="col">Membership Level</th>
+                                    <th scope="col">Annual Cost</th>
+                                    <th scope="col">Quantity</th>
+                                    <th scope="col">Total</th>
+                                </tr>
+                            </thead>
+                            {% for item in basket_items %}
+                            <tr>
+                                <td class="py-3">
+                                    <p>
+                                        {{ item.selected_membership_level.name }}
+                                    </p>
+                                </td>
+                                <td class="py-3">
+                                    <p>
+                                        €{{ item.price }}
+                                    </p>
+                                </td>
+                                <td class="py-3">
+                                    <p>
+                                        {{ item.quantity }}
+                                    </p>
+                                </td>
+                                <td class="py-3">
+                                    <p>
+                                        €{{ total }}
+                                    </p>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                        <hr>
+                    </div>
+                    {% endfor %}
+            {% endif %}
         </div>
     </div>
     <div class="container-card my-4">
@@ -25,33 +65,40 @@
         <div class="p-4 card-subsection">
             <h4 class="text-green">Member Personal Details</h4>
             <p>
-                form to enter member details
+                Please complete the form below.
+                This information will be retained in your member profile and
+                can be updated from your member dashboard.
             </p>
-            <div>
-                <ul>
-                    <li>
-                        Access to a large community of creative, accomplished Women through our
-                        exclusive Membership Directory and LinkedIn community
-                    </li>
-                    <li>
-                        Free admission to public, Members Only Events and screenings such as panel discussions,
-                        brown bag lunches, and seminars
-                    </li>
-                    <li>
-                        Discounted admission to partnered events
-                    </li>
-                    <li>
-                        Invitations to guild and studio screenings
-                    </li>
-                    <li>
-                        Access to professional development programs such as our Member Mentorship
-                        program and exclusive networking and skill-building events and workshops
-                    </li>
-                    <li>
-                        Discounted application fees for our public programs when applicable
-                    </li>
-                </ul>
-            </div>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Member Details:</legend>
+                    {{ member_data_form.default_firstname | as_crispy_field }}
+                    {{ member_data_form.default_lastname | as_crispy_field }}
+                </fieldset>
+                <fieldset class="rounded px-3 mb-5">
+                    <legend class="fieldset-label small text-black px-2 w-auto">Billing Information:</legend>
+                    {{ member_data_form.default_street_address1 | as_crispy_field }}
+                    {{ member_data_form.default_street_address2 | as_crispy_field }}
+                    {{ member_data_form.default_town_or_city | as_crispy_field }}
+                    {{ member_data_form.default_county | as_crispy_field }}
+                    {{ member_data_form.default_postcode | as_crispy_field }}
+                    {{ member_data_form.default_country | as_crispy_field }}
+                </fieldset>
+               
+                    <button id="submit-button" class="btn btn-black rounded-0">
+                        <span class="font-weight-bold">Complete Order</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p class="small text-danger my-0">
+                        <span class="icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
+                    </p>
+            </form>
         </div>
     </div>
     <div class="container-card my-4">

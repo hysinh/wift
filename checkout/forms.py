@@ -6,7 +6,7 @@ from profiles.models import Member_Data_Private
 class MembershipPrivateDataForm(forms.ModelForm):
     class Meta:
         model = Member_Data_Private
-        fields  = ('defaul_firstname', 'default_lastname',
+        fields  = ('default_firstname', 'default_lastname',
                    'default_street_address1', 'default_street_address2',
                    'default_town_or_city', 'default_county', 'default_postcode',
                    'default_country',)
@@ -18,7 +18,7 @@ class MembershipPrivateDataForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'defaul_firstname': 'First Name',
+            'default_firstname': 'First Name',
             'default_lastname': 'Last Name',
             'default_street_address1': 'Street Address 1',
             'default_street_address2': 'Street Address 2',
@@ -28,7 +28,7 @@ class MembershipPrivateDataForm(forms.ModelForm):
             'default_country': 'Country',
         }
 
-        self.fields['defaul_firstname'].widget.attrs['autofocus'] = True
+        self.fields['default_firstname'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':   
                 if self.fields[field].required:
@@ -38,5 +38,4 @@ class MembershipPrivateDataForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-
 

@@ -32,7 +32,7 @@
                                     <th scope="col">Membership Level</th>
                                     <th scope="col">Annual Cost</th>
                                     <th scope="col">Quantity</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th scope="col">Total</th>
                                 </tr>
                             </thead>
                             {% for item in basket_items %}
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                         <div class="container-checkout-button">
-                            <a href="{% url 'checkout' %}">
+                            <a href="{% url 'account_signup' %}">
                                 <span class="text-uppercase button-join-us icon">
                                     Secure Checkout <i class="fas fa-lock"></i>
                                 </span>
