@@ -32,29 +32,31 @@
                             {% for item in basket_items %}
                             <tr>
                                 <td class="py-3">
+                                    <hr>
                                     <p>
                                         {{ item.selected_membership_level.name }}
                                     </p>
                                 </td>
                                 <td class="py-3">
+                                    <hr>
                                     <p>
                                         €{{ item.price }}
                                     </p>
                                 </td>
                                 <td class="py-3">
+                                    <hr>
                                     <p>
                                         {{ item.quantity }}
                                     </p>
                                 </td>
                                 <td class="py-3">
+                                    <hr>
                                     <p>
                                         €{{ total }}
                                     </p>
                                 </td>
                             </tr>
-                            
                         </table>
-                        <hr>
                     </div>
                     {% endfor %}
             {% endif %}
@@ -63,21 +65,21 @@
     <div class="container-card my-4">
         <div class="bkgrd-yellow color-block"></div>
         <div class="p-4 card-subsection">
-            <h4 class="text-green">Member Personal Details</h4>
+            <h4 class="text-green">Enter Member Details</h4>
             <p>
-                Please complete the form below.
+                Please fill out the form below to complete your membership purchase.
                 This information will be retained in your member profile and
                 can be updated from your member dashboard.
             </p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Member Details:</legend>
+                    <legend class="fieldset-label px-2 w-auto">Member Details:</legend>
                     {{ member_data_form.default_firstname | as_crispy_field }}
                     {{ member_data_form.default_lastname | as_crispy_field }}
                 </fieldset>
                 <fieldset class="rounded px-3 mb-5">
-                    <legend class="fieldset-label small text-black px-2 w-auto">Billing Information:</legend>
+                    <legend class="fieldset-label px-2 w-auto">Billing Information:</legend>
                     {{ member_data_form.default_street_address1 | as_crispy_field }}
                     {{ member_data_form.default_street_address2 | as_crispy_field }}
                     {{ member_data_form.default_town_or_city | as_crispy_field }}
@@ -85,23 +87,38 @@
                     {{ member_data_form.default_postcode | as_crispy_field }}
                     {{ member_data_form.default_country | as_crispy_field }}
                 </fieldset>
-               
-                    <button id="submit-button" class="btn btn-black rounded-0">
-                        <span class="font-weight-bold">Complete Order</span>
+                <fieldset class="px-3">
+                    <legend class="fieldset-label px-2 w-auto">Payment Details:</legend>
+                    <!-- A Stripe card element will go here -->
+                    <div class="mb-3" id="card-element"><p>stripe stuff goes here</p></div>
+
+                    <!-- Used to display form errors -->
+                    <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                </fieldset>
+               <div class="submit-button text-right mt-5 mb-2">
+                    <a href="{% url 'view_basket' %}" class="btn btn-outline-black rounded-0">
+                        <span class="icon">
+                            <i class="fa-solid fa-circle-chevron-left"></i>
+                        </span>
+                        <span class="font-weight-bold">Adjust Bag</span>
+                    </a>
+                    <button id="submit-button" class="button-join-us">
+                        <span class="">Complete Purchase </span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
                         </span>
                     </button>
-                    <p class="small text-danger my-0">
+                    <p class="small text-danger my-4">
                         <span class="icon">
                             <i class="fas fa-exclamation-circle"></i>
                         </span>
-                        <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
+                        <span>Your card will be charged <strong>€{{ total|floatformat:2 }}</strong></span>
                     </p>
+               </div>
             </form>
         </div>
     </div>
-    <div class="container-card my-4">
+    <!-- <div class="container-card my-4">
         <div class="bkgrd-blue color-block"></div>
         <div class="p-4 card-subsection">
             <h4 class="text-green ">Payment Details</h4>
@@ -112,6 +129,6 @@
                 <button class="button-join-us">Purchase now <i class="fa-solid fa-arrow-right-long"></i></button>
             </a>
         </div>
-    </div>
+    </div> -->
 </div>
 {% endblock %}
