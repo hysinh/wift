@@ -3,6 +3,11 @@
 import os
 import sys
 
+import environ
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 def main():
     """Run administrative tasks."""

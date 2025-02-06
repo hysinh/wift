@@ -4,6 +4,11 @@
 
 
 {% block extra_title %}- Checkout{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="featured-image-container">
     <div class="join-image featured-image">
@@ -90,10 +95,11 @@
                 <fieldset class="px-3">
                     <legend class="fieldset-label px-2 w-auto">Payment Details:</legend>
                     <!-- A Stripe card element will go here -->
-                    <div class="mb-3" id="card-element"><p>stripe stuff goes here</p></div>
-
+                    <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                    <!-- Pass the client secret to the view so we can get the payment intent id -->
+                    <input type="hidden" value="{{ client_secret }}" name="client_secret">
                 </fieldset>
                <div class="submit-button text-right mt-5 mb-2">
                     <a href="{% url 'view_basket' %}" class="btn btn-outline-black rounded-0">
@@ -118,17 +124,12 @@
             </form>
         </div>
     </div>
-    <!-- <div class="container-card my-4">
-        <div class="bkgrd-blue color-block"></div>
-        <div class="p-4 card-subsection">
-            <h4 class="text-green ">Payment Details</h4>
-            <p>
-                stripe payment details
-            </p>
-            <a href="#" aria-label="#" rel="noopener">
-                <button class="button-join-us">Purchase now <i class="fa-solid fa-arrow-right-long"></i></button>
-            </a>
-        </div>
-    </div> -->
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+    {{ client_secret|json_script:"id_client_secret" }}
+    <script src="{% static 'checkout/js/stripe_elements.js' %}"></script>
 {% endblock %}
