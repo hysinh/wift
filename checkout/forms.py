@@ -3,6 +3,13 @@ from .models import MembershipPurchase
 from profiles.models import Member_Data_Private
 
 
+class MembershipPurchaseForm(forms.ModelForm):
+    class Meta:
+        model = MembershipPurchase
+        exclude = ('purchase_number', 'member', 'membership_purchased',
+                   'purchase_date', 'purchase_total', 'stripe_pid')
+
+
 class MembershipPrivateDataForm(forms.ModelForm):
     class Meta:
         model = Member_Data_Private

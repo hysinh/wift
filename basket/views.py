@@ -27,8 +27,8 @@ def add_to_basket(request, category_id):
 
     basket.clear()
     basket[category_id] = quantity
-        
     request.session['basket'] = basket
+    print(basket)
     messages.success(request, f'Added {selected_membership_level} membership to your basket')
     
     # print(request.session['basket'])

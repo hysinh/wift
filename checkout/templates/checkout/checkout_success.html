@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+{% block extra_title %}- Checkout Success{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="featured-image-container">
+    <div class="join-image featured-image">
+      <div class="overlay-text-featured-img-join">
+        <h2>Purchase Confirmation</h2>
+      </div>
+    </div>
+</div>
+<div class="container-md container-home-subsection px-6 justify-content-center">
+    <div class="container-card my-4">
+        <div class="bkgrd-green color-block"></div>
+        <div class="p-4 card-subsection container-membership">
+            <h4 class="text-green">Thank you!</h4>
+            <p>Your purchase information is below. A confirmation email will be sent to
+                <strong>{{ purchase.email }}</strong>
+            </p>
+            {% if basket_items %}
+            <h5>Your purchase summary:</h5>
+            <div class="table-responsive rounded">
+                <table class="table table-sm table-borderless">
+                    <thead class="text-black">
+                        <tr>
+                            <th scope="col">Membership Level</th>
+                            <th scope="col">Annual Cost</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    {% for item in basket_items %}
+                    <tr>
+                        <td class="py-3">
+                            <hr>
+                            <p>
+                                {{ item.selected_membership_level.name }}
+                            </p>
+                        </td>
+                        <td class="py-3">
+                            <hr>
+                            <p>
+                                €{{ item.price }}
+                            </p>
+                        </td>
+                        <td class="py-3">
+                            <hr>
+                            <p>
+                                {{ item.quantity }}
+                            </p>
+                        </td>
+                        <td class="py-3">
+                            <hr>
+                            <p>
+                                €{{ total }}
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div>
+                <a href="#" class="button-join-us">Go to Member Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

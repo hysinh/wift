@@ -29,8 +29,6 @@ class MembershipPurchase(models.Model):
         """
         if not self.purchase_number:
             self.purchase_number = self._generate_purchase_number()
-
-        self.purchase_total = self.membership_purchased.new_member_price
         
         super().save(*args, **kwargs)
 
