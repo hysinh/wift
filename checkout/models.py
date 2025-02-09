@@ -24,12 +24,10 @@ class MembershipPurchase(models.Model):
     
     def save(self, *args, **kwargs):
         """
-        Overrides the original save method to set the purchase number if it hasn't 
-        already been set and sets the purchase price
+        Override the original save method to set the order number if it hasn't been set already
         """
         if not self.purchase_number:
             self.purchase_number = self._generate_purchase_number()
-        
         super().save(*args, **kwargs)
 
     def update_purchase_total(self):
