@@ -25,7 +25,6 @@
             <p>Your purchase information is below. A confirmation email will be sent to
                 <strong>{{ member.email }}</strong>
             </p>
-            {% if basket_items %}
             <h5>Your purchase summary:</h5>
             <div class="table-responsive rounded">
                 <table class="table table-sm table-borderless">
@@ -37,37 +36,34 @@
                             <th scope="col">Total</th>
                         </tr>
                     </thead>
-                    {% for item in basket_items %}
                     <tr>
                         <td class="py-3">
                             <hr>
                             <p>
-                                {{ item.selected_membership_level.name }}
+                                {{ purchase.membership_purchased }}
                             </p>
                         </td>
                         <td class="py-3">
                             <hr>
                             <p>
-                                €{{ item.price }}
+                                €{{ purchase.purchase_total }}
                             </p>
                         </td>
                         <td class="py-3">
                             <hr>
                             <p>
-                                {{ item.quantity }}
+                                1
                             </p>
                         </td>
                         <td class="py-3">
                             <hr>
                             <p>
-                                €{{ total }}
+                                €{{ purchase.purchase_total }}
                             </p>
                         </td>
                     </tr>
                 </table>
             </div>
-            {% endfor %}
-            {% endif %}
             <div>
                 <a href="#" class="button-join-us">Go to Member Dashboard</a>
             </div>

@@ -114,7 +114,7 @@ def checkout_success(request, purchase_number):
     save_info = request.session.get('save_info')
     purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
     member = request.user
-    print(member.email)
+    print(purchase)
     messages.success(request, f'Purchase successfully processed! \
                      Your purchase number is {purchase_number}. A confirmation \
                      email will be sent to {member.email}.')
