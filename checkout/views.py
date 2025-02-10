@@ -171,7 +171,7 @@ def checkout_existing_member(request):
                 member_private_data.save()
                 print(member_private_data.membership_level)
                 messages.success(request, 'Member profille information was updated')
-            return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
+            return redirect(reverse('checkout_success_renewal', args=[purchase.purchase_number]))
         else:
             messages.error(
                 request,
@@ -224,6 +224,24 @@ def checkout_success(request, purchase_number):
         del request.session['basket']
 
     template = 'checkout/checkout_success.html'
+    context = {
+        'purchase': purchase,
+        'member': member,
+    }
+
+    return render(request, template, context)
+
+
+def checkout_success_renewal(request, purchase_number):
+    """ Handle successful renewal checkouts """
+    purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
+    member = request.user
+    messages.success(request, f'Renewal successfully processed!')
+    
+    if 'basket' in request.session:
+        del request.session['basket']
+
+    template = 'checkout/checkout_success_renewal.html'
     context = {
         'purchase': purchase,
         'member': member,
