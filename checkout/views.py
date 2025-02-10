@@ -139,10 +139,21 @@ def checkout_test(request):
         print(purchase_total)
 
         form_data = {
-            "membership_purchased_id": selected_membership.id,
-            "purchase_total": purchase_total,
+            'membership_purchased_id': selected_membership.id,
+            'purchase_total': purchase_total,
         }
         print(form_data)
+        member_data = {
+            'default_firstname': request.POST["default_firstname"],
+            'default_lastname': request.POST["default_lastname"],
+            'default_street_address1': request.POST["default_street_address1"],
+            'default_street_address2': request.POST["default_street_address2"],
+            'default_town_or_city': request.POST["default_town_or_city"],
+            'default_county': request.POST["default_county"],
+            'default_postcode': request.POST["default_postcode"],
+            'default_country': request.POST["default_country"],
+        }
+        print(member_data)
         purchase_form = MembershipPurchaseForm(form_data)
         membership_form = MembershipPrivateDataForm()
         if purchase_form.is_valid():
@@ -150,12 +161,14 @@ def checkout_test(request):
             purchase.member = request.user
             purchase.membership_purchased_id = selected_membership.id
             purchase.purchase_total = purchase_total
-            pid = request.POST.get("client_secret").split("_secret")[0]
+            pid = request.POST.get('client_secret').split("_secret")[0]
             purchase.stripe_pid = pid
             print(pid)
             purchase.save()
             if membership_form.is_valid():
                 member_private_data = membership_form.save(commit=False)
+                messages.success(request, 'Member data form was valid')
+                
             
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[purchase.purchase_number]))

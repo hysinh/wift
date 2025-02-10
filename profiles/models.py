@@ -14,7 +14,7 @@ class Member_Data_Private(models.Model):
     default_firstname = models.CharField(max_length=80, null=False, blank=False)
     default_lastname = models.CharField(max_length=80, null=False, blank=False)
     default_street_address1 = models.CharField(max_length=80, null=False, blank=False)
-    default_street_address2 = models.CharField(max_length=80, null=False, blank=False)
+    default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
     default_town_or_city = models.CharField(max_length=40, null=False, blank=False)
     default_county = models.CharField(max_length=80, null=False, blank=False)
     default_postcode = models.CharField(max_length=20, null=False, blank=False)
