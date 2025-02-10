@@ -71,10 +71,6 @@ a:hover {
 }
 
 /* Navigation */
-.navbar {
-    padding-top: 25px;
-}
-
 .navbar-brand {
     padding-right: 25px;
 }
@@ -85,6 +81,11 @@ a:hover {
 
 .navbar-toggler {
     border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none;
 }
 
 .dropdown-menu {
@@ -107,10 +108,9 @@ a:hover {
 }
 
 /* Bootstrap toasts */
-
 .message-container {
     position: fixed;
-    top: 72px;
+    top: 52px;
     right: 15px;
     background: #fff;
     border: 2px solid #647232;

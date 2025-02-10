@@ -14,11 +14,14 @@ import stripe
 
 @login_required()
 def checkout(request):
+    """
+    Displays the checkout page and handles a purchase.
+    Creates/updates the member private profile
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
     original_profile = get_object_or_404(Member_Data_Private, member=request.user)
-    print(original_profile)
 
     # if an original profile exists, form will be populated with default saved
     # member private data
@@ -63,9 +66,8 @@ def checkout(request):
                 if membership_form.is_valid():
                     member_private_data = membership_form.save(commit=False)
                     member_private_data.membership_level = selected_membership
-                    print(member_private_data.default_firstname)
                     member_private_data.save()
-                    messages.success(request, 'Member data form was updated')
+                    messages.success(request, 'Member profille information was updated')
                 return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
             else:
                 messages.error(
@@ -82,15 +84,12 @@ def checkout(request):
             
             current_basket = basket_contents(request)
             total = current_basket['total']
-            print(total)
             stripe_total = round(total * 100)
-            print(stripe_total)
             stripe.api_key = stripe_secret_key
             intent = stripe.PaymentIntent.create(
                 amount=stripe_total,
                 currency=settings.STRIPE_CURRENCY,
             )
-            print(intent)
 
             member_data_form = MembershipPrivateDataForm(instance=original_profile)
             purchase_form = MembershipPurchaseForm()
@@ -153,9 +152,8 @@ def checkout(request):
                     member_private_data = membership_form.save(commit=False)
                     member_private_data.member = request.user
                     member_private_data.membership_level = selected_membership
-                    print(member_private_data.default_firstname)
                     member_private_data.save()
-                    messages.success(request, 'Member data form was valid')
+                    messages.success(request, 'Member profile information was saved')
                 return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
             else:
                 messages.error(
@@ -171,15 +169,12 @@ def checkout(request):
             
             current_basket = basket_contents(request)
             total = current_basket['total']
-            print(total)
             stripe_total = round(total * 100)
-            print(stripe_total)
             stripe.api_key = stripe_secret_key
             intent = stripe.PaymentIntent.create(
                 amount=stripe_total,
                 currency=settings.STRIPE_CURRENCY,
             )
-            print(intent)
 
             member_data_form = MembershipPrivateDataForm()
             purchase_form = MembershipPurchaseForm()
@@ -206,10 +201,7 @@ def checkout_success(request, purchase_number):
     """ Handle successful checkouts """
     purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
     member = request.user
-    print(purchase)
-    messages.success(request, f'Purchase successfully processed! \
-                     Your purchase number is {purchase_number}. A confirmation \
-                     email will be sent to {member.email}.')
+    messages.success(request, f'Purchase successfully processed!')
     
     if 'basket' in request.session:
         del request.session['basket']
