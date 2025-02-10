@@ -66,7 +66,6 @@ def checkout(request):
                     print(member_private_data.default_firstname)
                     member_private_data.save()
                     messages.success(request, 'Member data form was updated')
-                request.session['save_info'] = 'save-info' in request.POST
                 return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
             else:
                 messages.error(
@@ -157,7 +156,6 @@ def checkout(request):
                     print(member_private_data.default_firstname)
                     member_private_data.save()
                     messages.success(request, 'Member data form was valid')
-                request.session['save_info'] = 'save-info' in request.POST
                 return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
             else:
                 messages.error(
@@ -206,7 +204,6 @@ def checkout(request):
 
 def checkout_success(request, purchase_number):
     """ Handle successful checkouts """
-    save_info = request.session.get('save_info')
     purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
     member = request.user
     print(purchase)
