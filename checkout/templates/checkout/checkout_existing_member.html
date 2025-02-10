@@ -21,7 +21,7 @@
     <div class="container-card my-4">
         <div class="bkgrd-green color-block"></div>
         <div class="p-4 card-subsection container-membership">
-            <h4 class="text-green">STEP 4: Purchase your annual membership</h4>
+            <h4 class="text-green">STEP 4: Renew your annual membership</h4>
             {% if basket_items %}
             <!-- <h5>Your Basket:</h5> -->
                     <div class="table-responsive rounded">
@@ -29,7 +29,7 @@
                             <thead class="text-black">
                                 <tr>
                                     <th scope="col">Membership Level</th>
-                                    <th scope="col">Annual Cost</th>
+                                    <th scope="col">Renewal Cost</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Total</th>
                                 </tr>
@@ -70,13 +70,12 @@
     <div class="container-card my-4">
         <div class="bkgrd-yellow color-block"></div>
         <div class="p-4 card-subsection">
-            <h4 class="text-green">Enter Member Details</h4>
-            <p> 
-                Please fill out the form below to complete your membership purchase.
-                This information will be retained in your member profile and
-                can be updated from your member dashboard.
+            <h4 class="text-green">Update Member Details</h4>
+            <p>
+                Please review your information.
             </p>
-            <form action="{% url 'checkout' %}" method="POST" id="payment-form">    
+            <!-- <form {% if member %} action="{% url 'checkout_existing_member' %} {% else %} action="{% url 'checkout' %}" {% endif %} method="POST" id="payment-form"> -->
+            <form action="{% url 'checkout_existing_member' %}" method="POST" id="payment-form">    
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label px-2 w-auto">Member Details:</legend>
