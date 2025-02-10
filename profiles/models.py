@@ -28,5 +28,5 @@ class Member_Data_Private(models.Model):
         verbose_name_plural = 'Member_Data_Private'
 
     def __str__(self):
-        return f"{self.user.username}"
+        return f"{self.default_firstname} {self.default_lastname}"
 
