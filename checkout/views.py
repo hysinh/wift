@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.conf import settings
 
 from .forms import MembershipPrivateDataForm, MembershipPurchaseForm
+from .models import MembershipPurchase
 from membership.models import MembershipCategory
 from basket.contexts import basket_contents
 
@@ -143,35 +144,27 @@ def checkout_test(request):
         }
         print(form_data)
         purchase_form = MembershipPurchaseForm(form_data)
+        membership_form = MembershipPrivateDataForm()
         if purchase_form.is_valid():
             purchase = purchase_form.save(commit=False)
             purchase.member = request.user
             purchase.membership_purchased_id = selected_membership.id
+            purchase.purchase_total = purchase_total
             pid = request.POST.get("client_secret").split("_secret")[0]
             purchase.stripe_pid = pid
             print(pid)
             purchase.save()
-            messages.success(
-                request,
-                "Success! The purchase was saved!"
-            )
-            # purchase.member = request.user
-            # pid = request.POST.get("client_secret").split("_secret")[0]
-            # purchase.stripe_pid = pid
-            # print(pid)
-            # purchase.save()
-            return render(request, "checkout/index.html")
-            # return redirect(
-            #     reverse('checkout_success', args=[purchase.purchase_number])
-            # )
+            if membership_form.is_valid():
+                member_private_data = membership_form.save(commit=False)
+            
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
         else:
             messages.error(
                 request,
                 "There was an errory with your form. \
                     Please double check your information."
-            )
-
-            
+            )     
     else:
         basket = request.session.get("basket", {})
         if not basket:
@@ -214,16 +207,19 @@ def checkout_success(request, purchase_number):
     """ Handle successful checkouts """
     save_info = request.session.get('save_info')
     purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
+    member = request.user
+    print(member.email)
     messages.success(request, f'Purchase successfully processed! \
                      Your purchase number is {purchase_number}. A confirmation \
-                     email will be sent to {purchase.email}.')
+                     email will be sent to {member.email}.')
     
-    if 'basket' in request.sssion:
+    if 'basket' in request.session:
         del request.session['basket']
 
     template = 'checkout/checkout_success.html'
     context = {
         'purchase': purchase,
+        'member': member,
     }
 
     return render(request, template, context)
