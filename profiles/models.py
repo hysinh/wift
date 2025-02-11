@@ -9,7 +9,7 @@ class Member_Data_Private(models.Model):
     """
     Stores a single Member's Profile Private data
     """
-    member = models.OneToOneField(User, on_delete=models.CASCADE)
+    member = models.OneToOneField(User, on_delete=models.PROTECT)
     membership_level = models.ForeignKey(MembershipCategory, on_delete=models.PROTECT)
     default_firstname = models.CharField(max_length=80, null=False, blank=False)
     default_lastname = models.CharField(max_length=80, null=False, blank=False)
