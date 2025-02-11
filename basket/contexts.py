@@ -2,7 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from membership.models import MembershipCategory
-# from profiles.models import Member_Data_Private
+from profiles.models import Member_Data_Private
 
 
 def basket_contents(request):
