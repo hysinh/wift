@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 import environ
 
 # Initialise environment variables
@@ -113,7 +114,6 @@ LOGOUT_REDIRECT_URL = ''
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
-
 WSGI_APPLICATION = 'wift.wsgi.application'
 
 
@@ -126,7 +126,6 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -174,8 +173,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'EUR'
-STRIPE_PUBLIC_KEY = env("PUBLIC_KEY")
-STRIPE_SECRET_KEY = env("SECRET_KEY")
+STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
+STRIPE_WH_SECRET = os.getenv('SECRET_WH_SECRET', '')
 
 
 # Default primary key field type
