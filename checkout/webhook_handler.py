@@ -20,6 +20,15 @@ class StripeWH_Handler:
         """
         Handles the payment_intent.succeeded webhook from Stripe
         """
+        intent = event.data.object
+        print(intent) # delete this line after webhook tested and is working
+        # should see purchase_form and member_form and metadata dictionaries in the payment intent printed to console
+        pid = intent.id
+        basket = intent.metadata.bag
+        save_info = intent.metadata.save_info
+
+        # billing
+
         return HttpResponse(
             content=f'Unhandled webhook received: {event["type"]}',
             status=200
