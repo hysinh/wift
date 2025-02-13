@@ -36,7 +36,8 @@ ALLOWED_HOSTS = [
     '127.0.0.1', # local preview
     'localhost', # listen for stripe webhooks
     'localhost:8000',
-    '127.0.0.1:8000', 
+    '127.0.0.1:8000',
+    'wift-nsmith-c3ae5713a782.herokuapp.com', 
 ]
 
 
