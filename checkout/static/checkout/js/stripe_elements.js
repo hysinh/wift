@@ -54,7 +54,29 @@ form.addEventListener('submit', function(ev) {
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
             card: card,
+            // purchase_details: {
+            //     purchase_number: $.trim(purchase_form.purchase_number.value),
+            //     member: $.trim(purchase_form.member.value),
+            //     membership_purchased: $.trim(purchase_form.membership_purchased.value),
+            //     purchase_date: $.trim(purchase_form.purchase_date.value),
+            //     purchase_total: $.trim(purchase_form.purchase_total.value),
+            // }
         }
+        // },
+        // member_details: {
+        //     member: $.trim(member_data_form.member.value),
+        //     membership_level: $.trim(member_data_form.membership_level.value),
+        //     firstname: $.trim(member_data_form.default_firstname.value),
+        //     lastname: $.trim(member_data_form.default_lastname.value),
+        //     address: {
+        //         line1: $.trim(member_data_form.default_street_address1.value),
+        //         line2: $.trim(member_data_form.default_street_address2.value),
+        //         city: $.trim(member_data_form.default_town_or_city.value),
+        //         country: $.trim(member_data_form.default_country.value),
+        //         postal_code: $.trim(member_data_form.default_postcode.value),
+        //         state: $.trim(member_data_form.default_county.value),
+        //     }
+        // },
     }).then(function(result) {
         if (result.error) {
             var errorDiv = document.getElementById('card-errors');
