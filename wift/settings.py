@@ -34,6 +34,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '127.0.0.1', # local preview
+    'localhost', # listen for stripe webhooks
+    'localhost:8000',
+    '127.0.0.1:8000', 
 ]
 
 
@@ -173,9 +176,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'EUR'
-STRIPE_PUBLIC_KEY = env('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = env('STRIPE_SECRET_KEY')
-STRIPE_WH_SECRET = os.getenv('SECRET_WH_SECRET', '')
+
+STRIPE_PUBLIC_KEY = env('PUBLIC_KEY')
+STRIPE_SECRET_KEY = env('SECRET_KEY')
+STRIPE_WH_SECRET = env('SECRET_WH_SECRET')
 
 
 # Default primary key field type

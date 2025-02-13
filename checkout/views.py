@@ -14,20 +14,21 @@ import stripe
 import json
 
 
-@require_POST
-def cache_checkout_data(request):
-    try:
-        pid = request.POST.get('client_secret').split('_secret')[0]
-        stripe.api.key = settings.STRIPE_SECRET_KEY
-        stripe.PaymentIntent.modify(pid, metadata={
-            'basket': json.dumps(request.session.get('basket', {})),
-            'username': request.user,
-        })
-        return HttpResponse(status=200)
-    except Exception as e:
-        messages.error(request, 'Sorry, your payment was not \
-                        processed right now. Please try again.')
-        return HttpResponse(content=e, status=400)
+# @require_POST
+# def cache_checkout_data(request):
+#     try:
+#         pid = request.POST.get('client_secret').split('_secret')[0]
+#         stripe.api_key = settings.STRIPE_SECRET_KEY
+#         stripe.PaymentIntent.modify(pid, metadata={
+#             'basket': json.dumps(request.session.get('basket', {})),
+#             'save_info': request.POST.get('save_info'),
+#             'username': request.user,
+#         })
+#         return HttpResponse(status=200)
+#     except Exception as e:
+#         messages.error(request, 'Sorry, your payment was not \
+#             processed right now. Please try again.')
+#         return HttpResponse(content=e, status=400)
 
 
 @login_required()
@@ -39,6 +40,7 @@ def checkout(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
+    # Check to see if user has an existing Member Profile
     existing_member = Member_Data_Private.objects.filter(member=request.user)
     print(existing_member)
 
