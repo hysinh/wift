@@ -15,7 +15,11 @@ import os
 import dj_database_url
 import environ
 
+
 # Initialise environment variables
+# if os.path.isfile('env.py'):
+#     import env
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -27,14 +31,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1', # local preview
-    'localhost', # listen for stripe webhooks
+    '127.0.0.1',  # local preview
+    'localhost',  # listen for stripe webhooks
     'localhost:8000',
     '127.0.0.1:8000',
     'wift-nsmith-c3ae5713a782.herokuapp.com', 
@@ -124,24 +129,25 @@ WSGI_APPLICATION = 'wift.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
-if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL),
-    }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
+# if 'DATABASE_URL' in os.environ:
+#     DATABASES = {
+#         'default': dj_database_url.parse('DATABASE_URL')
+#         # 'default': dj_database_url.config(default="DATABASE_URL"),
+#     }
+# else:
+#     DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.sqlite3',
+#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#         }
+#     }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -190,6 +196,9 @@ FREE_DELIVERY_THRESHOLD = 50
 STANDARD_DELIVERY_PERCENTAGE = 10
 STRIPE_CURRENCY = 'EUR'
 
+# STRIPE_PUBLIC_KEY = os.environ.get('PUBLIC_KEY')
+# STRIPE_SECRET_KEY = os.environ.get('SECRET_KEY')
+# STRIPE_WH_SECRET = os.environ.get('SECRET_WH_SECRET')
 STRIPE_PUBLIC_KEY = env('PUBLIC_KEY')
 STRIPE_SECRET_KEY = env('SECRET_KEY')
 STRIPE_WH_SECRET = env('SECRET_WH_SECRET')
