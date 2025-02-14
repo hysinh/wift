@@ -1,0 +1,472 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #eeebda;
+    color: black;
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    font-size: medium;
+}
+
+/* GLOBAL TEXT STYLING */
+a, a:visited {
+    color: #647232;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #065a65;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.text-green {
+    color: #647232;
+}
+
+.text-blue {
+    color: #065a65 !important;
+}
+
+.text-bold {
+    font-weight: bold !important;
+}
+
+/* Background colours */
+.bkgrd-green {
+    background-color: #647232;
+}
+
+.bkgrd-blue {
+    background-color: #647232;
+}
+
+.bkgrd-yellow {
+    background-color: #c68e07;
+}
+
+/* test styles */
+.test-blue {
+    background-color: blue;
+}
+
+.test-orange {
+    background-color: orange;
+}
+
+.test-red {
+    background-color: red;
+}
+
+.test-aqua {
+    background-color: aqua;
+}
+
+.test-purple {
+    background-color: purple;
+}
+
+/* Navigation */
+.navbar-brand {
+    padding-right: 25px;
+}
+
+.dropdown-toggle::after { 
+    content: none; 
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    border: none;
+    background-color: #c68e07;
+}
+
+.dropdown-item {
+    color: #065a65 !important;
+}
+
+.button-login {
+    background-color: #065a65;
+    color: #eeebda;
+    width: 150px;
+    border: none;
+    /* margin: 0px 5px; */
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+/* Bootstrap toasts */
+.message-container {
+    position: fixed;
+    top: 52px;
+    right: 15px;
+    background: #fff;
+    border: 2px solid #647232;
+    padding: 1px;
+    border-radius: 4px;
+    font-size: smaller;
+    z-index: 999999999999
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+/* Home Page */
+.home-image {
+    background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right 0px/cover, #c68e07;
+    height: 600px;
+    width: 100%;
+    position: relative;
+}
+
+/* Home page - Featured Image section */
+.featured-image-container {
+    padding: 0px;
+}
+
+.button-join-us {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #065a65;
+}
+
+.button-home-page {
+    position: absolute;
+    right: 25px;
+    top: 90px;
+}
+
+.button-join-us :hover {
+    background-color: #647232;
+    cursor: pointer;
+}
+
+#cover-text {   
+    font-family: Oswald, sans-serif;
+    text-align: right;
+    font-size: 130%;
+    position: absolute;
+    right: 25px;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-right: 10px;
+}
+
+#cover-text {
+    color: #065a65;
+    text-transform: uppercase;
+}
+
+#cover-text > h1 {
+    color: #065a65;
+}
+
+/* Home page subsection */
+.container-card h4 {
+    font-family: Bebas Neue, sans-serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: .5rem;
+    text-align: center;
+}
+
+.container-home-subsection {
+    margin: 25px 0px;
+    
+}
+
+.card-subsection {
+    background-color: #fff;
+    border: .5px dotted #647232;
+    width: 100%;
+}
+
+.color-block {
+    min-height: 120px;
+    min-width: 120px;
+    border-radius: 15px 15px 0px 0px;
+}
+
+/* Featured Image - applies to all pages except home page */
+.featured-image {
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Featured Image section on each page */
+.about-image {
+    background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+}
+
+.fellowships-image {
+    background: url("/static/images/wift_fellowships_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+}
+
+.mentoring-image {
+    background: url("/static/images/wift_mentoring_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+.events-image {
+    background: url("/static/images/wift_events_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+.contact-image {
+    background: url("/static/images/wift_contact_1067x600.png") no-repeat right/cover, #c68e07;
+}
+
+.join-image {
+    background: url("/static/images/wift_join_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+.registration-image {
+    background: url("/static/images/wift_registration_1067x600.png") no-repeat center/cover, #c68e07;
+}
+
+.overlay-text-featured-img h2 {
+    background-color: rgb(6, 90, 101, .5);
+    font-family: Bebas Neue, sans-serif;
+    font-size: 3.0rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: .5rem;
+    color: #fff;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    top: 100px;
+}
+
+.overlay-text-featured-img-join h2 {
+    background-color: rgb(6, 90, 101, .75);
+    font-family: Bebas Neue, sans-serif;
+    font-size: 3.0rem;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: .5rem;
+    color: #fff;
+    width: auto;
+    height: auto;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    top: 100px;
+}
+
+/* Join page */
+.container-membership h5 {
+    color: #065a65;
+    font-family: Bebas Neue, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.price {
+    font-family: Poppins, sans-serif;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: #647232;
+}
+
+/* Join page */
+.container-basket {
+    text-align: left;
+}
+
+/* Basket page */
+.button-remove button {
+    background-color: #fff;
+    color: red;
+    border: 0px;
+}
+
+.button-remove button:hover {
+    color: #647232;
+}
+
+.container-checkout-button {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #065a65;
+    padding: 50px 10px;
+    color: #fff;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer a {
+    color: #fff !important;
+}
+
+footer a:hover {
+    color: #647232 !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer button {
+    background-color: #c68e07;
+    border: none;
+}
+
+/* Media query for mobile devices and later (520px and up) */
+@media screen and (min-width: 520px) {
+    /* Fellowship page - Featured Image section */
+    .fellowships-image {
+        background: url("/static/images/wift_fellowships_1067x600.png") center/cover, #c68e07;
+    }
+
+    /* Basket page */
+    .container-checkout-button {
+        text-align: right;
+    }
+}
+
+/* Media query for tablet devices and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Home page */
+    .home-image {
+        background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+    }
+    
+    .button-join-us {
+        right: 360px;
+    }
+
+    #cover-text {   
+        right: 360px;
+        bottom: 180px;
+    }
+
+    #cover-text > h1 {
+        font-size: 4rem;
+    }
+
+    #cover-text > h2 {
+        font-size: 3rem;
+    }
+
+    #cover-text > h5 {
+        font-size: 2rem;
+    }
+
+    /* Home page - subsectioni */
+    .container-home-subsection {
+        margin: 0 auto;
+    }
+}
+
+/* larger devices - laptops, desktops, and up (992px and up)  */
+@media screen and (min-width: 992px) {
+    /* Navigation */
+    .button-login {
+        margin-left: 15px;
+    }
+
+    /* Home page */
+    .home-image {
+        background-image: url("/static/images/wift_home_1600x900.png");
+    }
+
+    .button-join-us {
+        right: 460px;
+    }
+
+    #cover-text {   
+        right: 460px;
+        bottom: 180px;
+    }
+
+    /* Home page - subsection */
+    .container-card {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+
+    .container-card h4 {
+        text-align: left;
+    }
+
+    .color-block {
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    /* Featured images at the top of each page */
+    .about-image {
+        background: url("/static/images/wift_about_1600x900.png") no-repeat top/cover;
+    }
+
+    .fellowships-image {
+        background: url("/static/images/wift_fellowships_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+    }
+
+    .mentoring-image {
+        background: url("/static/images/wift_mentoring_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+    }
+
+    .events-image {
+        background: url("/static/images/wift_events_1600x900.png") no-repeat center/cover, #c68e07;
+    }
+
+    .contact-image {
+        background: url("/static/images/wift_contact_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+    }
+
+    .join-image {
+        background: url("/static/images/wift_join_1600x900.png") no-repeat center/cover, #c68e07;
+    }
+
+}
+
+/* larger devices - laptops, desktops, and up (1280px and up)  */
+@media screen and (min-width: 1280px) {
+    /* Home page */
+    .home-image {
+        background: url("/static/images/wift_home_1067x600.png") no-repeat center/cover, #c68e07;
+    }
+
+    .button-join-us {
+        right: 760px;
+    }
+
+    #cover-text {   
+        right: 760px;
+        bottom: 180px;
+    }
+}
