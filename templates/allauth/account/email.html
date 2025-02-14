@@ -5,8 +5,13 @@
 {% block head_title %}{% trans "Email Addresses" %}{% endblock %}
 
 {% block content %}
-    <h1>{% trans "Email Addresses" %}</h1>
-{% if emailaddresses %}
+<div class="container-md container-home-subsection px-6 justify-content-center">
+  <div class="container-card my-4">
+      <div class="bkgrd-green color-block"></div>
+      <div class="p-4 card-subsection">
+          <h4 class="text-green">{% trans "Email Addresses" %}</h4>
+
+          {% if emailaddresses %}
 <p>{% trans 'The following email addresses are associated with your account:' %}</p>
 
 <form action="{% url 'account_email' %}" class="email_list" method="post">
@@ -70,4 +75,7 @@
   }
 })();
 </script>
+  </div>
+</div>
+
 {% endblock %}
