@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_countries',
     'membership',
     'basket',
     'profiles',

@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from membership.models import MembershipCategory
+from django_countries.fields import CountryField
 
 
 STATUS = ((0, "Inactive"), (1, "Active"))
@@ -18,7 +19,7 @@ class Member_Data_Private(models.Model):
     default_town_or_city = models.CharField(max_length=40, null=False, blank=False)
     default_county = models.CharField(max_length=80, null=False, blank=False)
     default_postcode = models.CharField(max_length=20, null=False, blank=False)
-    default_country = models.CharField(max_length=20, null=True, blank=True)
+    default_country = CountryField(blank_label='Country *', null=False, blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
