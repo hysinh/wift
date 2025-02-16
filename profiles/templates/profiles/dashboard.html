@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="featured-image-container">
+    <div class="about-image featured-image">
+      <div class="overlay-text-featured-img">
+        <h2>Member Dashboard</h2>
+      </div>
+    </div>
+</div>
+<div class="container-md container-home-subsection px-6 justify-content-center">
+  <div class="container-card my-4">
+    {% for membership in membership_purchase %}
+      <div class="p-4 card-subsection">
+        <h4 class="text-green">Member Name</h4>
+        <p>Membership Object: {{ membership_purchase }}</p>
+        <p>
+          Membership purchase date: {{ membership.purchase_date }}
+        </p>
+        <p>
+          copy
+        </p>
+        <p>
+          copy
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

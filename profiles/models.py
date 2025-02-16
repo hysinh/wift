@@ -25,9 +25,36 @@ class Member_Data_Private(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     class Meta:
-        ordering = ['default_lastname', 'default_firstname']
-        verbose_name_plural = 'Member_Data_Private'
+        ordering = ['member', 'default_lastname', 'default_firstname']
+        verbose_name_plural = 'Member Data Private'
 
     def __str__(self):
         return f"{self.default_firstname} {self.default_lastname}"
+
+
+class Member_Data_Public(models.Model):
+    """
+    Stores a single Member's Profile Public data
+    """
+    member = models.OneToOneField(User, on_delete=models.RESTRICT)
+    public_firstname = models.CharField(max_length=80, null=True, blank=True)
+    public_lastname = models.CharField(max_length=80, null=True, blank=True)
+    # profile_image = CloudinaryField('image', default='placeholder')
+    job_title = models.CharField(max_length=200, null=False, blank=False)
+    company_name = models.CharField(max_length=200, null=True, blank=True)
+    # public_email = models.EmailField(max_length=254, null=True)
+    # public_telephone = 
+    website = models.URLField(max_length=200, null=True)
+    imdb = models.URLField(max_length=200, null=True)
+    film_tv_credits = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.member.username
+    
+    class Meta:
+        ordering = ['member', 'public_lastname', 'public_firstname']
+        verbose_name_plural = 'Member Data Public'
 
