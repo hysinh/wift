@@ -1,5 +1,17 @@
 {% load static %}
 
+{% url 'home' as home %}
+{% url 'venue-hire' as venue_hire_url %}
+{% url 'about' as about %}
+{% url 'fellowships' as fellowships %}
+{% url 'mentoring' as mentoring %}
+{% url 'events' as events %}
+{% url 'join' as join %}
+{% url 'contact' as contact %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -52,33 +64,33 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="{% url 'home' %}">home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == home %}active{% endif %}" href="{% url 'home' %}">home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">about</a>
+              <a class="nav-link {% if request.path == about %}active{% endif %}" href="{% url 'about' %}">about</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                 programs
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'fellowships' %}"><i class="fa-solid fa-caret-right"></i> fellowships</a>
-                <a class="dropdown-item" href="{% url 'mentoring' %}"><i class="fa-solid fa-caret-right"></i> mentor program</a>
+                <a class="dropdown-item {% if request.path == fellowships %}active{% endif %}" href="{% url 'fellowships' %}"><i class="fa-solid fa-caret-right"></i> fellowships</a>
+                <a class="dropdown-item {% if request.path == mentoring %}active{% endif %}" href="{% url 'mentoring' %}"><i class="fa-solid fa-caret-right"></i> mentor program</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'events' %}">events</a>
+              <a class="nav-link {% if request.path == events %}active{% endif %}" href="{% url 'events' %}">events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">contact</a>
+              <a class="nav-link {% if request.path == contact %}active{% endif %}" href="{% url 'contact' %}">contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'join' %}">join WIFT</a>
+              <a class="nav-link {% if request.path == join %}active{% endif %}" href="{% url 'join' %}">join WIFT</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'account_logout' %}">log out</a>
+              <a class="nav-link {% if request.path == logout %}active{% endif %}" href="{% url 'account_logout' %}">log out</a>
             </li>
             <li class="nav-item nav-link text-blue">
               Logged in as {{ user }}
@@ -87,7 +99,7 @@
               <button class="button-login">Dashboard</button>
             </a>
             {% else %}
-            <a href="{% url 'account_login' %}">
+            <a href="{% url 'account_login' %}" class="{% if request.path == login_url %}active{% endif %}">
               <button class="button-login">LOGIN</button>
             </a>
             {% endif %}

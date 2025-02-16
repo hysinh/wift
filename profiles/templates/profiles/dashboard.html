@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="featured-image-container">
     <div class="about-image featured-image">
@@ -11,9 +15,58 @@
 </div>
 <div class="container-md container-home-subsection px-6 justify-content-center">
   <div class="container-card my-4">
-    {% for membership in membership_purchase %}
       <div class="p-4 card-subsection">
-        <h4 class="text-green">Member Name</h4>
+        {% for member in member_private %}
+        <h4 class="text-green">{{ member.default_firstname }} {{ member.default_lastname }}</h4>
+          <p>{{ member_private}}</p>
+          <p> </p>     
+        
+        <div class="container-dashboard-main">
+          <div class="container-dashboard-nav">
+            <div class="dashboard-nav-element dashboard-profile">
+              <div class="dashboard-profile-img">profile image</div>
+              <div class="dashboard-member-name">{{ member.default_firstname }} {{ member.default_lastname }}</div>
+              <div class="text-muted">{{ member.member.username }} </div>
+              <div class="text-muted">{{ member.member.email }} </div>
+              <div>profile completion bar?</div>
+            </div>
+            <div class="dashboard-nav-element">
+              <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+              Membership Purchases
+            </div>
+            <div class="dashboard-nav-element">
+              <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+              Edit Member Profile
+            </div>
+            <div class="dashboard-nav-element">
+              <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+              Edit Public Directory Profile
+            </div>
+            <div class="dashboard-nav-element">
+              <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+              Member Events
+            </div>
+            <div class="dashboard-nav-element">
+              <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+              Log out
+            </div>
+          </div>
+          
+          <div class="container-dashboard-body">
+            <div class="container-dashboard-private bkgrd-blue text-white p-3">Profile Summary:</div>
+              <div class="p-3">
+                <div>Name: {{ member.default_firstname }} {{ member.default_lastname }}</div>
+                <div>Email: {{ member.member.email }}</div>
+                <div>Address:</div>
+                <div>{{ member.default_street_address1 }}</div>
+              </div>
+            <div class="container-dashboard-public bkgrd-blue text-white p-3">Public Directory Profile:</div>
+            <div>recent activity</div>
+          </div>
+          {% endfor %}
+        </div>
+        
+        {% for membership in membership_purchase %}
         <p>Membership Object: {{ membership_purchase }}</p>
         <p>
           Membership purchase date: {{ membership.purchase_date }}
@@ -24,8 +77,8 @@
         <p>
           copy
         </p>
+        {%  endfor %}
       </div>
-    {% endfor %}
   </div>
 </div>
 {% endblock %}

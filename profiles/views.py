@@ -6,11 +6,13 @@ from checkout.models import MembershipPurchase
 def dashboard(request):
     """ Display the user's dashboard """
     membership_purchase = MembershipPurchase.objects.filter(member=request.user)
+    member_private = Member_Data_Private.objects.filter(member=request.user)
 
     
     template = "profiles/dashboard.html"
     context = {
-        'membership_purchase': membership_purchase, 
+        'membership_purchase': membership_purchase,
+        'member_private': member_private, 
     }
 
     return render(request, template, context)
