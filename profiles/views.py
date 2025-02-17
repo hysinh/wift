@@ -9,7 +9,7 @@ def dashboard(request):
     member_private = Member_Data_Private.objects.filter(member=request.user)
 
     
-    template = "profiles/dashboard.html"
+    template = "user/dashboard.html"
     context = {
         'membership_purchase': membership_purchase,
         'member_private': member_private, 
