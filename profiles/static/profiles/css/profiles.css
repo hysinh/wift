@@ -7,7 +7,6 @@
 
 /* Dashboard Navigation */
 .container-dashboard-nav {
-    border: 1px solid #c9c9c9;
     padding: 0px;
     width: 100%;
 }
@@ -41,7 +40,6 @@
 /* Dashboard Main Body */
 .container-dashboard-body {
     padding: 0px;
-    border: 1px solid red;
 }
 
 .container-private-info > div {

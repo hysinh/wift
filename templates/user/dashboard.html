@@ -5,6 +5,8 @@
     <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
 {% endblock %}
 
+{% block extra_title %}- Member Dashboard{% endblock %}
+
 {% block content %}
 <div class="featured-image-container">
     <div class="about-image featured-image">
@@ -28,7 +30,6 @@
               <div class="dashboard-member-name text-center">{{ member.default_firstname }} {{ member.default_lastname }}</div>
               <div class="text-muted text-center">{{ member.member.username }} </div>
               <div class="text-muted text-center">{{ member.member.email }} </div>
-              <div class="text-muted text-center">profile completion bar?</div>
             </div>
             <!-- Dashboard Navigation -->
             <div class="dashboard-nav-element">
@@ -38,7 +39,7 @@
               </a>
             </div>
             <div class="dashboard-nav-element">
-              <a href="#">
+              <a href="{% url 'dashboard' %}">
                 <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
                 Edit Member Profile
               </a>
