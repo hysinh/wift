@@ -42,7 +42,7 @@ a:hover {
 }
 
 .bkgrd-blue {
-    background-color: #647232;
+    background-color: #065a65;
 }
 
 .bkgrd-yellow {
@@ -315,46 +315,6 @@ a:hover {
 .container-checkout-button {
     text-align: center;
 }
-
-/* Dashboard */
-/* .container-dashboard-main {
-    display: block;
-}
-
-.container-dashboard-nav {
-    border: 1px solid #c9c9c9;
-    padding: 0px;
-    width: 100%;
-}
-
-.dashboard-nav-element {
-    border-bottom: 1px solid #c9c9c9;
-    padding: 10px 15px;
-    text-align: center;
-}
-
-.dashboard-profile {
-    text-align: center;
-}
-
-.dashboard-profile-img {
-    width: 270px;
-    height: 270px;
-    border: 1px solid #c9c9c9;
-    margin: auto;
-}
-
-.dashboard-member-name {
-    font-size: larger;
-}
-
-.icon {
-    color: #065a65;
-}
-
-.container-dashboard-body {
-    padding: 20px;
-} */
 
 /* Footer */
 footer {
