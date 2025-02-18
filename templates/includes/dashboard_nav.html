@@ -14,33 +14,33 @@
         </a>
     </div>
     <div class="dashboard-nav-element">
-        <a href="#">
-        <span class="icon"><i class="fa-solid fa-receipt"></i></span>
-        Membership Purchases
+        <a href="{% url 'membership_purchases' member.id %}">
+            <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+            Purchase Receipts
         </a>
     </div>
     <div class="dashboard-nav-element">
         <a href="{% url 'edit_private_data' member.id %}">
-        <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
-        Edit Account Details
+            <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+            Edit Account Details
         </a>
     </div>
     <div class="dashboard-nav-element">
         <a href="{% url 'edit_public_data' member.id %}">
-        <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
-        Edit Public Directory Profile
+            <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+            Edit Public Directory Profile
         </a>
     </div>
     <div class="dashboard-nav-element">
         <a href="#">
-        <span class="icon"><i class="fa-regular fa-calendar"></i></span>
-        Member Events
+            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+            Member Events
         </a>
     </div>
     <div class="dashboard-nav-element">
         <a href="{% url 'account_logout' %}">
-        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-        Log out
+            <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+            Log out
         </a>
     </div>
 </div>
