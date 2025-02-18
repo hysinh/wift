@@ -13,10 +13,10 @@ class MembershipPurchaseForm(forms.ModelForm):
 class MembershipPrivateDataForm(forms.ModelForm):
     class Meta:
         model = Member_Data_Private
-        fields  = ('default_firstname', 'default_lastname',
+        fields  = ['default_firstname', 'default_lastname',
                    'default_street_address1', 'default_street_address2',
                    'default_town_or_city', 'default_county', 'default_postcode',
-                   'default_country',)
+                   'default_country',]
         
     def __init__(self, *args, **kwargs):
         """ Add placesholders and classes, remove auto-generated

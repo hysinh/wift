@@ -46,7 +46,7 @@ class Member_Data_Public(models.Model):
     # public_telephone = 
     website = models.URLField(max_length=200, null=True)
     imdb = models.URLField(max_length=200, null=True)
-    film_tv_credits = models.TextField()
+    # film_tv_credits = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 

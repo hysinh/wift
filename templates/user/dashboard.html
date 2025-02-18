@@ -23,57 +23,12 @@
         <h4 class="text-green">{{ member.default_firstname }} {{ member.default_lastname }}</h4>
 
         <div class="container-dashboard-main">
-          <div class="container-dashboard-nav">
-            <!-- Member's Profile Detail -->
-            <div class="dashboard-nav-element dashboard-profile">
-              <div class="dashboard-profile-img">profile image</div>
-              <div class="dashboard-member-name text-center">{{ member.default_firstname }} {{ member.default_lastname }}</div>
-              <div class="text-muted text-center">{{ member.member.username }} </div>
-              <div class="text-muted text-center">{{ member.member.email }} </div>
-            </div>
-            <!-- Dashboard Navigation -->
-            <div class="dashboard-nav-element">
-              <a href="{% url 'dashboard' member.id %}">
-                <span class="icon"><i class="fa-solid fa-gauge-high"></i></span>
-                Member Dashboard
-              </a>
-            </div>
-            <div class="dashboard-nav-element">
-              <a href="#">
-                <span class="icon"><i class="fa-solid fa-receipt"></i></span>
-                Membership Purchases
-              </a>
-            </div>
-            <div class="dashboard-nav-element">
-              <a href="{% url 'edit_private_data' member.id %}">
-                <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
-                Edit Member Profile
-              </a>
-            </div>
-            <div class="dashboard-nav-element">
-              <a href="#">
-                <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
-                Edit Public Directory Profile
-              </a>
-            </div>
-            <div class="dashboard-nav-element">
-              <a href="#">
-                <span class="icon"><i class="fa-regular fa-calendar"></i></span>
-                Member Events
-              </a>
-            </div>
-            <div class="dashboard-nav-element">
-              <a href="{% url 'account_logout' %}">
-                <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
-                Log out
-              </a>
-            </div>
-          </div>
+          {% include 'includes/dashboard_nav.html' %}
           
           <!-- Dashboard Main Section -->
           <div class="container-dashboard-body">
             <!-- Member's Private Directory Info -->
-            <div class="container-dashboard-private bkgrd-blue text-white p-3">Member Profile</div>
+            <div class="container-dashboard-private bkgrd-blue text-white p-3">Account Summary</div>
             <div class="container-private-info p-3">
               <div class="container-private-info">
                 <div class="container-subheader text-muted">Name:</div>
@@ -96,38 +51,40 @@
             </div>
         {% endfor %}
             <!-- Member's Public Directory Info -->
-            <div class="container-dashboard-public bkgrd-blue text-white p-3">PUBLIC Directory Profile</div>
+            {% for member in member_public %}
+            <div class="container-dashboard-public bkgrd-blue text-white p-3">Public Directory Profile</div>
             <div class="container-private-info p-3">
               <div class="container-private-info">
                 <div class="container-subheader text-muted">Name:</div>
-                <div>Public Name</div>
-              </div>
-              <div class="container-private-info">
-                <div class="container-subheader text-muted">Email:</div>
-                <div>public@email.com</div>
+                
+                <div>{% if member.public_firstname %}{{ member.public_firstname }}{% endif %} {{ member.public_lastname }}</div>
               </div>
               <div class="container-private-info">
                 <div class="container-subheader text-muted">Job Title:</div>
-                <div>Producer</div>
+                <div>{{ member.job_title }}</div>
               </div>
               <div class="container-private-info">
                 <div class="container-subheader text-muted">Company:</div>
-                <div>Film company name</div>
+                <div>{{ member.company_name }}</div>
               </div>
               <div class="container-private-info">
                 <div class="container-subheader text-muted">Website:</div>
-                <div>personalwebsite@actor.com</div>
+                <div>
+                  <a href="{{ member.website }}" target="_blank" rel="noopener" aria-label="Opens {{ member.website }} website in a new tab">
+                    {{ member.website }}
+                  </a>
+                </div>
               </div>
               <div class="container-private-info">
                 <div class="container-subheader text-muted">IMDB:</div>
-                <div>imdb link</div>
-              </div>
-              <div class="container-private-info">
-                <div class="container-subheader text-muted">Film & TV Credits:</div>
-                <div>Film & TV Credits
+                <div>
+                  <a href="{{ member.imdb }}" target="_blank" rel="noopener" aria-label="Opens {{ member.imdb }} website in a new tab">
+                    {{ member.imdb }}
+                  </a>
                 </div>
               </div>
             </div>
+            {% endfor %}
 
             <!-- Member's Most Recent Membership Purchase -->
             {% for purchase in membership_purchase %}

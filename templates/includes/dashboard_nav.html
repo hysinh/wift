@@ -1,0 +1,46 @@
+<div class="container-dashboard-nav">
+    <!-- Member's Profile Detail -->
+    <div class="dashboard-nav-element dashboard-profile">
+        <div class="dashboard-profile-img">profile image</div>
+        <div class="dashboard-member-name text-center">{{ member.default_firstname }} {{ member.default_lastname }}</div>
+        <div class="text-muted text-center">{{ member.member.username }} </div>
+        <div class="text-muted text-center">{{ member.member.email }} </div>
+    </div>
+    <!-- Dashboard Navigation -->
+    <div class="dashboard-nav-element">
+        <a href="{% url 'dashboard' member.id %}">
+        <span class="icon"><i class="fa-solid fa-gauge-high"></i></span>
+        Member Dashboard
+        </a>
+    </div>
+    <div class="dashboard-nav-element">
+        <a href="#">
+        <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+        Membership Purchases
+        </a>
+    </div>
+    <div class="dashboard-nav-element">
+        <a href="{% url 'edit_private_data' member.id %}">
+        <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+        Edit Account Details
+        </a>
+    </div>
+    <div class="dashboard-nav-element">
+        <a href="{% url 'edit_public_data' member.id %}">
+        <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
+        Edit Public Directory Profile
+        </a>
+    </div>
+    <div class="dashboard-nav-element">
+        <a href="#">
+        <span class="icon"><i class="fa-regular fa-calendar"></i></span>
+        Member Events
+        </a>
+    </div>
+    <div class="dashboard-nav-element">
+        <a href="{% url 'account_logout' %}">
+        <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
+        Log out
+        </a>
+    </div>
+</div>

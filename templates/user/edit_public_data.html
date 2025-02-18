@@ -29,12 +29,12 @@
           <!-- Dashboard Main Section -->
           <div class="container-dashboard-body">
             <!-- Member's Private Directory Info -->
-            <div class="container-dashboard-private bkgrd-blue text-white p-3">Member Profile</div>
+            <div class="container-dashboard-private bkgrd-blue text-white p-3">Public Profile</div>
             <div class="container-private-info p-3">
               <p>Update your profile below:</p>
-              <form action="{% url 'edit_private_data' member.id %}" method="POST" id="edit-private-data-form">
+              <form action="{% url 'edit_public_data' member.id %}" method="POST" id="edit-private-data-form">
                 {% csrf_token %}
-                {{ form | crispy }}
+                {{ public_data_form | crispy }}
                 <a href="{% url 'dashboard' member.id %}" class="btn btn-outline-black rounded-0">
                   <span class="icon">
                       <i class="fa-solid fa-circle-chevron-left"></i>
