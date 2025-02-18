@@ -95,7 +95,7 @@
             <li class="nav-item nav-link text-blue">
               Logged in as {{ user }}
             </li>
-            <a href="{% url 'account_login' %}">
+            <a href="{% url 'dashboard' request.user.id %}">
               <button class="button-login">Dashboard</button>
             </a>
             {% else %}

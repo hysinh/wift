@@ -33,13 +33,19 @@
             </div>
             <!-- Dashboard Navigation -->
             <div class="dashboard-nav-element">
+              <a href="{% url 'dashboard' member.id %}">
+                <span class="icon"><i class="fa-solid fa-gauge-high"></i></span>
+                Member Dashboard
+              </a>
+            </div>
+            <div class="dashboard-nav-element">
               <a href="#">
                 <span class="icon"><i class="fa-solid fa-receipt"></i></span>
                 Membership Purchases
               </a>
             </div>
             <div class="dashboard-nav-element">
-              <a href="{% url 'dashboard' %}">
+              <a href="{% url 'edit_private_data' member.id %}">
                 <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
                 Edit Member Profile
               </a>
