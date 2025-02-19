@@ -52,7 +52,7 @@ def checkout(request):
     current_basket = basket_contents(request)
     print(current_basket)
     total = current_basket['total']
-    print(tota)
+    print(total)
     # stripe_total = round(total * 100)
     # stripe.api_key = stripe_secret_key
     # intent = stripe.PaymentIntent.create(
