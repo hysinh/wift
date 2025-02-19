@@ -46,7 +46,12 @@ def checkout(request):
     basket = request.session.get("basket", {})
     print(basket)
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
     print(stripe_public_key)
+
+    current_basket = basket_contents(request)
+    print(current_basket)
+
     
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
