@@ -40,21 +40,26 @@ def checkout(request):
     Displays the checkout page and handles a purchase.
     Creates/updates the member private profile
     """
-    stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    """ A view to return the Contact page """
+    return render(request, 'public/contact.html')
+    # stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    # stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    member_data_form = MembershipPrivateDataForm()
-    purchase_form = MembershipPurchaseForm()
+    # member_data_form = MembershipPrivateDataForm()
+    # purchase_form = MembershipPurchaseForm()
 
-    template = "checkout/checkout.html"
-    context = {
-        "member_data_form": member_data_form,
-        "purchase_form": purchase_form,
-        "stripe_public_key": stripe_public_key,
-        "client_secret": intent.client_secret,
-    }
+    # template = "checkout/checkout.html"
+    # context = {
+    #     "member_data_form": member_data_form,
+    #     "purchase_form": purchase_form,
+    #     "stripe_public_key": stripe_public_key,
+    #     "client_secret": intent.client_secret,
+    # }
 
-    return render(request, template, context)
+    # return render(request, template, context)
+
+
+
     # Check to see if user has an existing Member Profile
     # existing_member = Member_Data_Private.objects.filter(member=request.user)
     # print(existing_member)
