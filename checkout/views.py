@@ -59,13 +59,13 @@ def checkout(request):
                 quantity = quantity
             selected_membership = get_object_or_404(MembershipCategory, pk=category_id)
             purchase_total = selected_membership.new_member_price * quantity
-            
+            print(selected_membership)
             # data for membership purchase
             form_data = {
                 'membership_purchased_id': selected_membership.id,
                 'purchase_total': purchase_total,
             }
-
+            
             # private data to create member profile
             member_data = {
                 'default_firstname': request.POST["default_firstname"],
@@ -77,15 +77,16 @@ def checkout(request):
                 'default_postcode': request.POST["default_postcode"],
                 'default_country': request.POST["default_country"],
             }
-
+            print(member_data)
             purchase_form = MembershipPurchaseForm(form_data)
             membership_form = MembershipPrivateDataForm(member_data)
             if purchase_form.is_valid():
                 purchase = purchase_form.save(commit=False)
                 purchase.member = request.user
+                print(purchase.member)
                 purchase.membership_purchased_id = selected_membership.id
                 purchase.purchase_total = purchase_total
-                pid = request.POST.get('client_secret').split("_secret")[0]
+                pid = request.POST.get('client_secret').split('_secret')[0]
                 purchase.stripe_pid = pid
                 purchase.save()
                 if membership_form.is_valid():
@@ -104,6 +105,7 @@ def checkout(request):
                 )     
         else:
             basket = request.session.get("basket", {})
+            print(basket)
             if not basket:
                 messages.error(request, "There's nothing in your basket at the moment")
                 return redirect(reverse("join"))
@@ -116,7 +118,7 @@ def checkout(request):
                 amount=stripe_total,
                 currency=settings.STRIPE_CURRENCY,
             )
-
+            print(intent)  # delete
             member_data_form = MembershipPrivateDataForm()
             purchase_form = MembershipPurchaseForm()
 

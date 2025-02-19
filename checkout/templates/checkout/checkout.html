@@ -77,7 +77,7 @@
                 This information will be retained in your member profile and
                 can be updated from your member dashboard.
             </p>
-            <form action="{% url 'checkout' %}" method="POST" id="payment-form">    
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">  
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
                     <legend class="fieldset-label px-2 w-auto">Member Details:</legend>
@@ -106,7 +106,7 @@
                 </fieldset>
                 <fieldset class="px-3">
                     <legend class="fieldset-label px-2 w-auto">Payment Details:</legend>
-                    <!-- A Stripe card element will go here -->
+                    <!-- A Stripe card element will go here  -->
                     <div class="mb-3" id="card-element"></div>
                     <!-- Used to display form errors -->
                     <div class="mb-3 text-danger" id="card-errors" role="alert"></div>

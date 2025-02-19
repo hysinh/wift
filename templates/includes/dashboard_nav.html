@@ -8,25 +8,25 @@
     </div>
     <!-- Dashboard Navigation -->
     <div class="dashboard-nav-element">
-        <a href="{% url 'dashboard' member.id %}">
+        <a href="{% url 'dashboard' member.member.id %}">
         <span class="icon"><i class="fa-solid fa-gauge-high"></i></span>
         Member Dashboard
         </a>
     </div>
     <div class="dashboard-nav-element">
-        <a href="{% url 'membership_purchases' member.id %}">
+        <a href="{% url 'membership_purchases' member.member.id %}">
             <span class="icon"><i class="fa-solid fa-receipt"></i></span>
             Purchase Receipts
         </a>
     </div>
     <div class="dashboard-nav-element">
-        <a href="{% url 'edit_private_data' member.id %}">
+        <a href="{% url 'edit_private_data' member.member.id %}">
             <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
             Edit Account Details
         </a>
     </div>
     <div class="dashboard-nav-element">
-        <a href="{% url 'edit_public_data' member.id %}">
+        <a href="{% url 'edit_public_data' member.member.id %}">
             <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
             Edit Public Directory Profile
         </a>
