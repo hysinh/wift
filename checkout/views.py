@@ -45,6 +45,8 @@ def checkout(request):
     print('inside the checkout view')
     basket = request.session.get("basket", {})
     print(basket)
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    print(stripe_public_key)
     
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
