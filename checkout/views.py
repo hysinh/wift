@@ -43,19 +43,24 @@ def checkout(request):
     # stripe_public_key = settings.STRIPE_PUBLIC_KEY
     # stripe_secret_key = settings.STRIPE_SECRET_KEY
     print('inside the checkout view')
+    basket = request.session.get("basket", {})
+    print(basket)
+    
+    """ A view to return the Contact page """
+    return render(request, 'public/contact.html')
 
-    member_data_form = MembershipPrivateDataForm()
-    purchase_form = MembershipPurchaseForm()
+    # member_data_form = MembershipPrivateDataForm()
+    # purchase_form = MembershipPurchaseForm()
 
-    template = "checkout/checkout.html"
-    context = {
-        "member_data_form": member_data_form,
-        "purchase_form": purchase_form,
-        # "stripe_public_key": stripe_public_key,
-        # "client_secret": intent.client_secret,
-    }
+    # template = "checkout/checkout.html"
+    # context = {
+    #     "member_data_form": member_data_form,
+    #     "purchase_form": purchase_form,
+    #     # "stripe_public_key": stripe_public_key,
+    #     # "client_secret": intent.client_secret,
+    # }
 
-    return render(request, template, context)
+    # return render(request, template, context)
 
 
 
