@@ -51,7 +51,15 @@ def checkout(request):
 
     current_basket = basket_contents(request)
     print(current_basket)
-
+    total = current_basket['total']
+    print(tota)
+    # stripe_total = round(total * 100)
+    # stripe.api_key = stripe_secret_key
+    # intent = stripe.PaymentIntent.create(
+    #     amount=stripe_total,
+    #     currency=settings.STRIPE_CURRENCY,
+    # )
+    # print(intent)  # delete
     
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
