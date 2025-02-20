@@ -1,0 +1,16 @@
+Hello {{ purchase.default_firstname }} {{ purchase.default_lastname}},
+
+This is a confirmation of your membership with the Guild of Women in Film and Television - Ireland. Your purchase information is below:
+
+Purchase Number: {{purchase.purchase_number }}
+Purchase Date: {{ purchase.purchase_date }}
+
+Annual Membership Cost: ${{ purchase.purchase_total }}
+Renewal Date: {{ purchase.get_renewal_date }}
+
+If you have any questions, feel free to contact us at {{ contact_email }}.
+
+Thank you for your order!
+
+Sincerely,
+The Guild of Women in Film & Television - Ireland
