@@ -65,16 +65,11 @@ def checkout(request):
     )
     print(intent)  # delete
 
-    form = RegistrationForm()
-    context = {}
-    
-    categories = MembershipCategory.objects.all()
-    context = {
-        'form': form,
-        'categories': categories,
-    }
-    
-    return render(request, 'checkout/checkout.html', context)
+    member_data_form = MembershipPrivateDataForm()
+    print(member_data_form)
+    # purchase_form = MembershipPurchaseForm()
+    """ A view to return the Contact page """
+    return render(request, 'public/contact.html')
     
     # template = "checkout/checkout.html"
     # context = {
@@ -97,7 +92,7 @@ def checkout(request):
     #     # "client_secret": intent.client_secret,
     # }
 
-    return render(request, template, context)
+    # return render(request, template, context)
 
 
 
