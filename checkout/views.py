@@ -57,11 +57,11 @@ def checkout(request):
     print(stripe_total)
     stripe.api_key = stripe_secret_key
     print('stripe_api_key')
-    # intent = stripe.PaymentIntent.create(
-    #     amount=stripe_total,
-    #     currency=settings.STRIPE_CURRENCY,
-    # )
-    # print(intent)  # delete
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+    print(intent)  # delete
     
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
