@@ -68,22 +68,22 @@ def checkout(request):
     context = {
         # "member_data_form": member_data_form,
         # "purchase_form": purchase_form,
-        "stripe_public_key": stripe_public_key,
-        "client_secret": intent.client_secret,
+        # "stripe_public_key": stripe_public_key,
+        # "client_secret": intent.client_secret,
     }
 
     return render(request, template, context)
 
-    member_data_form = MembershipPrivateDataForm()
-    purchase_form = MembershipPurchaseForm()
+    # member_data_form = MembershipPrivateDataForm()
+    # purchase_form = MembershipPurchaseForm()
 
-    template = "checkout/checkout.html"
-    context = {
-        "member_data_form": member_data_form,
-        "purchase_form": purchase_form,
-        # "stripe_public_key": stripe_public_key,
-        # "client_secret": intent.client_secret,
-    }
+    # template = "checkout/checkout.html"
+    # context = {
+    #     "member_data_form": member_data_form,
+    #     "purchase_form": purchase_form,
+    #     # "stripe_public_key": stripe_public_key,
+    #     # "client_secret": intent.client_secret,
+    # }
 
     return render(request, template, context)
 
