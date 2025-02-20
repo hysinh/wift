@@ -67,7 +67,7 @@ def checkout(request):
 
     member_data_form = MembershipPrivateDataForm()
     print(member_data_form)
-    # purchase_form = MembershipPurchaseForm()
+    purchase_form = MembershipPurchaseForm()
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
     
