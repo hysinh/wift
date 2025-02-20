@@ -104,7 +104,11 @@
               </div>
               <div class="container-private-info">
                 <div class="container-subheader text-muted">Renew:</div>
-                <div>00 Month year</div>
+                <div>{{ purchase.get_expiration_date }}</div>
+              </div>
+              <div class="container-private-info">
+                <div class="container-subheader text-muted">Status:</div>
+                <div>{% if purchase.is_active %}Active{% else %}Inactive{% endif %}</div>
               </div>
             </div>
           {% endfor %}

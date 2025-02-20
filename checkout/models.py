@@ -4,7 +4,8 @@ from membership.models import MembershipCategory
 from profiles.models import User
 from datetime import date
 from decimal import Decimal
-from datetime import datetime
+from datetime import timedelta
+
 
 
 class MembershipPurchase(models.Model):
@@ -38,17 +39,23 @@ class MembershipPurchase(models.Model):
 
     def get_purchase_date(self):
         return self.purchase_date.strftime("%d-%m-%Y")
+    
+    def get_expiration_date(self):
+        expiration_date = self.purchase_date + timedelta(days=365)
+        date = expiration_date.strftime("%d-%m-%Y")
+        return date
 
     # determines if the membership is active
     @property
     def is_active(self):
-        # return date.today() >= self.purchase_date and date.today() < (self.purchase_date + 365)
-        return date.today() >= self.purchase_date and date.today() < (self.purchase_date + 365)
+        expiration_date = self.purchase_date + timedelta(days=365)
+        return expiration_date >= self.purchase_date 
     
     # determines if the membership is inactive
     @property
     def is_inactive(self):
-        return date.today() >= (self.purchase_date + 365)
+        expiration_date = self.purchase_date + timedelta(days=365)
+        return self.purchase_date > expiration_date
     
     def __str__(self):
         return self.purchase_number
