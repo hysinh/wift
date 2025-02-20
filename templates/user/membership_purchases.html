@@ -27,8 +27,27 @@
         {% endfor %}
           <!-- Dashboard Main Section -->
           <div class="container-dashboard-body">
-            <!-- Member's Private Directory Info -->
+            <!-- Member's Purchase receipts -->
             <div class="container-dashboard-private bkgrd-blue text-white p-3">Membership Purchase Receipts</div>
+              <!-- Displays Active Approved Bookings -->
+              <div class="booking-card-container">
+                <!-- {% for purchase in membership_purchases %} -->
+                <!-- {% if booking.is_active %} -->
+                  <!-- <div class="purchase-card-individual">
+                    <p class="text-muted">Membership: {{ purchase }}</p>
+                    <p><span class="text-muted bold">Annual Cost:</span> {{  }}</p>
+                    <p><span class="text-muted bold">Purchase date:</span> {{  }}</p>
+                    <p><span class="text-muted bold">Expiration Date:</span> {{  }}</p>
+                    <p><span class="text-muted bold">Number of guests:</span> {{ }}</p>
+                    <p><span class="text-muted bold">Status:</span> {% if purchase.status == 1 %}<span class="green bold">Approved</span>{% else %}<span class="red bold">Pending Approval</span>{% endif %}</p>
+                  </div> -->
+                  <!-- {% endif %} -->
+                  <!-- {% empty %}
+                
+              No bookings yet -->
+              <!-- {% endfor %} -->
+
+              </div>
             <div class="container-purchase-receipt-card">{{ membership_purchase }}</div>
             {{ member_private }}
         

@@ -4,6 +4,7 @@ from membership.models import MembershipCategory
 from profiles.models import User
 from datetime import date
 from decimal import Decimal
+from datetime import datetime
 
 
 class MembershipPurchase(models.Model):
@@ -35,9 +36,13 @@ class MembershipPurchase(models.Model):
         self.purchase_total = Decimal(self.membership_purchased.new_member_price)
         self.save()
 
+    def get_purchase_date(self):
+        return self.purchase_date.strftime("%d-%m-%Y")
+
     # determines if the membership is active
     @property
     def is_active(self):
+        # return date.today() >= self.purchase_date and date.today() < (self.purchase_date + 365)
         return date.today() >= self.purchase_date and date.today() < (self.purchase_date + 365)
     
     # determines if the membership is inactive
