@@ -6,4 +6,5 @@ urlpatterns = [
     path('dashboard/edit_profile/<member_id>', views.edit_private_data, name='edit_private_data'),
     path('dashboard/edit_public_profile/<member_id>', views.edit_public_data, name='edit_public_data'),
     path('dashboard/purchase_receipts/<member_id>', views.membership_purchases, name='membership_purchases'),
+    path('dashboard/member_directory/<member_id>', views.member_directory, name='member_directory'),
 ]

@@ -28,16 +28,17 @@
           <!-- Dashboard Main Section -->
           <div class="container-dashboard-body">
             
-            <div class="container-dashboard-private bkgrd-blue text-white p-3">Membership Purchase Receipts</div>
+            <div class="container-dashboard-private bkgrd-blue text-white p-3">Member Directory</div>
               <!-- Member's Purchase receipts -->  
-              <div class="purchase-card-container p-3">
-                {% for purchase in membership_purchases %}
-                  <div class="purchase-card-individual">
-                    <p><span class="text-muted">Membership:</span> <span class="font-weight-bold text-blue">{{ purchase.membership_purchased}}</span></p>
-                    <p><span class="text-muted">Annual Cost:</span> €{{ purchase.purchase_total }}</p>
-                    <p><span class="text-muted">Purchase date:</span> {{ purchase.get_purchase_date }}</p>
-                    <p><span class="text-muted">Expiration Date:</span> {{ purchase.get_expiration_date }}</p>
-                    <p><span class="text-muted">Status:</span> {% if purchase.is_active %}<span class="text-success font-weight-bold">Active</span>{% else %}<span class="text-danger font-weight-bold">Inactive</span>{% endif %}</p>
+              <div class="member-card-container p-3">
+                {% for member in member_profiles %}
+                  <div class="member-card-individual">
+                    <p><span class="text-muted">Name:</span> <span class="font-weight-bold text-blue">{{ member.public_firstname }} {{ member.public_lastname }}</span></p>
+                    <p><span class="text-muted">Title:</span> {{ member.job_title }}</p>
+                    <p><span class="text-muted">Company:</span> {{ member.company_name }}</p>
+                    <p><span class="text-muted">Website:</span> {{ member.website }}</p>
+                    <p><span class="text-muted">IMDB:</span> {{ member.imdb }}</p>
+                    <hr>
                   </div>
                 {% endfor %}
               </div>

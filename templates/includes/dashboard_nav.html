@@ -32,11 +32,17 @@
         </a>
     </div>
     <div class="dashboard-nav-element">
+        <a href="{% url 'member_directory' member.member.id %}">
+            <span class="icon"><i class="fa-regular fa-address-book"></i></span>
+            Membership Directory
+        </a>
+    </div>
+    <!-- <div class="dashboard-nav-element">
         <a href="#">
             <span class="icon"><i class="fa-regular fa-calendar"></i></span>
             Member Events
         </a>
-    </div>
+    </div> -->
     <div class="dashboard-nav-element">
         <a href="{% url 'account_logout' %}">
             <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>

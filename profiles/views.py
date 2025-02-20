@@ -160,64 +160,32 @@ def edit_public_data(request, member_id):
         }
 
         return render(request, template, context)
-    
-    # if member_public_exists:
-    #     member_public = get_object_or_404(Member_Data_Public, member=member_id)
-    #     print(member_public)
-    #     public_data_form = MembershipPublicDataForm(instance=member_public)
-
-    #     if request.method == "POST":
-    #         public_data_form = MembershipPrivateDataForm(request.POST, instance=member_public)
-    #         if public_data_form.is_valid():
-    #             public_data_form.save()
-    #             messages.success(request, "Your public profile changes saved successfully")
-    #             return redirect('dashboard', member.member.id)
-    #         else:
-    #             messages.error(
-    #                 request,
-    #                 "Your changes could not be saved. Please check your form and try again",
-    #             )
-
-    #     public_data_form = MembershipPublicDataForm(instance=member_public)
-
-    # else:
-    #     if request.method == "POST":
-    #         public_data_form = MembershipPublicDataForm(request.POST)
-    #         if public_data_form.is_valid():
-    #             public_data = public_data_form.save(commit=False)
-    #             public_data.member = request.user
-    #             public_data.save()
-    #             messages.success(request, "Your public profile changes saved successfully")
-    #             return redirect('dashboard', member_id)
-    #         else:
-    #             messages.error(
-    #                 request,
-    #                 "Your changes could not be saved. Please check your form and try again",
-    #             )
-
-    #     public_data_form = MembershipPublicDataForm()
-    
-    # template = "user/edit_public_data.html"
-    # context = {
-    #     'member_public_exists': member_public_exists,
-    #     'member_private': member_private,
-    #     'member_public': member_public,
-    #     'membership_purchase': membership_purchase,
-    #     'public_data_form': public_data_form,
-    # }
-
-    # return render(request, template, context)
 
 
 @login_required
 def membership_purchases(request, member_id):
     """ View Member's Membership Purchase receipts """
-    membership_purchase = MembershipPurchase.objects.filter(member=request.user)
+    membership_purchases = MembershipPurchase.objects.filter(member=request.user)
     member_private = Member_Data_Private.objects.filter(member=request.user)
 
     template = "user/membership_purchases.html"
     context = {
-        'membership_purchase': membership_purchase,
+        'membership_purchases': membership_purchases,
+        'member_private': member_private,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def member_directory(request, member_id):
+    """ View Member's Membership Purchase receipts """
+    member_profiles = Member_Data_Public.objects.all()
+    member_private = Member_Data_Private.objects.filter(member=request.user)
+
+    template = "user/member_directory.html"
+    context = {
+        'member_profiles': member_profiles,
         'member_private': member_private,
     }
 
