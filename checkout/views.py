@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 from profiles.models import Member_Data_Private
 from .forms import MembershipPrivateDataForm, MembershipPurchaseForm
+from profiles.forms import RegistrationForm
 from .models import MembershipPurchase
 from membership.models import MembershipCategory
 from basket.contexts import basket_contents
@@ -63,16 +64,27 @@ def checkout(request):
         currency=settings.STRIPE_CURRENCY,
     )
     print(intent)  # delete
-    
-    template = "checkout/checkout.html"
-    context = {
-        # "member_data_form": member_data_form,
-        # "purchase_form": purchase_form,
-        # "stripe_public_key": stripe_public_key,
-        # "client_secret": intent.client_secret,
-    }
 
-    return render(request, template, context)
+    form = RegistrationForm()
+    context = {}
+    
+    categories = MembershipCategory.objects.all()
+    context = {
+        'form': form,
+        'categories': categories,
+    }
+    
+    return render(request, 'public/join.html', context)
+    
+    # template = "checkout/checkout.html"
+    # context = {
+    #     # "member_data_form": member_data_form,
+    #     # "purchase_form": purchase_form,
+    #     # "stripe_public_key": stripe_public_key,
+    #     # "client_secret": intent.client_secret,
+    # }
+
+    # return render(request, template, context)
 
     # member_data_form = MembershipPrivateDataForm()
     # purchase_form = MembershipPurchaseForm()
