@@ -74,7 +74,7 @@ def checkout(request):
         'categories': categories,
     }
     
-    return render(request, 'public/join.html', context)
+    return render(request, 'checkout/checkout.html', context)
     
     # template = "checkout/checkout.html"
     # context = {
