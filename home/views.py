@@ -1,6 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from membership.models import MembershipCategory
 from membership.forms import RegistrationForm
+from .forms import ContactForm
+from django.contrib import messages
 
 # Create your views here.
 
@@ -26,8 +28,33 @@ def events(request):
     return render(request, 'public/events.html')
 
 def contact(request):
-    """ A view to return the Contact page """
-    return render(request, 'public/contact.html')
+    """
+    Renders an email form that allows users to send an inquiry
+    to the WIFT organization
+    """
+    contact_form = ContactForm()
+    context = {}
+    if request.method == "POST":
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
+
+            messages.success(
+                request,
+                "Thank you for your message. Someone from our team with contact you shortly.",
+            )
+            
+            return redirect("contact")
+
+        else:
+            messages.error(request, "There is an error in the form.")
+            return render(request, "public/contact.html", context)
+
+    context = {
+        "contact_form": contact_form,
+    }
+
+    return render(request, "public/contact.html", context)
 
 def join(request):
     """ A view to return the Join page """
