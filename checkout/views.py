@@ -65,8 +65,8 @@ def checkout(request):
     )
     print(intent)  # delete
 
-    # member_data_form = MembershipPrivateDataForm()
-    # print(member_data_form)
+    member_data_form = MembershipPrivateDataForm()
+    print(member_data_form)
     # purchase_form = MembershipPurchaseForm()
     """ A view to return the Contact page """
     return render(request, 'public/contact.html')
