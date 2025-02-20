@@ -41,35 +41,35 @@ def checkout(request):
     Displays the checkout page and handles a purchase.
     Creates/updates the member private profile
     """
-    # stripe_public_key = settings.STRIPE_PUBLIC_KEY
-    # stripe_secret_key = settings.STRIPE_SECRET_KEY
-    # print(stripe_public_key)
-    # print('inside the checkout view')
-    # basket = request.session.get("basket", {})
-    # print(basket)
-    # # member_data_form = MembershipPrivateDataForm()
-    # # purchase_form = MembershipPurchaseForm()
-    # context = {}
-    
-    # current_basket = basket_contents(request)
-    # print(current_basket)
-    # total = current_basket['total']
-    # print(total)
-    # stripe_total = round(total * 100)
-    # print(stripe_total)
-    # stripe.api_key = stripe_secret_key
-    # print('stripe_api_key')
-    # intent = stripe.PaymentIntent.create(
-    #     amount=stripe_total,
-    #     currency=settings.STRIPE_CURRENCY,
-    # )
-    # print(intent)  # delete
-
+    stripe_public_key = settings.STRIPE_PUBLIC_KEY
+    stripe_secret_key = settings.STRIPE_SECRET_KEY
+    print(stripe_public_key)
+    print('inside the checkout view')
+    basket = request.session.get("basket", {})
+    print(basket)
     # member_data_form = MembershipPrivateDataForm()
-    # print(member_data_form)
     # purchase_form = MembershipPurchaseForm()
-    # """ A view to return the Contact page """
-    # return render(request, 'public/contact.html')
+    context = {}
+    
+    current_basket = basket_contents(request)
+    print(current_basket)
+    total = current_basket['total']
+    print(total)
+    stripe_total = round(total * 100)
+    print(stripe_total)
+    stripe.api_key = stripe_secret_key
+    print('stripe_api_key')
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+    )
+    print(intent)  # delete
+
+    member_data_form = MembershipPrivateDataForm()
+    print(member_data_form)
+    # purchase_form = MembershipPurchaseForm()
+    """ A view to return the Contact page """
+    return render(request, 'public/contact.html')
     
     # template = "checkout/checkout.html"
     # context = {
@@ -84,15 +84,15 @@ def checkout(request):
     # member_data_form = MembershipPrivateDataForm()
     # purchase_form = MembershipPurchaseForm()
 
-    template = "checkout/checkout.html"
-    context = {
-        # "member_data_form": member_data_form,
-        # "purchase_form": purchase_form,
-        # "stripe_public_key": stripe_public_key,
-        # "client_secret": intent.client_secret,
-    }
+    # template = "checkout/checkout.html"
+    # context = {
+    #     "member_data_form": member_data_form,
+    #     "purchase_form": purchase_form,
+    #     # "stripe_public_key": stripe_public_key,
+    #     # "client_secret": intent.client_secret,
+    # }
 
-    return render(request, template, context)
+    # return render(request, template, context)
 
 
 
