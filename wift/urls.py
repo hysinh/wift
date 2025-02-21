@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import display_404, display_500
+
 
 urlpatterns = [
     # django admin panel and all-auth authentication pages
@@ -33,3 +35,10 @@ urlpatterns = [
     path('', include('checkout.urls')),
     path('', include('profiles.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# 404 custom error page
+handler404 = display_404
+
+# 500 custom error page
+handler500 = display_500
+
