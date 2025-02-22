@@ -57,11 +57,11 @@ form.addEventListener('submit', function(ev) {
         payment_method: {
             card: card,
             purchase_details: {
-                purchase_number: $.trim(purchase_form.purchase_number.value),
-                member: $.trim(purchase_form.member.value),
-                membership_purchased: $.trim(purchase_form.membership_purchased.value),
-                purchase_date: $.trim(purchase_form.purchase_date.value),
-                purchase_total: $.trim(purchase_form.purchase_total.value),
+                // purchase_number: $.trim(purchase_form.purchase_number.value),
+                // member: $.trim(purchase_form.member.value),
+                // membership_purchased: $.trim(purchase_form.membership_purchased.value),
+                // purchase_date: $.trim(purchase_form.purchase_date.value),
+                // purchase_total: $.trim(purchase_form.purchase_total.value),
             }
         } 
         // member_details: {
