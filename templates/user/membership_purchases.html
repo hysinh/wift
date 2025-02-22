@@ -39,6 +39,7 @@
                     <p><span class="text-muted">Expiration Date:</span> {{ purchase.get_expiration_date }}</p>
                     <p><span class="text-muted">Status:</span> {% if purchase.is_active %}<span class="text-success font-weight-bold">Active</span>{% else %}<span class="text-danger font-weight-bold">Inactive</span>{% endif %}</p>
                   </div>
+                  <hr>
                 {% endfor %}
               </div>
             </div>

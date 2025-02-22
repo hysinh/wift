@@ -36,8 +36,16 @@
                     <p><span class="text-muted">Name:</span> <span class="font-weight-bold text-blue">{{ member.public_firstname }} {{ member.public_lastname }}</span></p>
                     <p><span class="text-muted">Title:</span> {{ member.job_title }}</p>
                     <p><span class="text-muted">Company:</span> {{ member.company_name }}</p>
-                    <p><span class="text-muted">Website:</span> {{ member.website }}</p>
-                    <p><span class="text-muted">IMDB:</span> {{ member.imdb }}</p>
+                    <p><span class="text-muted">Website:</span> 
+                      <a href="{{ member.website }}" target="_blank" rel="noopener" aria-label="Opens {{ member.website }} website in a new tab">
+                        {{ member.website }}
+                      </a>
+                    </p>
+                    <p><span class="text-muted">IMDB:</span> 
+                      <a href="{{ member.imdb }}" target="_blank" rel="noopener" aria-label="Opens {{ member.imdb }} website in a new tab">
+                        {{ member.imdb }}
+                      </a>
+                    </p>
                     <hr>
                   </div>
                 {% endfor %}
