@@ -1,11 +1,13 @@
 import json
 from django.http import HttpResponse
+from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 
 import stripe
 
 # Using Django
+@require_POST
 @csrf_exempt
 def webhook(request):
     """ LIsten for webhooks from Stripe """
