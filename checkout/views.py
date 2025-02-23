@@ -28,6 +28,7 @@ def cache_checkout_data(request):
             'username': request.user,
         })
         print(stripe.PaymentIntent)
+        print('the stripe payment intent')
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment was not \
@@ -88,7 +89,7 @@ def checkout(request):
                     'default_postcode': request.POST["default_postcode"],
                     'default_country': request.POST["default_country"],
                 }
-                print(member_data)
+                # print(member_data)
                 purchase_form = MembershipPurchaseForm(form_data)
                 membership_form = MembershipPrivateDataForm(member_data)
                 if purchase_form.is_valid():
