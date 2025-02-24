@@ -78,7 +78,6 @@ form.addEventListener('submit', function(ev) {
                 city: document.getElementById("id_default_town_or_city").value,
                 country: document.getElementById("id_default_country").value,
                 state: document.getElementById("id_default_county").value,
-                postcode: document.getElementById("id_default_postcode").value,
             }
             // lastname: document.getElementById("id_default_lastname").value,
         }
@@ -87,15 +86,6 @@ form.addEventListener('submit', function(ev) {
             payment_method: {
                 card: card,
                 billing_details: {...member_data_private}
-                // membership_purchase: {
-                //     purchase_details: {
-                //         // purchase_number: $.trim(form.purchase_number.value),
-                //         // member: $.trim(purchase_form.member.value),
-                //         // membership_purchased: $.trim(purchase_form.membership_purchased.value),
-                //         // purchase_date: $.trim(purchase_form.purchase_date.value),
-                //         // purchase_total: $.trim(purchase_form.purchase_total.value),
-                //     }
-                // }
             },
             shipping: {...member_data_private},
             // metadata: {...member_data_private},
