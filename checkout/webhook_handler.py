@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from .models import MembershipPurchase
 from profiles.models import MembershipCategory, Member_Data_Private
 
+import stripe
 import time
 
 
