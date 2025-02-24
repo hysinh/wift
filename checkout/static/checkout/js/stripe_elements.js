@@ -78,6 +78,7 @@ form.addEventListener('submit', function(ev) {
                 city: document.getElementById("id_default_town_or_city").value,
                 country: document.getElementById("id_default_country").value,
                 state: document.getElementById("id_default_county").value,
+                postcode: document.getElementById("id_default_postcode").value,
             }
             // lastname: document.getElementById("id_default_lastname").value,
         }
