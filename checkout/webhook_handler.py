@@ -22,7 +22,7 @@ class StripeWH_Handler:
         intent = event.data.object
         print('intent from inside webhook handler')
         print(intent)
-        basket = intent.metadata.bag
+        basket = intent.metadata.basket
         print(basket)
 
         # Get the Charge object
