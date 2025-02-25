@@ -19,4 +19,4 @@ def display_500(request):
     """
     Displays a custom 500 error page
     """
-    return render(request, "500.html", status=500)
+    return render(request, "errors/500.html", status=500)
