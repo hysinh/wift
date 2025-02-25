@@ -117,7 +117,7 @@ form.addEventListener('submit', function(ev) {
                 $('#loading-overlay').fadeToggle(100);   
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
-                    form.submit();
+                    // form.submit();
                 }  
             }
         });
