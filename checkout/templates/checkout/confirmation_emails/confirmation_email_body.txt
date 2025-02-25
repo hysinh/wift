@@ -8,7 +8,7 @@ Purchase Date: {{ purchase.purchase_date }}
 Annual Membership Cost: ${{ purchase.purchase_total }}
 Renewal Date: {{ purchase.get_renewal_date }}
 
-If you have any questions, feel free to contact us at {{ contact_email }}.
+If you have any questions, feel free to contact us at scruplesnoregrets@gmail.com.
 
 Thank you for your order!
 
