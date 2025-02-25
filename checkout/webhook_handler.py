@@ -1,6 +1,9 @@
 from django.contrib.auth.models import User
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 from .models import MembershipPurchase
 from profiles.models import MembershipCategory, Member_Data_Private
 
@@ -14,6 +17,24 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
+
+    def _send_confirmation_email(self, purchase):
+        """Send the user a confirmation email"""
+        print('inside the send confirmation method')
+        cust_email = purchase.member.email
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'purchase': purchase})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'purchase': purchase, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )     
 
     def handle_event(self, event):
         """
@@ -29,8 +50,8 @@ class StripeWH_Handler:
         """
         print('inside the handle_payment_intent_succeeded_webhook')
         intent = event.data.object
-        # print('intent from inside webhook handler')
-        # print(intent)
+        print('intent from inside webhook handler')
+        print(intent)
         pid = intent.id
         intent_basket = json.loads(intent.metadata.basket)
         # print('the intent basket')
@@ -74,7 +95,7 @@ class StripeWH_Handler:
         attempt = 1
         while attempt <= 5:
             try:
-                # print(f"member: {username}, membership_purchased: {membership_selected.id}, purchase_total: {grand_total}, stripe_pid: {intent.id}")
+                print(f"member: {username}, membership_purchased: {membership_selected.id}, purchase_total: {grand_total}, stripe_pid: {intent.id}")
                 member = User.objects.get(id=username)
                 membership = MembershipCategory.objects.get(id=membership_selected.id)
                 purchase = MembershipPurchase.objects.get(
@@ -91,12 +112,13 @@ class StripeWH_Handler:
                 attempt += 1
                 time.sleep(1)
         if purchase_exists:
-            # print(f"purchase exists event: {event}")
+            print(f"purchase exists event: {event}")
+            self._send_confirmation_email(purchase)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
                 status=200)
         else:
-            # print("purchase does not exist")
+            print("purchase does not exist")
             purchase = None
             try:
                 print(f"stripe_pid: {intent.id}, member: {username}, membership_purchased: {membership_selected.id}, purchase_total: {grand_total}")
@@ -110,13 +132,15 @@ class StripeWH_Handler:
                 )
                 purchase.save()
             except Exception as e:
-                # print(f"unable to create DB record due to: {e}")
+                print(f"unable to create DB record due to: {e}")
                 if purchase:
                     purchase.delete()
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | ERROR: {e}',
                     status=500)
-      
+
+        print('send email here')
+        self._send_confirmation_email(purchase)
         return HttpResponse(
             content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
             status=200)                                     

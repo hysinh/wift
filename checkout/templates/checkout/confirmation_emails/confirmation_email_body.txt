@@ -1,4 +1,4 @@
-Hello {{ purchase.default_firstname }} {{ purchase.default_lastname}},
+Hello {{ purchase.member.username }},
 
 This is a confirmation of your membership with the Guild of Women in Film and Television - Ireland. Your purchase information is below:
 
