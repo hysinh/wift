@@ -22,13 +22,17 @@ def cache_checkout_data(request):
         print(pid)
         stripe.api_key = settings.STRIPE_SECRET_KEY
         print(stripe.api_key)
+        basket = request.session.get('basket', {})
+        print(basket)
         stripe.PaymentIntent.modify(pid, metadata={
-            'basket': json.dumps(request.session.get('basket', {})),
+            'basket': json.dumps(basket), # ['3']
+            # 'basket': json.dumps(request.session.get('basket', {})),
             # 'save_info': request.POST.get('save_info'),
-            'username': request.user,
+            # 'user': request.user,
+            'username': request.user.id,
         })
         print(stripe.PaymentIntent)
-        print('the stripe payment intent')
+        print('Inside cache checkout data view: the stripe payment intent')
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, 'Sorry, your payment was not \
