@@ -76,7 +76,7 @@ class StripeWH_Handler:
         # print(member)
         member_private_data = intent.shipping
         country = member_private_data.address.country
-        # print(country)
+        print(country)
         grand_total = round(stripe_charge.amount / 100, 2)
         # print(grand_total)
 
@@ -131,6 +131,19 @@ class StripeWH_Handler:
                     purchase_total = grand_total,
                 )
                 purchase.save()
+                member = Member_Data_Private(
+                    member = member,
+                    membership_level = membership,
+                    default_firstname =  member_private_data.name,
+                    default_street_address1 = member_private_data.address.line1,
+                    default_street_address2 = member_private_data.address.line2,
+                    default_town_or_city = member_private_data.address.city,
+                    default_county = member_private_data.address.state,
+                    default_postcode = member_private_data.address.postal_code,
+                    default_country = member_private_data.address.country,
+                )
+                member.save()
+                print(f'member was created: {member}')
             except Exception as e:
                 print(f"unable to create DB record due to: {e}")
                 if purchase:
