@@ -36,6 +36,17 @@ a:hover {
     font-weight: bold !important;
 }
 
+.button-main {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: #065a65;
+    border-radius: 5px;
+}
+
 /* Background colours */
 .bkgrd-green {
     background-color: #647232;
