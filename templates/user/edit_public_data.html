@@ -52,7 +52,7 @@
               </form>
               {% if user.is_authenticated and member.member == user %}
                     <!-- Delete Booking Button -->
-                    <button class="button-delete py-2" data-profile_id="{{ member.member.id }}">
+                    <button class="button-delete py-2 btn-delete" data-profile_id="{{ member.member.id }}">
                       Delete Profile
                     </button>
               {% endif %}
@@ -91,5 +91,5 @@
 {% endblock %}
 
 {% block postloadjs %}
-  <script src="{% static 'js/booking.js' %}"></script>
+  <script src="{% static 'profiles/js/profiles.js' %}"></script>
 {% endblock %}

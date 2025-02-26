@@ -8,5 +8,5 @@ urlpatterns = [
     path('dashboard/create_public_profile/<member_id>', views.create_public_data, name='create_public_data'),
     path('dashboard/purchase_receipts/<member_id>', views.membership_purchases, name='membership_purchases'),
     path('dashboard/member_directory/<member_id>', views.member_directory, name='member_directory'),
-    path('delete-profile/<member_id>/', views.delete_public_data, name='delete_public_data'),
+    path('dashboard/delete_profile/<member_id>/', views.delete_public_data, name='delete_public_data'),
 ]

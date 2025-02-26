@@ -17,10 +17,13 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 * - Displays a confirmation modal (`deleteModal`) to prompt 
 * the user for confirmation before deletion.
 */
+
+console.log("hello");
 for (let button of deleteButtons) {
   button.addEventListener("click", (e) => {
     let profileId = e.target.getAttribute("data-profile_id");
-    deleteConfirm.href = `../delete-profile/${profileId}`;
+    deleteConfirm.href = `../delete_profile/${profileId}`;
     deleteModal.show();
   });
 }
+

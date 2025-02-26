@@ -338,6 +338,10 @@ a:hover {
     background-color: red;
 }
 
+.btn-danger {
+    background-color: red !important;
+}
+
 /* Footer */
 footer {
     background-color: #065a65;

@@ -28,7 +28,7 @@
     <div class="dashboard-nav-element">
         <a href="{% url 'edit_public_data' member.member.id %}">
             <span class="icon"><i class="fa-solid fa-pen-to-square"></i></span>
-            Edit Public Directory Profile
+            {% if member_public %}Edit{% else %}Create{% endif %} Public Directory Profile
         </a>
     </div>
     <div class="dashboard-nav-element">
