@@ -64,12 +64,14 @@ form.addEventListener('submit', function(ev) {
 
     $.post(url, postData).done(() => {
         console.log("After the postData");
-        console.log(form);
+        // console.log(form);
         var default_firstname = document.getElementById("id_default_firstname").value;
         var default_lastname = document.getElementById("id_default_lastname").value;
         // var name = default_firstname + default_lastname;
         var name = default_firstname.concat(" ", default_lastname);
         console.log(name);
+        var post_code = document.getElementById("id_default_postcode").value;
+        console.log(post_code);
         var member_data_private = {
             name: name,
             address:{
@@ -78,6 +80,8 @@ form.addEventListener('submit', function(ev) {
                 city: document.getElementById("id_default_town_or_city").value,
                 country: document.getElementById("id_default_country").value,
                 state: document.getElementById("id_default_county").value,
+                postal_code: document.getElementById("id_default_postcode").value,
+
             }
             // lastname: document.getElementById("id_default_lastname").value,
         }
@@ -85,7 +89,7 @@ form.addEventListener('submit', function(ev) {
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
-                billing_details: {...member_data_private}
+                // billing_details: {...member_data_private}
             },
             shipping: {...member_data_private},
             // metadata: {...member_data_private},

@@ -179,8 +179,8 @@ def membership_purchases(request, member_id):
 
 @login_required
 def member_directory(request, member_id):
-    """ View Member's Membership Purchase receipts """
-    member_profiles = Member_Data_Public.objects.all()
+    """ View Member's Membership Directpry """
+    member_profiles = Member_Data_Public.objects.all().order_by('public_lastname').values()
     member_private = Member_Data_Private.objects.filter(member=request.user)
 
     template = "user/member_directory.html"
