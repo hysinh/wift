@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+{% block extra_title %}- Member Dashboard{% endblock %}
+
+{% block content %}
+<div class="featured-image-container">
+    <div class="about-image featured-image">
+      <div class="overlay-text-featured-img">
+        <h2>Member Dashboard</h2>
+      </div>
+    </div>
+</div>
+<div class="container-md container-home-subsection px-6 justify-content-center">
+  <div class="container-card my-4">
+      <!-- Member's Profile Detail -->
+      <div class="p-4 card-subsection">
+        {% for member in member_private %}
+        <h4 class="text-green">{{ member.default_firstname }} {{ member.default_lastname }}</h4>
+
+        <div class="container-dashboard-main">
+          {% include 'includes/dashboard_nav.html' %}
+          
+          <!-- Dashboard Main Section -->
+          <div class="container-dashboard-body">
+            <!-- Member's Private Directory Info -->
+            <div class="container-dashboard-private bkgrd-blue text-white p-3">Public Profile</div>
+            <div class="container-private-info p-3">
+              <p>Update your profile below:</p>
+              <form action="{% url 'create_public_data' member.member.id %}" method="POST" id="create-public-data-form">
+                {% csrf_token %}
+                {{ public_data_form | crispy }}
+                <a href="{% url 'dashboard' member.member.id %}" class="btn btn-outline-black rounded-0">
+                  <span class="icon">
+                      <i class="fa-solid fa-circle-chevron-left"></i>
+                  </span>
+                  <span class="font-weight-bold">Cancel</span>
+                </a>
+                <button id="submit-button" class="button-join-us">
+                  <span class="">Create Profile </span>
+                  <span class="icon">
+                      <i class="fas fa-lock"></i>
+                  </span>
+                </button>
+              </form>
+            </div>
+        {% endfor %}
+            
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+{% endblock %}

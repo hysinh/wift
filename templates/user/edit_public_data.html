@@ -41,19 +41,55 @@
                   </span>
                   <span class="font-weight-bold">Cancel</span>
                 </a>
-                <button id="submit-button" class="button-join-us">
-                  <span class="">Update Profile </span>
-                  <span class="icon">
-                      <i class="fas fa-lock"></i>
-                  </span>
-              </button>
+                {% if user.is_authenticated and member.member == user %}             
+                  <button id="submit-button" class="button-join-us my-2">
+                    <span class="">Update Profile </span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                  </button>
+                {% endif %}
               </form>
+              {% if user.is_authenticated and member.member == user %}
+                    <!-- Delete Booking Button -->
+                    <button class="button-delete py-2" data-profile_id="{{ member.member.id }}">
+                      Delete Profile
+                    </button>
+              {% endif %}
             </div>
-        {% endfor %}
-            
+        {% endfor %} 
           </div>
         </div>
       </div>
   </div>
+  <!-- Delete Modal - Source: CI DJango Blog Project -->
+  <!-- Delete confirmation modal -->
+  <div class="modal fade" id="deleteModal" tabindex="-1"
+    aria-labelledby="deleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"
+            id="deleteModalLabel">Delete profile?</h5>
+          <button type="button" class="btn-close"
+            data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete your public profile?
+          This action cannot be undone.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"
+            data-bs-dismiss="modal">Close</button>
+          <a id="deleteConfirm" href="#" class="btn
+            btn-danger" aria-label="Delete">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+  <script src="{% static 'js/booking.js' %}"></script>
 {% endblock %}

@@ -327,6 +327,17 @@ a:hover {
     text-align: center;
 }
 
+/* Edit Public Profile Page */
+.button-delete {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: red;
+}
+
 /* Footer */
 footer {
     background-color: #065a65;
