@@ -151,7 +151,7 @@ def checkout_existing_member(request):
     """
     Displays the checkout page and handles a membership purchase
     for an existing member.
-    Updates the existing member private profile data
+    Updates the existing member private profile data.
     """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
@@ -200,7 +200,6 @@ def checkout_existing_member(request):
                 member_private_data = membership_form.save(commit=False)
                 member_private_data.membership_level = selected_membership
                 member_private_data.save()
-                print(member_private_data.membership_level)
                 messages.success(request, 'Member profille information was updated')
             return redirect(reverse('checkout_success_renewal', args=[purchase.purchase_number]))
         else:
