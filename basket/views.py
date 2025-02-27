@@ -28,11 +28,8 @@ def add_to_basket(request, category_id):
     basket.clear()
     basket[category_id] = quantity
     request.session['basket'] = basket
-    print(basket)
-    messages.success(request, f'Added {selected_membership_level} membership to your basket')
-    
-    # print(request.session['basket'])
 
+    messages.success(request, f'Added {selected_membership_level} membership to your basket')
     return redirect('view_basket')
 
 
@@ -46,11 +43,11 @@ def remove_from_basket(request, category_id):
         request.session['basket'] = basket
         messages.success(request, f'{selected_membership_level} membership removed from your basket')
 
-        return redirect('view_basket') # USING HTTPRESPONSE HERE DOESN't WORK
+        return redirect('view_basket')
 
     except Exception as e:
         messages.error(request, f'Error removing item; {e}')
-        return HttpResponse(status=500) # HOW DO YOU TEST THIS?
+        return HttpResponse(status=500)
 
     
 

@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="featured-image-container">
-   <div class="registration-image featured-image">
+    <div class="registration-image featured-image">
         <div class="overlay-text-featured-img-join">
             <h2>Membership Registration</h2>
         </div>
@@ -58,12 +58,12 @@
                                     </p>
                                 </td>
                             </tr>
-                            
                         </table>
                         <hr>
                     </div>
-                    <div >
+                    <div>
                         <div>
+                            <!-- Change Membership Selection -->
                             <div class="py-2 px-1">
                                 <a href="{% url 'join' %}">
                                     <span class="icon">
@@ -74,7 +74,8 @@
                             </div>
                             <div>
                                 <!-- Remove membership from basket -->
-                                <form id="empty-basket" class="form update-form" method="POST" action="{% url 'remove_from_basket' item.selected_membership_level.id %}">
+                                <form id="empty-basket" class="form update-form" method="POST"
+                                    action="{% url 'remove_from_basket' item.selected_membership_level.id %}">
                                     {% csrf_token %}
                                     <div class="form-group">
                                         <div class="input-group button-remove">
@@ -88,23 +89,23 @@
                                 {% endfor %}
                             </div>
                         </div>
+                        <!-- Continue to checkout -->
                         <div class="container-checkout-button">
-                            <!-- <a href="{% url 'account_signup' %}"> -->
-                                <a href="{% url 'checkout' %}">
+                            <a href="{% url 'checkout' %}">
                                 <span class="text-uppercase button-join-us icon">
                                     Secure Checkout <i class="fas fa-lock"></i>
                                 </span>
                             </a>
-                        </div>                     
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     {% else %}
-                        <hr>
-                        <p class="lead mb-5">Your basket is empty</p> 
-                        <hr>
+                    <hr>
+                    <p class="lead mb-5">Your basket is empty</p>
+                    <hr>
                 </div>
                 <div>
                     <a href="{% url 'join' %}">

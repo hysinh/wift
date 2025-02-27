@@ -12,9 +12,7 @@ def basket_contents(request):
 
     basket = request.session.get('basket', {})
 
-    existing_members = Member_Data_Private.objects.all()
     existing_member = Member_Data_Private.objects.filter(member=request.user.id)
-    print(existing_member)
 
     if existing_member.exists():
         for category_id, quantity in basket.items():
@@ -39,17 +37,6 @@ def basket_contents(request):
                 'selected_membership_level': selected_membership_level,
                 'price': selected_membership_level.new_member_price
             })
-
-    # for category_id, quantity in basket.items():
-    #     selected_membership_level = get_object_or_404(MembershipCategory, pk=category_id)
-    #     total += quantity * selected_membership_level.new_member_price
-    #     product_count += quantity
-    #     basket_items.append({
-    #         'category_id': category_id,
-    #         'quantity': quantity,
-    #         'selected_membership_level': selected_membership_level,
-    #         'price': selected_membership_level.new_member_price
-    #     })
 
     context = {
         'basket_items': basket_items,
