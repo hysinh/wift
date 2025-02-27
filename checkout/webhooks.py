@@ -13,7 +13,6 @@ import stripe
 def webhook(request):
     """ LIsten for webhooks from Stripe """
     # Setup
-    wh_secret = settings.STRIPE_WH_SECRET
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     payload = request.body
