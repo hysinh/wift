@@ -7,23 +7,25 @@ from decimal import Decimal
 from datetime import timedelta
 
 
-
 class MembershipPurchase(models.Model):
 
     purchase_number = models.CharField(max_length=32, null=False, editable=False)
     member = models.ForeignKey(User, on_delete=models.RESTRICT, null=False, blank=False)
-    membership_purchased = models.ForeignKey(MembershipCategory, on_delete=models.RESTRICT,
-                                             null=False, blank=False)
+    membership_purchased = models.ForeignKey(
+        MembershipCategory, on_delete=models.RESTRICT, null=False, blank=False
+    )
     purchase_date = models.DateTimeField(auto_now_add=True)
-    purchase_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    purchase_total = models.DecimalField(
+        max_digits=10, decimal_places=2, null=False, default=0
+    )
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
 
     def _generate_purchase_number(self):
         """
         Generates a random, unique purchase number using UUID
         """
         return uuid.uuid4().hex.upper()
-    
+
     def save(self, *args, **kwargs):
         """
         Override the original save method to set the order number if it hasn't been set already
@@ -33,14 +35,16 @@ class MembershipPurchase(models.Model):
         super().save(*args, **kwargs)
 
     def update_purchase_total(self):
-        """ Updates the purchase total dependent on the membership level selected """
+        """Updates the purchase total dependent on the membership level selected"""
         self.purchase_total = Decimal(self.membership_purchased.new_member_price)
         self.save()
 
     def get_purchase_date(self):
+        """ Converts DateTimeField to more readable date format """
         return self.purchase_date.strftime("%d-%m-%Y")
-    
+
     def get_expiration_date(self):
+        """ Calculates the expiration date from the Purchase date and converts to readable date format """
         expiration_date = self.purchase_date + timedelta(days=365)
         date = expiration_date.strftime("%d-%m-%Y")
         return date
@@ -49,13 +53,7 @@ class MembershipPurchase(models.Model):
     @property
     def is_active(self):
         expiration_date = self.purchase_date + timedelta(days=365)
-        return expiration_date >= self.purchase_date 
-    
-    # determines if the membership is inactive
-    @property
-    def is_inactive(self):
-        expiration_date = self.purchase_date + timedelta(days=365)
-        return self.purchase_date > expiration_date
-    
+        return expiration_date >= self.purchase_date
+
     def __str__(self):
         return self.purchase_number
