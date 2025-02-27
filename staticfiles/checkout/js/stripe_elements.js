@@ -59,17 +59,14 @@ form.addEventListener('submit', function(ev) {
     var postData = {
         'csrfmiddlewaretoken': csrfToken,
         'client_secret': clientSecret,
-    }
+    };
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(() => {
-        console.log("After the postData");
-        console.log(form);
         var default_firstname = document.getElementById("id_default_firstname").value;
         var default_lastname = document.getElementById("id_default_lastname").value;
-        // var name = default_firstname + default_lastname;
         var name = default_firstname.concat(" ", default_lastname);
-        console.log(name);
+
         var member_data_private = {
             name: name,
             address:{
@@ -78,30 +75,15 @@ form.addEventListener('submit', function(ev) {
                 city: document.getElementById("id_default_town_or_city").value,
                 country: document.getElementById("id_default_country").value,
                 state: document.getElementById("id_default_county").value,
+                postal_code: document.getElementById("id_default_postcode").value,
             }
-            // lastname: document.getElementById("id_default_lastname").value,
-        }
-        console.log(member_data_private);
+        };
+
         stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
-                billing_details: {...member_data_private}
             },
             shipping: {...member_data_private},
-            // metadata: {...member_data_private},
-            // member_data_private: {
-            //     // name: $.trim(form.full_name.value),
-            //     // member: $.trim(form.member.value),
-            //     // membership_level: $.trim(member_data_form.membership_level.value),
-            //     // default_firstname: $.trim(form.querySelector("#id_default_firstname").value),
-            //     // default_lastname: $.trim(member_data_form.default_lastname.value),
-            //     // default_street_address1: $.trim(member_data_form.default_street_address1.value),
-            //     // default_street_address2: $.trim(member_data_form.default_street_address2.value),
-            //     // default_town_or_city: $.trim(member_data_form.default_town_or_city.value),
-            //     // default_county: $.trim(member_data_form.default_county.value),
-            //     // default_postcode: $.trim(member_data_form.default_postcode.value),
-            //     // default_country: $.trim(member_data_form.default_country.value),
-            // },
         }).then(function(result) {
             if (result.error) {
                 var errorDiv = document.getElementById('card-errors');
@@ -114,12 +96,15 @@ form.addEventListener('submit', function(ev) {
                 card.update({ 'disabled': false});
                 $('#submit-button').attr('disabled', false);
                 $('#payment-form').fadeToggle(100);
-                $('#loading-overlay').fadeToggle(100);   
+                $('#loading-overlay').fadeToggle(100);
             } else {
                 if (result.paymentIntent.status === 'succeeded') {
                     form.submit();
-                }  
+                }
             }
         });
-    })  
+    }).fail(function () {
+        // just reload the page, the error will be in the django messages
+        location.reload();
+    });
 });
