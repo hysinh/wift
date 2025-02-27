@@ -153,12 +153,6 @@ I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Cou
   </details>
 
   <details >
-  <summary>Entity Relationship Diagram</summary>  
-  
-  ![erd](documentation\readme\WIFT_ERD.drawio.png)
-  </details>
-
-  <details >
   <summary>UI Mockup</summary>  
 
   ![mockup](documentation\readme\laptop_home.png)
@@ -186,97 +180,115 @@ I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Cou
   3. Laptop Device dimensions: 992px and larger
 
 ### Database Design
-Custom models were created for Venues, Bookings, and Contacts. A venue can have many bookings. A booking can only have one client and one venue.
+Custom models were created for Membership Purchases, Member Private Data, Member Public Data, Membership Categories, and Messages (sent via the contact form).
 <details >
-<summary>Entity Relationship Diagrams</summary>  
+<summary>Entity Relationship Diagram</summary>  
 
-![ERDs](documentation/readme/screenshot_ERDs.png)
+![erd](documentation\readme\WIFT_ERD.drawio.png)
 </details>
   
 
 
 ## Features
 ### Navbar - top navigation
-The navbar incorporates the logo and a responsive navbar that collapses to a hamburger when a device is less than a tablet. The navigation options provide the user with all of their potential navigation options including registering as a user or logging into the user dashboard to create and/or manage bookings. If a user is logged in, their user name is displayed adjacent to the navbar.
+The navbar incorporates the logo and a responsive navbar that collapses to a hamburger when a device is less than a tablet. The navigation options provide the user with all of their potential navigation options including logging into the member dashboard to create and/or manage their personal data. If a user is logged in, their user name is displayed adjacent to the navbar and they have access to a dashboard button.
 <details >
 <summary>Public navbar</summary>  
 
-![navbar](documentation/readme/features/screenshot_navbar_laptop.png)
+![navbar](documentation\readme\screenshot_navbar_sitevistor.png)
 </details>
 <details>
 <summary>Registered user navbar (logged in)</summary>
 
-![navbar - logged in](documentation/readme/features/screenshot_navbar_loggedin.png)
+![navbar - logged in](documentation\readme\screenshot_navbar_member.png)
 </details>
  
 
 ### Home Page
-The Home page provides a featured image of Wimpleton House as well as brief details about the venue hire opportunities at the Wimpleton.
+The Home page provides a featured image of a woman with film camera as well as some highlights of the website content. Links direct visitors to visit the events page, the program-fellowships page, and the membership/join page.
 <details>
 <summary>Home Page - Featured Image</summary>
 
-![home page](documentation/readme/features/screenshot_home_featured_image.png)
+![home page](documentation\readme\screenshot_home_featuredimg.png)
 </details>
 <details>
-<summary>Home Page - Venue Hire short descriptions</summary>
+<summary>Home Page - Website highlights with short descriptions</summary>
 
-![home page](documentation/readme/features/screenshot_home_venue_options.png)
-</details>
-
-
-### Venue Hire Page
-The Venue Hire page features details about each of the venue hire options available at the Wimpleton House. A visitor also can click on a button that directs them to the Booking form if they are logged in or to the sign in page if they are not already signed in or registered as a user. There are additional buttons at the end of each venue description that once clicked directs the user to the Booking form with that particular venue preselected in the booking form. Each of the venue images and descriptions are generated dynamically from the venues saved in the database.
-<details>
-<summary>Venue Hire page</summary>
-
-![venue hire page](documentation/readme/features/screenshot_venuehire_featured_image.png)
-</details>
-<details>
-<summary>Venue Hire - Venue Descriptions</summary>
-
-![venue hire page](documentation/readme/features/screenshot_venuehire_venues.png)
+![home page](documentation\readme\screenshot_home_subheadings.png)
 </details>
 
 ### About Page
-The About page provides basic information about Wimpleton House and emphasises it's versatility as a venue for hire for special events. Following the Wimpleton House details, there is a gallery that features images of various special events that were hosted previously at the Wimpleton House.
+The About page provides basic information about WIFT and emphasises the educational and advocacy goals of the organisation and it's support for the community of women in the film and television industry in Ireland. 
 <details>
 <summary>About page</summary>
 
-![about page](documentation/readme/features/screenshot_about.png)
+![about page](documentation\readme\screenshot_aboutpage.png)
+</details>
+
+### Events Page
+The Events page provides information about upcoming events that feature work by members or in support of the work of women in film and television in the community. These can be film viewings, film festivals organised with other organisations, brown bag lunches, lectures, seminar, and other educational or networking opportunities relevant to members and the public.
+<details>
+<summary>Events page</summary>
+
+![events page](documentation\readme\screenshot_events_page.png)
+</details>
+
+### Fellowships Page
+The Fellowships page provides information about some of the professional training and educational opportunities organised by WIFT for the community. 
+<details>
+<summary>Fellowships page</summary>
+
+![fellowships page](documentation\readme\screenshot_fellowshippage.png)
+</details>
+
+### Mentorship Page
+The Mentorship Page provides information about the unique one-on-one relationship that WIFT fosters to help junior or rising professionals in the WIFT community gain access to experienced professionals and peers and their wealth of knowledge.
+<details>
+<summary>Mentorships page</summary>
+
+![mentorship page](documentation\readme\screenshot_mentorpage.png)
+</details>
+
+### Join Page
+The Join page provides all the different available Membership levels, their benefits, and the unique offerings for each level designed to suit the different levels of students and professionals who might be interested in joining the WIFT community.
+<details>
+<summary>Join page</summary>
+
+![join page](documentation\readme\screenshot_joinpage.png)
+</details>
+<details>
+<summary>Membership levels</summary>
+
+![join page](documentation\readme\screenshot_membershiplevel.png)
 </details>
 
 ### Contact Page
-The Contact page features basic contact information for the Wimplton House including address and telephone details. The page also includes a google maps embedded into the page. The Contact page also features a email contact form that allows the vistor to ask questions or to send a message to the Wimpleton House staff by completing the form. The information is stored in the database and the messages accessible to staff members via the Admin panel.
+The Contact page features basic contact information for WIFT and telephone details. The Contact page also features a contact form that allows the vistor to ask questions or to send a message to WIFT staff by completing the form. The information is stored in the database and the messages accessible to staff members via the Admin panel.
 <details>
 <summary>Contact Page</summary>
 
-![contact page](documentation/readme/features/screenshot_contact_page.png)
-</details>
-<details>
-<summary>Google Maps</summary>
-
-![contact page](documentation/readme/features/screenshot_contact_map.png)
+![contact page](documentation\readme\screenshot_contactpage.png)
 </details>
 <details>
 <summary>Contact form</summary>
 
-![contact page](documentation/readme/features/screenshot_contact_contactform.png)
+![contact page](documentation\readme\screenshot_contactform.png)
 </details>
 
-### Booking Dashboard
-The Booking Dashboard is the hub for the user to create, manage, and delete bookings. The Booking Dashboard displays bookings dependent on their status (e.g. Approved, Pending approval, and Expired). The dashboard also features a button that direct the user to the Request Booking form. Once the user has created a booking request, the booking will be displayed in the dashboard in the appropriate section. The user should then be able edit or delete any active bookings with the status of Approved or Pending. Expired bookings are not editable by the user although they can be edited by an admin via the Admin panel.
+### Member Dashboard
+The Member Dashboard is special interface that members can view their membership details, edit personal details like their address, and create a public profile that displays in the Member Directory. At this time, the Member Directory is only accessible to members.The Member Dashboard features a dashboard navigation on the left that allows a member to navigate to view purchase receipts, edit their personal data, create/edit their public profile, view the membership directory, and log out of the membership dashboard. On the dashboards main page, the member can view their current personal details, their public profile details if they have one, and their most recent membership purchase.
 <details>
-<summary>Booking Dashboard</summary>
+<summary>Member Dashboard</summary>
 
-![booking dashboard](documentation/readme/features/screenshot_booking_dashboard.png)
+![member dashboard](documentation\readme\screenshot_dashboard.png)
 </details>
 
-### Request Booking Form
+### View Purchase Receipts
 This page allows the user to input the details of the venue they'd like to book. Users are requested to choose a venue (based on the a selection based on the approved Venues saved in the database), an event type (via preset choices), number of guests (a minumum of 20 guests and maximum of 500 guests), and the event date (only dates from 5 days in advance of the current date to two years out are accepted). The form validates the data and prints an error message corresponding with each field input box if the user inputs something that is not in line with the predetermined paramenters. A successful submission removes the venue with that particular event date from future bookings and returns the user to the Booking dashboard where they can see a success message.
 <details>
-<summary>Request Booking Form</summary>
+<summary>View Purchase Receipts</summary>
 
-![Request Booking Form](documentation/readme/features/screenshot_bookingform.png)
+![purchase receipts](documentation/readme/features/screenshot_bookingform.png)
 </details>
 <details>
 <summary>Request Booking Error Messages Example</summary>
