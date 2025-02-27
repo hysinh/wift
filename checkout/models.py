@@ -22,36 +22,36 @@ class MembershipPurchase(models.Model):
 
     def _generate_purchase_number(self):
         """
-        Generates a random, unique purchase number using UUID
+        Generates a random, unique purchase number using UUID.
         """
         return uuid.uuid4().hex.upper()
 
     def save(self, *args, **kwargs):
         """
-        Override the original save method to set the order number if it hasn't been set already
+        Override the original save method to set the order number if it hasn't been set already.
         """
         if not self.purchase_number:
             self.purchase_number = self._generate_purchase_number()
         super().save(*args, **kwargs)
 
     def update_purchase_total(self):
-        """Updates the purchase total dependent on the membership level selected"""
+        """Updates the purchase total dependent on the membership level selected. """
         self.purchase_total = Decimal(self.membership_purchased.new_member_price)
         self.save()
 
     def get_purchase_date(self):
-        """ Converts DateTimeField to more readable date format """
+        """ Converts DateTimeField to more readable date format. """
         return self.purchase_date.strftime("%d-%m-%Y")
 
     def get_expiration_date(self):
-        """ Calculates the expiration date from the Purchase date and converts to readable date format """
+        """ Calculates the expiration date from the Purchase date and converts to readable date format. """
         expiration_date = self.purchase_date + timedelta(days=365)
         date = expiration_date.strftime("%d-%m-%Y")
         return date
 
-    # determines if the membership is active
     @property
     def is_active(self):
+        """ Determines if the membership is active """
         expiration_date = self.purchase_date + timedelta(days=365)
         return expiration_date >= self.purchase_date
 
