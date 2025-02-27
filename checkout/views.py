@@ -225,7 +225,7 @@ def checkout_existing_member(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-        print(intent)
+
         member_data_form = MembershipPrivateDataForm(instance=original_profile)
         purchase_form = MembershipPurchaseForm()
 
