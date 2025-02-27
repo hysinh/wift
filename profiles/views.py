@@ -195,6 +195,7 @@ def delete_public_data(request, member_id):
     Delete an individual booking
     """
     member_public = get_object_or_404(Member_Data_Public, member=member_id)
+
     if member_public.member == request.user:
         member_public.delete()
         messages.success(request, "Public profile deleted successfully")
@@ -211,14 +212,28 @@ def membership_purchases(request, member_id):
     """ View Member's Membership Purchase receipts """
     membership_purchases = MembershipPurchase.objects.filter(member=request.user)
     member_private = Member_Data_Private.objects.filter(member=request.user)
+    member_public_exists = Member_Data_Public.objects.filter(member=request.user.id)
 
-    template = "user/membership_purchases.html"
-    context = {
-        'membership_purchases': membership_purchases,
-        'member_private': member_private,
-    }
+    if member_public_exists:
+        member_public = get_object_or_404(Member_Data_Public, member=member_id)
 
-    return render(request, template, context)
+        template = "user/membership_purchases.html"
+        context = {
+            'membership_purchases': membership_purchases,
+            'member_private': member_private,
+            'member_public': member_public,
+        }
+
+        return render(request, template, context)
+    
+    else:
+        template = "user/membership_purchases.html"
+        context = {
+            'membership_purchases': membership_purchases,
+            'member_private': member_private,
+        }
+
+        return render(request, template, context)
 
 
 @login_required
@@ -226,12 +241,26 @@ def member_directory(request, member_id):
     """ View Member's Membership Directpry """
     member_profiles = Member_Data_Public.objects.all().order_by('public_lastname').values()
     member_private = Member_Data_Private.objects.filter(member=request.user)
+    member_public_exists = Member_Data_Public.objects.filter(member=request.user.id)
 
-    template = "user/member_directory.html"
-    context = {
-        'member_profiles': member_profiles,
-        'member_private': member_private,
-    }
+    if member_public_exists:
+        member_public = get_object_or_404(Member_Data_Public, member=member_id)
+        
+        template = "user/member_directory.html"
+        context = {
+            'member_profiles': member_profiles,
+            'member_private': member_private,
+            'member_public': member_public,
+        }
 
-    return render(request, template, context)
+        return render(request, template, context)
+
+    else:
+        template = "user/member_directory.html"
+        context = {
+            'member_profiles': member_profiles,
+            'member_private': member_private,
+        }
+
+        return render(request, template, context)
     

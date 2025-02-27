@@ -3,7 +3,7 @@
 
 /* Modal Code Source: Code Institute Django Blog Walk Through Project */
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-const deleteButtons = document.getElementsByClassName("btn-delete");
+const deleteButtons = document.getElementsByClassName("button-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
 
