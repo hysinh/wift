@@ -13,11 +13,12 @@ class MembershipPurchaseForm(forms.ModelForm):
 class MembershipPrivateDataForm(forms.ModelForm):
     class Meta:
         model = Member_Data_Private
-        fields  = ['default_firstname', 'default_lastname',
-                   'default_street_address1', 'default_street_address2',
-                   'default_town_or_city', 'default_county', 'default_postcode',
-                   'default_country',]
-        
+        fields = ['default_firstname', 'default_lastname',
+                  'default_street_address1', 'default_street_address2',
+                  'default_town_or_city', 'default_county',
+                  'default_postcode', 'default_country',
+                  ]
+
     def __init__(self, *args, **kwargs):
         """ Add placesholders and classes, remove auto-generated
         labels and set autfocus on first field - Source Code Institute
@@ -37,7 +38,7 @@ class MembershipPrivateDataForm(forms.ModelForm):
 
         self.fields['default_firstname'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':   
+            if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
@@ -45,4 +46,3 @@ class MembershipPrivateDataForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-

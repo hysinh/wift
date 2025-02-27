@@ -24,7 +24,7 @@
         <div class="p-4 card-subsection container-membership">
             <h4 class="text-green">STEP 4: Purchase your annual membership</h4>
             {% if basket_items %}
-            <!-- <h5>Your Basket:</h5> -->
+            <!-- Basket Items Display here -->
                     <div class="table-responsive rounded">
                         <table class="table table-sm table-borderless">
                             <thead class="text-black">
@@ -77,6 +77,7 @@
                 This information will be retained in your member profile and
                 can be updated from your member dashboard.
             </p>
+            <!-- Member Private Data Form -->
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">  
                 {% csrf_token %}
                 <fieldset class="rounded px-3 mb-5">
@@ -92,17 +93,6 @@
                     {{ member_data_form.default_county | as_crispy_field }}
                     {{ member_data_form.default_postcode | as_crispy_field }}
                     {{ member_data_form.default_country | as_crispy_field }}
-                    <div class="form-check form-check-inline float-right mr-0">
-                        {% if user.is_authenticated %}
-                            <label class="form-check-label" for="id-save-info">Save this delivery information to my profile</label>
-                            <input class="form-check-input ml-2 mr-0" type="checkbox" id="id-save-info" name="save-info" checked>
-                        {% else %}
-                            <label class="form-check-label" for="id-save-info">
-                                <a class="text-info" href="{% url 'account_signup' %}">Create an account</a> or 
-                                <a class="text-info" href="{% url 'account_login' %}">login</a> to save this information
-                            </label>
-                        {% endif %}
-                    </div>
                 </fieldset>
                 <fieldset class="px-3">
                     <legend class="fieldset-label px-2 w-auto">Payment Details:</legend>
