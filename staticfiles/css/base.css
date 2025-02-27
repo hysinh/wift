@@ -327,6 +327,11 @@ a:hover {
     text-align: center;
 }
 
+/* Edit Public Profile Page */
+.btn-danger {
+    background-color: red !important;
+}
+
 /* Footer */
 footer {
     background-color: #065a65;
