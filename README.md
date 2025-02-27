@@ -1,5 +1,5 @@
 # WIFT - Women in Film and Television Application
-  ![screenshot of landing page](documentation\readme\screenshot_amiresponsive_wift.png)
+  ![screenshot of landing page](documentation/readme/screenshot_amiresponsive_wift.png)
 
   [View Live Project Here](https://wift-nsmith-c3ae5713a782.herokuapp.com/)
  
@@ -75,7 +75,7 @@ I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Cou
   <details >
   <summary>Kanban Board screenshot</summary>  
 
-  ![Kanban Board screenshot](documentation\readme\screenshot_kanban_wift.png)
+  ![Kanban Board screenshot](documentation/readme/screenshot_kanban_wift.png)
   </details>
 
 - ### Issues
@@ -132,36 +132,36 @@ I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Cou
   <details >
   <summary>Flowchart</summary>  
   
-  ![erd](documentation\readme\WIFT_flowchart.jpg)
+  ![erd](documentation/readme/WIFT_flowchart.jpg)
   </details>
 
   <details >
   <summary>UX Wireframe 1</summary>  
 
-  ![mockup](documentation\readme\ux_wireframes1.jpg)
+  ![mockup](documentation/readme/ux_wireframes1.jpg)
   </details>
 
   <details >
   <summary>UX Wireframe 2</summary>  
 
-  ![mockup](documentation\readme\ux_wireframes2.jpg)
+  ![mockup](documentation/readme/ux_wireframes2.jpg)
   </details>
   <details >
   <summary>UX Wireframe 3</summary>  
 
-  ![mockup](documentation\readme\ux_wireframes3.jpg)
+  ![mockup](documentation/readme/ux_wireframes3.jpg)
   </details>
 
   <details >
   <summary>UI Mockup</summary>  
 
-  ![mockup](documentation\readme\laptop_home.png)
+  ![mockup](documentation/readme/laptop_home.png)
   </details>
 
   <details >
   <summary>Color Scheme</summary>  
 
-  ![color scheme](documentation\readme\screenshot_colour_palette_wift.png)
+  ![color scheme](documentation/readme/screenshot_colour_palette_wift.png)
   </details>
 
   #### Font Family
@@ -169,7 +169,7 @@ I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Cou
   <details >
   <summary>Fonts</summary>  
 
-  ![color scheme](documentation\readme\screenshot_fontfamilies.png)
+  ![color scheme](documentation/readme/screenshot_fontfamilies.png)
   </details>
 
   #### Responsiveness
@@ -184,7 +184,7 @@ Custom models were created for Membership Purchases, Member Private Data, Member
 <details >
 <summary>Entity Relationship Diagram</summary>  
 
-![erd](documentation\readme\WIFT_ERD.drawio.png)
+![erd](documentation/readme/WIFT_ERD.drawio.png)
 </details>
   
 
@@ -195,12 +195,12 @@ The navbar incorporates the logo and a responsive navbar that collapses to a ham
 <details >
 <summary>Public navbar</summary>  
 
-![navbar](documentation\readme\screenshot_navbar_sitevistor.png)
+![navbar](documentation/readme/screenshot_navbar_sitevistor.png)
 </details>
 <details>
 <summary>Registered user navbar (logged in)</summary>
 
-![navbar - logged in](documentation\readme\screenshot_navbar_member.png)
+![navbar - logged in](documentation/readme/screenshot_navbar_member.png)
 </details>
  
 
@@ -209,12 +209,12 @@ The Home page provides a featured image of a woman with film camera as well as s
 <details>
 <summary>Home Page - Featured Image</summary>
 
-![home page](documentation\readme\screenshot_home_featuredimg.png)
+![home page](documentation/readme/screenshot_home_featuredimg.png)
 </details>
 <details>
 <summary>Home Page - Website highlights with short descriptions</summary>
 
-![home page](documentation\readme\screenshot_home_subheadings.png)
+![home page](documentation/readme/screenshot_home_subheadings.png)
 </details>
 
 ### About Page
@@ -222,7 +222,7 @@ The About page provides basic information about WIFT and emphasises the educatio
 <details>
 <summary>About page</summary>
 
-![about page](documentation\readme\screenshot_aboutpage.png)
+![about page](documentation/readme/screenshot_aboutpage.png)
 </details>
 
 ### Events Page
@@ -230,7 +230,7 @@ The Events page provides information about upcoming events that feature work by 
 <details>
 <summary>Events page</summary>
 
-![events page](documentation\readme\screenshot_events_page.png)
+![events page](documentation/readme/screenshot_events_page.png)
 </details>
 
 ### Fellowships Page
@@ -238,7 +238,7 @@ The Fellowships page provides information about some of the professional trainin
 <details>
 <summary>Fellowships page</summary>
 
-![fellowships page](documentation\readme\screenshot_fellowshippage.png)
+![fellowships page](documentation/readme/screenshot_fellowshippage.png)
 </details>
 
 ### Mentorship Page
@@ -246,7 +246,7 @@ The Mentorship Page provides information about the unique one-on-one relationshi
 <details>
 <summary>Mentorships page</summary>
 
-![mentorship page](documentation\readme\screenshot_mentorpage.png)
+![mentorship page](documentation/readme/screenshot_mentorpage.png)
 </details>
 
 ### Join Page
@@ -254,12 +254,12 @@ The Join page provides all the different available Membership levels, their bene
 <details>
 <summary>Join page</summary>
 
-![join page](documentation\readme\screenshot_joinpage.png)
+![join page](documentation/readme/screenshot_joinpage.png)
 </details>
 <details>
 <summary>Membership levels</summary>
 
-![join page](documentation\readme\screenshot_membershiplevel.png)
+![join page](documentation/readme/screenshot_membershiplevel.png)
 </details>
 
 ### Contact Page
@@ -267,12 +267,12 @@ The Contact page features basic contact information for WIFT and telephone detai
 <details>
 <summary>Contact Page</summary>
 
-![contact page](documentation\readme\screenshot_contactpage.png)
+![contact page](documentation/readme/screenshot_contactpage.png)
 </details>
 <details>
 <summary>Contact form</summary>
 
-![contact page](documentation\readme\screenshot_contactform.png)
+![contact page](documentation/readme/screenshot_contactform.png)
 </details>
 
 ### Member Dashboard
@@ -280,25 +280,15 @@ The Member Dashboard is special interface that members can view their membership
 <details>
 <summary>Member Dashboard</summary>
 
-![member dashboard](documentation\readme\screenshot_dashboard.png)
+![member dashboard](documentation/readme/screenshot_dashboard.png)
 </details>
 
 ### View Purchase Receipts
-This page allows the user to input the details of the venue they'd like to book. Users are requested to choose a venue (based on the a selection based on the approved Venues saved in the database), an event type (via preset choices), number of guests (a minumum of 20 guests and maximum of 500 guests), and the event date (only dates from 5 days in advance of the current date to two years out are accepted). The form validates the data and prints an error message corresponding with each field input box if the user inputs something that is not in line with the predetermined paramenters. A successful submission removes the venue with that particular event date from future bookings and returns the user to the Booking dashboard where they can see a success message.
+text
 <details>
 <summary>View Purchase Receipts</summary>
 
 ![purchase receipts](documentation/readme/features/screenshot_bookingform.png)
-</details>
-<details>
-<summary>Request Booking Error Messages Example</summary>
-
-![Request Booking Form](documentation/readme/features/screenshot_bookingform_error.png)
-</details>
-<details>
-<summary>Request Booking Success Example</summary>
-
-![Request Booking Form](documentation/readme/features/screenshot_booking_dashboard_success_msg.png)
 </details>
 
 ### Edit Booking Page
