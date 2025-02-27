@@ -120,7 +120,6 @@ class StripeWH_Handler:
         """
         Handle the payment_intent.payment_failed webhook from Stripe
         """
-        print(f"event: {event}")
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
