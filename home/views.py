@@ -68,3 +68,7 @@ def join(request):
     }
     
     return render(request, 'public/join.html', context)
+
+def privacy_policy(request):
+    """ A view to return the Privacy Policy page """
+    return render(request, 'public/privacy_policy.html')

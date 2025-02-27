@@ -11,4 +11,5 @@ urlpatterns = [
     path('events/', views.events, name='events'),
     path('contact/', views.contact, name='contact'),
     path('join/', views.join, name='join'),
+    path('privacy/', views.privacy_policy, name='privacy'),
 ]
