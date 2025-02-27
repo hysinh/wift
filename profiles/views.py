@@ -37,45 +37,60 @@ def edit_private_data(request, member_id):
     """ Update Member Private Account Data """
     membership_purchase = MembershipPurchase.objects.filter(member=request.user)
     member_private = Member_Data_Private.objects.filter(member=request.user)
-
-    print(member_id)
-    # print(member.id)
-    print(request.user.id)
-    # print(member.member.id)
-    print(request.user)
-
-    # redirects the user back to the booking dashboard if they do not have
-    # permissions to edit the booking
-    # if member_id != request.user.id:
-    #     messages.error(
-    #         request, "You do not have permissions to edit this booking.")
-    #     return redirect('dashboard', member_id)
+    member_public_exists = Member_Data_Public.objects.filter(member=request.user.id)
     
     member = get_object_or_404(Member_Data_Private, member=member_id)
 
-    if request.method == "POST":
-        form = MembershipPrivateDataForm(request.POST, instance=member)
-        if form.is_valid():
-            form.save()
-            messages.success(request, "Member profile changes saved successfully")
-            return redirect('dashboard', member_id)
-        else:
-            messages.error(
-                request,
-                "Your changes could not be saved. Please check your form and try again",
-            )
+    if member_public_exists:
+        member_public = get_object_or_404(Member_Data_Public, member=member_id)
+        if request.method == "POST":
+            form = MembershipPrivateDataForm(request.POST, instance=member)
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Member profile changes saved successfully")
+                return redirect('dashboard', member_id)
+            else:
+                messages.error(
+                    request,
+                    "Your changes could not be saved. Please check your form and try again",
+                )
 
-    form = MembershipPrivateDataForm(instance=member)
-    
-    template = "user/edit_private_data.html"
-    context = {
-        'membership_purchase': membership_purchase,
-        'member_private': member_private,
-        'form': form,
-        'member': member,
-    }
+        form = MembershipPrivateDataForm(instance=member)
 
-    return render(request, template, context)
+        template = "user/edit_private_data.html"
+        context = {
+            'membership_purchase': membership_purchase,
+            'member_private': member_private,
+            'form': form,
+            'member': member,
+            'member_public': member_public,
+        }
+
+        return render(request, template, context)
+    else:
+        if request.method == "POST":
+            form = MembershipPrivateDataForm(request.POST, instance=member)
+            if form.is_valid():
+                form.save()
+                messages.success(request, "Member profile changes saved successfully")
+                return redirect('dashboard', member_id)
+            else:
+                messages.error(
+                    request,
+                    "Your changes could not be saved. Please check your form and try again",
+                )
+
+        form = MembershipPrivateDataForm(instance=member)
+
+        template = "user/edit_private_data.html"
+        context = {
+            'membership_purchase': membership_purchase,
+            'member_private': member_private,
+            'form': form,
+            'member': member,
+        }
+
+        return render(request, template, context)
 
 
 @login_required

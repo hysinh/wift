@@ -314,20 +314,26 @@ A member can create and then edit or delete their public profile from the dashbo
 <details>
 <summary>Create Public Profile</summary>
 
-![create profile](documentation/readme/features/screenshot_delete_booking.png)
+![create profile](documentation/readme/features/screenshot_dashboard_create_public_profile.png)
 </details>
 <details>
-<summary>Edit Public Profile</summary>
+<summary>Edit Public Profile Error</summary>
 
-![Edit profile](documentation/readme/features/screenshot_delete_booking_confirmation.png)
+![Edit profile](documentation/readme/features/screenshot_dashboard_create_public_profile_error.png)
 </details>
+<details>
+<summary>Edit Public Profile Success</summary>
+
+![Edit profile](documentation/readme/features/screenshot_dashboard_create_public_profile_success.png)
+</details>
+
 
 ### Member Directory
 A member can view the member directory which willd display all the public profiles of the current WIFT membership.
 <details>
-<summary>Create Public Profile</summary>
+<summary>Member Directory</summary>
 
-![create profile](documentation/readme/features/screenshot_delete_booking.png)
+![create profile](documentation/readme/features/screenshot_dashboard_members_directory.png)
 </details>
 
 ### Sign In Page
