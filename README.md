@@ -195,12 +195,12 @@ The navbar incorporates the logo and a responsive navbar that collapses to a ham
 <details >
 <summary>Public navbar</summary>  
 
-![navbar](documentation/readme/screenshot_navbar_sitevistor.png)
+![navbar](documentation/readme/features/screenshot_navbar_sitevistor.png)
 </details>
 <details>
 <summary>Registered user navbar (logged in)</summary>
 
-![navbar - logged in](documentation/readme/screenshot_navbar_member.png)
+![navbar - logged in](documentation/readme/features/screenshot_navbar_member.png)
 </details>
  
 
@@ -209,12 +209,12 @@ The Home page provides a featured image of a woman with film camera as well as s
 <details>
 <summary>Home Page - Featured Image</summary>
 
-![home page](documentation/readme/screenshot_home_featuredimg.png)
+![home page](documentation/readme/features/screenshot_home_featuredimg.png)
 </details>
 <details>
 <summary>Home Page - Website highlights with short descriptions</summary>
 
-![home page](documentation/readme/screenshot_home_subheadings.png)
+![home page](documentation/readme/features/screenshot_home_subheadings.png)
 </details>
 
 ### About Page
@@ -222,7 +222,7 @@ The About page provides basic information about WIFT and emphasises the educatio
 <details>
 <summary>About page</summary>
 
-![about page](documentation/readme/screenshot_aboutpage.png)
+![about page](documentation/readme/features/screenshot_aboutpage.png)
 </details>
 
 ### Events Page
@@ -230,7 +230,7 @@ The Events page provides information about upcoming events that feature work by 
 <details>
 <summary>Events page</summary>
 
-![events page](documentation/readme/screenshot_events_page.png)
+![events page](documentation/readme/features/screenshot_events_page.png)
 </details>
 
 ### Fellowships Page
@@ -238,7 +238,7 @@ The Fellowships page provides information about some of the professional trainin
 <details>
 <summary>Fellowships page</summary>
 
-![fellowships page](documentation/readme/screenshot_fellowshippage.png)
+![fellowships page](documentation/readme/features/screenshot_fellowshippage.png)
 </details>
 
 ### Mentorship Page
@@ -246,7 +246,7 @@ The Mentorship Page provides information about the unique one-on-one relationshi
 <details>
 <summary>Mentorships page</summary>
 
-![mentorship page](documentation/readme/screenshot_mentorpage.png)
+![mentorship page](documentation/readme/features/screenshot_mentorpage.png)
 </details>
 
 ### Join Page
@@ -254,12 +254,12 @@ The Join page provides all the different available Membership levels, their bene
 <details>
 <summary>Join page</summary>
 
-![join page](documentation/readme/screenshot_joinpage.png)
+![join page](documentation/readme/features/screenshot_joinpage.png)
 </details>
 <details>
 <summary>Membership levels</summary>
 
-![join page](documentation/readme/screenshot_membershiplevel.png)
+![join page](documentation/readme/features/screenshot_membershiplevel.png)
 </details>
 
 ### Contact Page
@@ -267,12 +267,12 @@ The Contact page features basic contact information for WIFT and telephone detai
 <details>
 <summary>Contact Page</summary>
 
-![contact page](documentation/readme/screenshot_contactpage.png)
+![contact page](documentation/readme/features/screenshot_contactpage.png)
 </details>
 <details>
 <summary>Contact form</summary>
 
-![contact page](documentation/readme/screenshot_contactform.png)
+![contact page](documentation/readme/features/screenshot_contactform.png)
 </details>
 
 ### Member Dashboard
@@ -280,51 +280,58 @@ The Member Dashboard is special interface that members can view their membership
 <details>
 <summary>Member Dashboard</summary>
 
-![member dashboard](documentation/readme/screenshot_dashboard.png)
+![member dashboard](documentation/readme/features/screenshot_dashboard.png)
 </details>
 
-### View Purchase Receipts
-text
+### View Member Purchase Receipts
+A member can view their membership purchase receipts. The receipts display the membership level purchased, the total cost, the purchase date, and the renewal date.
 <details>
 <summary>View Purchase Receipts</summary>
 
-![purchase receipts](documentation/readme/features/screenshot_bookingform.png)
+![purchase receipts](documentation/readme/features/screenshot_dashboard_purchase_receipts.png)
 </details>
 
-### Edit Booking Page
-The Edit booking page is an option for any current and existing booking for that user. Expired bookings (in the past) are not editable by the user. The user is able to edit any of the booking details such as venue, event type, event date, and number of guests as long as they make changes that stay within the form's criteria. For example, if the user attempts to rebook the venue to a date that's already book, the user will not be allowed to change the booking.
+### Edit Member Account Information Page
+A member can edit their Account information created when they made their membership purchase. If the member attempts to save their information with any required fields missing, they receive an error message displayed in the upper right corner of the page. If their page was saved successfully, they will also see a success message displayed in the same corner.
 <details>
-<summary>Edit Booking page</summary>
+<summary>Edit Member Account Information page</summary>
 
-![Edit Booking Page](documentation/readme/features/screenshot_edit_booking.png)
+![edit account info](documentation/readme/features/screenshot_dashboard_edit_profile.png)
 </details>
 <details>
-<summary>Edit Booking success message</summary>
+<summary>Edit Acount information success message</summary>
 
-![Edit Booking Page](documentation/readme/features/screenshot_edit_booking_success.png)
+![Edit Booking Page](documentation/readme/features/screenshot_dashboard_edit_profile_success.png)
 </details>
 <details>
 <summary>Edit Booking error message</summary>
 
-![Edit Booking Page](documentation/readme/features/screenshot_edit_booking_error.png)
+![Edit Booking Page](documentation/readme/features/screenshot_dashboard_edit_profile_error.png)
 </details>
 
-
-### Delete Booking
-A user can only delete bookings that both exist and are current. Expired bookings are not deletable by the user. When the user clicks on the delete button, a modal will open and the user must confirm that they wish to delete the booking or they are given the option to cancel the request. Once the user confirms, they are then redirected back to the Booking dashboard and will see a confirmation that they deleted their booking.
+### Create/Edit/Delete Public Profile
+A member can create and then edit or delete their public profile from the dashboard navigation menu. If the member attempts to save their public profile with an required fields missing, they will see an error message in the upper right hand corner of the screen. If the member clicks on the delete profile link, a pop window will appear to confirm that they want to delete the profile. A confirmation message of the deletion will appear in the upper right corner of the screen.
 <details>
-<summary>Delete Booking</summary>
+<summary>Create Public Profile</summary>
 
-![Delete Booking](documentation/readme/features/screenshot_delete_booking.png)
+![create profile](documentation/readme/features/screenshot_delete_booking.png)
 </details>
 <details>
-<summary>Delete Booking Confirmation</summary>
+<summary>Edit Public Profile</summary>
 
-![Delete Booking confirmation](documentation/readme/features/screenshot_delete_booking_confirmation.png)
+![Edit profile](documentation/readme/features/screenshot_delete_booking_confirmation.png)
+</details>
+
+### Member Directory
+A member can view the member directory which willd display all the public profiles of the current WIFT membership.
+<details>
+<summary>Create Public Profile</summary>
+
+![create profile](documentation/readme/features/screenshot_delete_booking.png)
 </details>
 
 ### Sign In Page
-A user is prompted to sign in when they attempt to make a booking.
+A user is prompted to sign in when they attempt to make a membership purchase or click on the login button.
 <details>
 <summary>Sign in Page</summary>
 
@@ -332,7 +339,7 @@ A user is prompted to sign in when they attempt to make a booking.
 </details>
 
 ### Sign Out Page
-The user can sign out at any point.
+The member can sign out at any point.
 <details>
 <summary>Sign Out Page</summary>
 
@@ -340,7 +347,7 @@ The user can sign out at any point.
 </details>
 
 ### Register Page
-If the user wishes to make a booking and clicks on any of the booking buttons, they will be directed a register page where they can register or log in if they have already registered.
+If the user wishes to purchase a WIFT membership, they will be prompted to register for an account in order to complete the order process.
 <details>
 <summary>Register Page</summary>
 
@@ -348,11 +355,19 @@ If the user wishes to make a booking and clicks on any of the booking buttons, t
 </details>
 
 ### Footer
-The footer contains links to the Venue Hire page, the About page, the Contact Page and the Home Page. It also contains two social media links to Facebook and Instagram. The Copyright information is also on the footer.
+The footer contains a newsletter sign up box that is linked to MailChimp. The footer also contains two social media links and a link to the privacy page.
 <details>
 <summary>Footer</summary>
 
 ![footer](documentation/readme/features/screenshot_footer.png)
+</details>
+
+### Privacy Page
+A Privacy Policy page communicates the WIFT privacy policy.
+<details>
+<summary>Privacy Policy</summary>
+
+![create profile](documentation/readme/features/screenshot_delete_booking.png)
 </details>
 
 ### 404 Error Page
@@ -372,12 +387,7 @@ If there is a server error, a 500 Error page will display.
 </details>
 
 ### Future Development
-- I think the error handling on the Edit Booking page could be better. I didn't realise until late in the testing phase that the form doesn't validate changes to the date and number of guests the same way it does for the Request Booking form. I changed the error message so that it works for current form but it doesn't give the user enough information about the specific problem. I didn't have enough time to figure out a better solution before this project concluded. In a future version, I would like to resolve this and provide better error messaging.
-- I had hoped to delve deeper into unit testing and if time allowed, develop more comprehensive unit testing in the future.
-- I had included a staff name and venue capacity on my Venue models. I had hoped to build a staff dashboard that would allow staff members to access the website from the front end and be able to create, edit, and delete venues as well as bookings. Although I wasn't able to implement this in version, I would like to develop this in the future.
-- I also had hoped for this version to be able to implement a venue capacity limitation on the booking form. However, although I spent some time on this, I was not able to implement this function in the this current version and would hope that I can implement this in a future version.
-- For my dates, I would implement a conversion of the DateTime object to the local timezone to account for potential clients visiting from locales outside the local timezone. This implementation would resolve discrepancies in timezone when booking.
-- My mentor had suggested changing the name of my contact model (a web email form) from to "Email" to "Contact" as the form wasn't exactly an email. However, after implementing this change, I still think the name is slightly confusing as it displays in the admin dashboard as "Contacts" which doesn't convey what it really is either. Neither "Email" nor "Contact" conveyed exactly what it is. However, I chose to leave it for this version of the application and will probably update in the future to better convey it's purpose.
+- text
 
 
 ## Technologies
@@ -389,10 +399,9 @@ If there is a server error, a 500 Error page will display.
 
   ### Technologies and Programs Used
   - GitHub - used to save and store all the files for this website
-  - GitPod and VSCode - was used as the IDE to develop and test the code for this website in both the cloud and locally.
+  - VSCode - was used as the IDE to develop and test the code for this website in both the cloud and locally.
   - Git - provided the version control
   - Heroku - provided the cloud deployment environment shell and Command Line Interface (CLI)
-  - Cloudinary - Use for cloud storage of media files uploaded by the user
   - draw.io - used for flowchart creation
   - W3C HTML validator
   - W3C Jigsaw
@@ -407,7 +416,7 @@ If there is a server error, a 500 Error page will display.
 
   
   1. Log into GitHub account. 
-  2. Navigate to the project repository: [Wimpleton](https://github.com/hysinh/wimpleton-booking-app)
+  2. Navigate to the project repository: [WIFT](https://github.com/hysinh/wift)
   3. Navigate to the CODE link on the navigation across the top.
   3. Then, navigate to the green CODE button on the right side and click.
   4. Select the Local tab and click on the copy icon to make a copy of the repository.
@@ -418,7 +427,7 @@ If there is a server error, a 500 Error page will display.
   9. Once your app has been created, it directs you to a new screen.
   10. Navigate across the top of the screen and click on the "Settings" tab.
   11. Navigate down the page and click on the "Reveal Config Vars" button.
-  12. For the first key, type in "CLOUDINARY_URL" and then copy and paste the entirety of your cloudinary url file into the value box.
+  12. 
   13. For the second key, type in "DATABASE_URL" and then type in your unique Postgres database url in its corresponding value.
   14. Then in the third key, type in "SECRET_KEY" and your secret key in to the corresponding value.
   15. Under Buildpacks, add the <b>python</b> buildpack. 
@@ -428,53 +437,32 @@ If there is a server error, a 500 Error page will display.
 
 
   #### How to clone the Wimpleton House Booking App & make changes:
-  1. Open the [Wimpleton-House-Booking-App repository](https://github.com/hysinh/wimpleton-booking-app) on GitHub.
+  1. Open the [WIFT repository](https://github.com/hysinh/wift) on GitHub.
   2. Navigate to the CODE link on the navigation across the top.
   3. Then, navigate to the green CODE button on the right side and click.
   4. Select the Local tab and click on the copy icon to make a copy of the repository.
   5. Then navigate back to your main GitHub dashboard and then create a new repository with your desired name.
   6. On the next page, navigate to the bottom of the page and select Import code under "Import code from another repository".
-  7. In the next window, paste the copied link of the [Wimpleton](https://github.com/hysinh/wimpleton-booking-app) into the line.
+  7. In the next window, paste the copied link of the [WIFT](https://github.com/hysinh/wift) into the line.
   8. Then, click Begin Import to import the repository code.
   9. Make changes and/or deploy as desired.
-  10. This program requires the use of a postgres database, the Django Webframe work, Bootstrap CSS library, Django Crispy Forms, Gunicorn, Django Summernote and a Cloudinary account.
+  10. This program requires the use of a postgres database, the Django Webframe work, Bootstrap CSS library, Django Crispy Forms, Gunicorn, and Django Summernote.
 
   ## Testing
-  Please view all the testing documentation in [TESTING.md](TESTING.md)
+  Please view all the testing documentation in [TESTING.md](TESTING.md) # NEED TO CREATE
 
   
 ## Credits
 ### Code
-- Sandeep Aggarwal, my Code Institute Mentor, helped me write the maximum attribute for the code for my DateInput function.
-- Jason Holt Smith helped me write the code in my Form Unit tests for the Venue which is a foreign key to my Booking model.
 - I reused the delete modal used in in the Code Institute Django Blog walk through project
 
 ### Content
 - https://fonts.google.com/
 - https://fontawesome.com/  
 - #### Images - [Pexels](https://www.pexels.com/) was my primary image source
-  - Photo by Анна Хазова: https://www.pexels.com/photo/happy-friends-and-newlywed-couple-celebrating-wedding-at-night-5005252/
-  - Photo by Dan Fuhrman: https://www.pexels.com/photo/beige-concrete-building-1076234/
-  - Photo by Dominik Reiter: https://www.pexels.com/photo/gray-concrete-building-2169965/
-  - Photo by Eugenia Remark: https://www.pexels.com/photo/bride-in-wedding-dress-posing-near-old-castle-15283360/
-  - Photo by Ingo Joseph: https://www.pexels.com/photo/beige-painted-concrete-building-87378/
-  - Photo by Jeremy Wong: https://www.pexels.com/photo/white-chairs-1082024/
-  - Photo by Ahmed ツ: https://www.pexels.com/photo/tables-in-a-room-24023467/
-  - Photo by Pixabay: https://www.pexels.com/photo/white-concrete-castle-surrounded-by-green-plants-50673/
-  - Photo by Soner Görkem: https://www.pexels.com/photo/people-doing-wedding-party-6119578/
-  - Photo by Pixabay: https://www.pexels.com/photo/steel-gate-of-brown-brick-building-159490/
-  - Photo by Victoria Strelka_ph: https://www.pexels.com/photo/bride-and-groom-walking-towards-the-church-12194355/
+  - Photo by xx: link
+  - 
 - #### Code resources
-  - Getting a json file output of object
-    https://sentry.io/answers/creating-a-json-response-using-django-and-python/
-  - Comparing dates - strings vs objects
-    https://stackoverflow.com/questions/15311222/comparing-dates-stored-as-strings-in-django
-  - Accessing django properties
-    https://dev.to/doridoro/django-model-properties-28ac
-  - How to compare dates in django
-    https://stackoverflow.com/questions/3798812/how-to-compare-dates-in-django-templates
-  - 404 custom and 500 pages with handler url
-    https://stackoverflow.com/questions/20581017/django-custom-404-page-not-working
-
+  - code resources
 
   
