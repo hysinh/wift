@@ -47,7 +47,8 @@ def checkout(request):
     # Check to see if user has an active membership
     memberships = MembershipPurchase.objects.filter(member=request.user)
     if memberships:
-        active_member = get_object_or_404(MembershipPurchase, member=request.user)
+        active_member = get_object_or_404(
+                MembershipPurchase, member=request.user)
         if active_member.is_active:
             # Transfer to dashboard if active member
             messages.info(request, "Your membership is currently active")
@@ -55,19 +56,21 @@ def checkout(request):
 
     else:
         # Check to see if user has an existing Member Private Data record
-        existing_member = Member_Data_Private.objects.filter(member=request.user)
+        existing_member = Member_Data_Private.objects.filter(
+                member=request.user)
 
         if existing_member:
-            # Transfer to checkout existing member view 
+            # Transfer to checkout existing member view
             return redirect(reverse('checkout_existing_member'))
-        
+
         else:
             if request.method == "POST":
                 basket = request.session.get("basket", {})
                 for category_id, quantity in basket.items():
                     category_id = category_id
                     quantity = quantity
-                selected_membership = get_object_or_404(MembershipCategory, pk=category_id)
+                selected_membership = get_object_or_404(
+                        MembershipCategory, pk=category_id)
                 purchase_total = selected_membership.new_member_price * quantity
 
                 # data to create membership purchase
@@ -75,7 +78,7 @@ def checkout(request):
                     'membership_purchased_id': selected_membership.id,
                     'purchase_total': purchase_total,
                 }
-                
+
                 # private data to create member profile
                 member_data = {
                     'default_firstname': request.POST["default_firstname"],
@@ -103,20 +106,25 @@ def checkout(request):
                         member_private_data.member = request.user
                         member_private_data.membership_level = selected_membership
                         member_private_data.save()
-                        messages.success(request, 'Member profile information was saved')
-                    return redirect(reverse('checkout_success', args=[purchase.purchase_number]))
+                        messages.success(
+                            request, 'Member profile information was saved')
+                    return redirect(reverse(
+                            'checkout_success',
+                            args=[purchase.purchase_number]))
                 else:
                     messages.error(
                         request,
                         "There was an errory with your form. \
                             Please double check your information."
-                    )     
+                    )
             else:
                 basket = request.session.get("basket", {})
                 if not basket:
-                    messages.error(request, "There's nothing in your basket at the moment")
+                    messages.error(
+                        request,
+                        "There's nothing in your basket at the moment")
                     return redirect(reverse("join"))
-                
+
                 current_basket = basket_contents(request)
                 total = current_basket['total']
                 stripe_total = round(total * 100)
@@ -156,14 +164,16 @@ def checkout_existing_member(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
-    original_profile = get_object_or_404(Member_Data_Private, member=request.user)
+    original_profile = get_object_or_404(
+        Member_Data_Private, member=request.user)
 
     if request.method == "POST":
         basket = request.session.get("basket", {})
         for category_id, quantity in basket.items():
             category_id = category_id
             quantity = quantity
-        selected_membership = get_object_or_404(MembershipCategory, pk=category_id)
+        selected_membership = get_object_or_404(
+            MembershipCategory, pk=category_id)
         purchase_total = selected_membership.renewal_price * quantity
 
         # data for membership renewal
@@ -185,7 +195,8 @@ def checkout_existing_member(request):
         }
 
         purchase_form = MembershipPurchaseForm(form_data)
-        membership_form = MembershipPrivateDataForm(member_data, instance=original_profile)
+        membership_form = MembershipPrivateDataForm(
+            member_data, instance=original_profile)
         if purchase_form.is_valid():
             purchase = purchase_form.save(commit=False)
             purchase.member = request.user
@@ -200,22 +211,28 @@ def checkout_existing_member(request):
                 member_private_data = membership_form.save(commit=False)
                 member_private_data.membership_level = selected_membership
                 member_private_data.save()
-                messages.success(request, 'Member profille information was updated')
-            return redirect(reverse('checkout_success_renewal', args=[purchase.purchase_number]))
+                messages.success(
+                    request,
+                    'Member profille information was updated')
+            return redirect(reverse(
+                    'checkout_success_renewal',
+                    args=[purchase.purchase_number]))
         else:
             messages.error(
                 request,
                 "There was an errory with your form. \
                     Please double check your information."
-            )     
-    
+            )
+
     else:
         # opens view with member profile pre-populating form
         basket = request.session.get("basket", {})
         if not basket:
-            messages.error(request, "There's nothing in your basket at the moment")
+            messages.error(
+                request,
+                "There's nothing in your basket at the moment")
             return redirect(reverse("join"))
-        
+
         current_basket = basket_contents(request)
         total = current_basket['total']
         stripe_total = round(total * 100)
@@ -248,10 +265,13 @@ def checkout_existing_member(request):
 
 def checkout_success(request, purchase_number):
     """ Handle successful checkouts for new members. """
-    purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
+    purchase = get_object_or_404(
+        MembershipPurchase,
+        purchase_number=purchase_number
+        )
     member = request.user
     messages.success(request, f'Purchase successfully processed!')
-    
+
     if 'basket' in request.session:
         del request.session['basket']
 
@@ -266,10 +286,13 @@ def checkout_success(request, purchase_number):
 
 def checkout_success_renewal(request, purchase_number):
     """ Handle successful renewal checkouts for existing members """
-    purchase = get_object_or_404(MembershipPurchase, purchase_number=purchase_number)
+    purchase = get_object_or_404(
+        MembershipPurchase,
+        purchase_number=purchase_number
+        )
     member = request.user
     messages.success(request, f'Renewal successfully processed!')
-    
+
     if 'basket' in request.session:
         del request.session['basket']
 

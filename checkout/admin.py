@@ -9,10 +9,3 @@ class MembershipPurchaseAdmin(admin.ModelAdmin):
     list_display = ('purchase_number', 'member', 'membership_purchased', 'purchase_date')
     order = ('-date',)
     search_fields = ['member']
-
-
-
-
-
-
-
