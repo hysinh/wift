@@ -187,7 +187,8 @@ Custom models were created for Membership Purchases, Member Private Data, Member
 ![erd](documentation/readme/WIFT_ERD.drawio.png)
 </details>
   
-
+## Marketing / SEO
+text
 
 ## Features
 ### Navbar - top navigation
@@ -341,7 +342,7 @@ A user is prompted to sign in when they attempt to make a membership purchase or
 <details>
 <summary>Sign in Page</summary>
 
-![sign in](documentation/readme/features/screenshot_signin_laptop.png)
+![sign in](documentation/readme/features/screenshot_signin_page.png)
 </details>
 
 ### Sign Out Page
@@ -349,7 +350,7 @@ The member can sign out at any point.
 <details>
 <summary>Sign Out Page</summary>
 
-![sign out](documentation/readme/features/screenshot_signout.png)
+![sign out](documentation/readme/features/screenshot_signout_page.png)
 </details>
 
 ### Register Page
@@ -373,7 +374,7 @@ A Privacy Policy page communicates the WIFT privacy policy.
 <details>
 <summary>Privacy Policy</summary>
 
-![create profile](documentation/readme/features/screenshot_delete_booking.png)
+![create profile](documentation/readme/features/screenshot_privacy_policy.png)
 </details>
 
 ### 404 Error Page
@@ -455,7 +456,7 @@ If there is a server error, a 500 Error page will display.
   10. This program requires the use of a postgres database, the Django Webframe work, Bootstrap CSS library, Django Crispy Forms, Gunicorn, and Django Summernote.
 
   ## Testing
-  Please view all the testing documentation in [TESTING.md](TESTING.md) # NEED TO CREATE
+  Please view all the testing documentation in [TESTING.md](TESTING.md)
 
   
 ## Credits
