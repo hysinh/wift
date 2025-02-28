@@ -59,60 +59,80 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     <details >
     <summary>Home page (base.html and index.html)</summary>  
 
-    ![Hpme page](documentation/testing/html/screenshot_html_validation_indexpage.png)
+    ![Hpme page](documentation/testing/html/screenshot_html_validation_index.png)
     </details>
     <details >
     <summary>About page (about.html)</summary>  
 
-    ![Venue Hire page](documentation/testing/html/screenshot_html_validation_venuehirepage.png)
+    ![about page](documentation/testing/html/screenshot_html_validation_about.png)
     </details>
     <details>
-    <summary>About page (about.html)</summary>  
+    <summary>Events page (events.html)</summary>  
 
-    ![About page](documentation/testing/html/screenshot_html_validation_aboutpage.png)
+    ![events page](documentation/testing/html/screenshot_html_validation_events.png)
+    </details>
+    <details>
+    <summary>Fellowships page (fellowships.html)</summary>  
+
+    ![fellowships page](documentation/testing/html/screenshot_html_validation_fellowships.png)
+    </details>
+    <details>
+    <summary>Mentoring page (mentoring.html)</summary>  
+
+    ![mentoring page](documentation/testing/html/screenshot_html_validation_mentoring.png)
     </details>
     <details>
     <summary>Contact page (contact.html)</summary>  
 
-    ![Contact page](documentation/testing/html/screenshot_html_validation_contactpage.png)
+    ![Contact page](documentation/testing/html/screenshot_html_validation_contact.png)
     </details>
+    <details>
+    <summary>Sign up page (signup.html)</summary>  
+
+    ![Signup page](documentation/testing/html/screenshot_html_validation_signout.png)
+    </details>
+    <details>
+    <summary>Sign In page (login.html)</summary>  
+
+    ![signin page](documentation/testing/html/screenshot_html_validation_login.png)
+    </details>
+    <details>
+    <summary>Log Out page (logout.html)</summary>  
+
+    ![ogout page](documentation/testing/html/screenshot_html_validation_signout.png)
+    </details>    
+
+    #### Registered User Pages (Logged in)
+    <details >
+    <summary>Member Dashboard page (dashboard.html)</summary>  
+
+    ![Member Dashboard page](documentation/testing/html/screenshot_html_validation_dashboard.png)
+    </details>
+    <details >
+    <summary>Membership Purchases page (membership_purchases.html)</summary>  
+
+    ![receipts page](documentation/testing/html/screenshot_html_validation_dashboard_purchase_receipts.png)
+    </details>
+    <details >
+    <summary>Edit Account Info page (edit_private_data.html) - ERROR Detail - See error in the Unresolved Bugs Table below</summary>  
+
+    ![edit account page](documentation/testing/html/screenshot_html_validation_dashboard_edit_profile_error.png)
+    </details>
+    <details>
+    <summary>Sign out page (signout.html)</summary>  
+
+    ![Signout page](documentation/testing/html/screenshot_html_validation_signout.png)
+    </details>
+
     <details>
     <summary>Sign up page (signup.html) - ERRORS Detail - See error in Linter Error Table below</summary>  
 
-    ![Signup page](documentation/testing/html/screenshot_html_signup_errors1.png)
+    ![Signup page](documentation/testing/html/screenshot_html_signup.png)
     </details>
     <details>
     <summary>Sign Up page (signup.html) - ERRORS Detail 2 - See error in Linter Error Table below</summary>  
 
     ![Signup page](documentation/testing/html/screenshot_html_signup_errors2.png)
-    </details>
-    <details>
-    <summary>Sign In page (signin.html)</summary>  
-
-    ![Login page](documentation/testing/html/screenshot_html_signin.png)
-    </details>
-    
-
-    #### Registered User Pages (Logged in)
-    <details >
-    <summary>Booking Dashboard page (booking_dashboard.html)</summary>  
-
-    ![Booking Dashboard page](documentation/testing/html/screenshot_html_validation_bookingdashboard.png)
-    </details>
-    <details >
-    <summary>Request Booking page (request_booking.html)</summary>  
-
-    ![Request Booking page](documentation/testing/html/screenshot_html_validation_bookingrequestpage.png)
-    </details>
-    <details >
-    <summary>Edit Booking page (edit_booking.html)</summary>  
-
-    ![Edit Booking page](documentation/testing/html/screenshot_html_validation_editbooking.png)
-    </details>
-    <details>
-    <summary>Signout page (signout.html)</summary>  
-
-    ![Signout page](documentation/testing/html/screenshot_html_validation_signout.png)
     </details>
     
     #### Custom Error Pages
@@ -406,7 +426,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
-  | Error message in Edit Booking form is displaying incorrect message | Edit booking page | Updated error message to be more appropriate |
+  | The placeholder placed on the country field in the mode | Edit Account Info page | Updated error message to be more appropriate |
   | 500 Error message has wrong copy | 500 Error page | Updated error message to be more appropriate |
   | Parse error | styles.css | Remove errant character |
   | Family Name for font family | style.css | Add quotes around family name |
@@ -416,6 +436,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   
   ### Unfixed Bugs
   - Although there were some spots where I could have found a better solution, there were no bugs that I was able to find that I could not resolve unless otherwise noted.
+  | The placeholder placed on the country field in the member private data model is not acceptable though it was something in the Boutique Ado walkthrough project. | Edit Account Info page | Updated error message to be more appropriate |
   
   ### Unresolved Linter Code Errors
   | Bug | Line | Unresolved Reason |
