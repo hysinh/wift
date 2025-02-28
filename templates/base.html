@@ -98,15 +98,21 @@
             <li class="nav-item nav-link text-blue">
               Logged in as {{ user }}
             </li>
-            <a href="{% url 'dashboard' request.user.id %}">
-              <button class="button-login">Dashboard</button>
-            </a>
-            {% else %}
-            <a href="{% url 'account_login' %}" class="{% if request.path == login_url %}active{% endif %}">
-              <button class="button-login">LOGIN</button>
-            </a>
             {% endif %}
           </ul>
+          {% if user.is_authenticated %}
+          <div class="button-login">
+            <a href="{% url 'dashboard' request.user.id %}">Dashboard
+              <!-- <button class="button-login">Dashboard</button> -->
+            </a>
+          </div>
+          {% else %}
+          <div class="button-login">
+            <a href="{% url 'account_login' %}" class="{% if request.path == login_url %} active{% endif %}">LOGIN
+              <!-- <button class="button-login">LOGIN</button> -->
+            </a>
+          </div>
+          {% endif %}
         </div>
     </nav>
 
@@ -200,7 +206,7 @@
       </div>
     </footer>
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}

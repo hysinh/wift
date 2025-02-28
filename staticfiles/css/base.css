@@ -13,16 +13,21 @@ body {
 }
 
 /* GLOBAL TEXT STYLING */
-a, a:visited {
+/* a {
     color: #647232;
     text-decoration: none;
-}
+} */
 
-a:hover {
+/* a, a:visited {
+    color: #647232;
+    text-decoration: none;
+} */
+
+/* a:hover {
     color: #065a65;
     cursor: pointer;
     text-decoration: none;
-}
+} */
 
 .text-green {
     color: #647232;
@@ -109,13 +114,24 @@ a:hover {
 }
 
 .button-login {
-    background-color: #065a65;
+    background-color: red;
     color: #eeebda;
-    width: 150px;
+    width: 100px;
     border: none;
+    text-align: center;
     /* margin: 0px 5px; */
     padding: 5px 20px;
     border-radius: 5px;
+}
+
+.test-button {
+    background-color: red;
+    height: 50px;
+    width: 100px;
+}
+
+.button-login a {
+    color: #eeebda !important;
 }
 
 /* Bootstrap toasts */
