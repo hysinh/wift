@@ -111,11 +111,16 @@ a:hover {
 .button-login {
     background-color: #065a65;
     color: #eeebda;
-    width: 150px;
+    width: 120px;
     border: none;
+    text-align: center;
     /* margin: 0px 5px; */
     padding: 5px 20px;
     border-radius: 5px;
+}
+
+.button-login a:visited {
+    color: #eeebda;
 }
 
 /* Bootstrap toasts */
@@ -168,9 +173,13 @@ a:hover {
     top: 90px;
 }
 
-.button-join-us :hover {
-    background-color: #647232;
+.button-join-us a:hover {
+    color: #647232;
     cursor: pointer;
+}
+
+.button-join-us a:visited {
+    color: #fff;
 }
 
 #cover-text {   
