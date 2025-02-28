@@ -13,21 +13,16 @@ body {
 }
 
 /* GLOBAL TEXT STYLING */
-/* a {
+a, a:visited {
     color: #647232;
     text-decoration: none;
-} */
+}
 
-/* a, a:visited {
-    color: #647232;
-    text-decoration: none;
-} */
-
-/* a:hover {
+a:hover {
     color: #065a65;
     cursor: pointer;
     text-decoration: none;
-} */
+}
 
 .text-green {
     color: #647232;
@@ -65,27 +60,6 @@ body {
     background-color: #c68e07;
 }
 
-/* test styles */
-.test-blue {
-    background-color: blue;
-}
-
-.test-orange {
-    background-color: orange;
-}
-
-.test-red {
-    background-color: red;
-}
-
-.test-aqua {
-    background-color: aqua;
-}
-
-.test-purple {
-    background-color: purple;
-}
-
 /* Navigation */
 .navbar-brand {
     padding-right: 25px;
@@ -114,24 +88,17 @@ body {
 }
 
 .button-login {
-    background-color: red;
+    background-color: #065a65;
     color: #eeebda;
-    width: 100px;
+    width: 120px;
     border: none;
     text-align: center;
-    /* margin: 0px 5px; */
     padding: 5px 20px;
     border-radius: 5px;
 }
 
-.test-button {
-    background-color: red;
-    height: 50px;
-    width: 100px;
-}
-
-.button-login a {
-    color: #eeebda !important;
+.button-login a:visited {
+    color: #eeebda;
 }
 
 /* Bootstrap toasts */
@@ -184,9 +151,13 @@ body {
     top: 90px;
 }
 
-.button-join-us :hover {
-    background-color: #647232;
+.button-join-us a:hover {
+    color: #647232;
     cursor: pointer;
+}
+
+.button-join-us a:visited {
+    color: #fff;
 }
 
 #cover-text {   
@@ -344,6 +315,16 @@ body {
 }
 
 /* Edit Public Profile Page */
+.button-delete {
+    font-family: Poppins, sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    width: auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: red;
+}
+
 .btn-danger {
     background-color: red !important;
 }

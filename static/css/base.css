@@ -60,27 +60,6 @@ a:hover {
     background-color: #c68e07;
 }
 
-/* test styles */
-.test-blue {
-    background-color: blue;
-}
-
-.test-orange {
-    background-color: orange;
-}
-
-.test-red {
-    background-color: red;
-}
-
-.test-aqua {
-    background-color: aqua;
-}
-
-.test-purple {
-    background-color: purple;
-}
-
 /* Navigation */
 .navbar-brand {
     padding-right: 25px;
@@ -114,7 +93,6 @@ a:hover {
     width: 120px;
     border: none;
     text-align: center;
-    /* margin: 0px 5px; */
     padding: 5px 20px;
     border-radius: 5px;
 }
