@@ -79,9 +79,7 @@
                 <div class="container-membership pb-4">
                     <hr>
                     <h5>{{ category.name }}</h5>
-                    <p>
-                        {{ category.description|safe }}
-                    </p> 
+                    {{ category.description|safe }}
                     <p>
                         <span class="price">Annual Dues: €{{ category.new_member_price }}</span>
                     </p>
