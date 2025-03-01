@@ -341,12 +341,17 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
   ### Search Engine Optimization, Accessibility, Best Practices, & Performance
   - #### Google Lighthouse Audits
-    Google Lighthouse was used to assess each page on it's performance, accessibility, Best Practices, and SEO. Using google fonts, font awesome as well as an Google maps embed all affected the performance of different pages as they are considered render-blocking resources. For my mobile performance assessments, the ratings were a little low due to the featured image file size. Although I used a smaller image set to 800px x 450px which affected the ratings only a little, the file size was still a bit larger than the Lighthouse standard. I decided that I didn't want to compromise the image size or quality further as it is an integral part of the website branding.
+    Google Lighthouse was used to assess each page on it's performance, accessibility, Best Practices, and SEO. Using Google fonts, Bootstrap, Font Awesome as well Stripe greatly affected the performance of the majority pages especially on the mobile size as they are considered render-blocking resources. I swapped out all my images to smaller images which only affected the ratings slightly. Stripe's cookies also greatly decreased the Best Practices ratings.
     #### Home Page
     - <details >
       <summary>mobile</summary>  
 
       ![Hpme page](documentation/testing/lighthouse/screenshot_lighthouse_home_mobile.png)
+      </details>
+      <details >
+      <summary>mobile - details</summary>  
+
+      ![Hpme page](documentation/testing/lighthouse/screenshot_lighthouse_home_mobile2.png)
       </details>
     - <details >
       <summary>desktop</summary>  
@@ -354,38 +359,55 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
       ![Hpme page](documentation/testing/lighthouse/screenshot_lighthouse_home_desktop.png)
       </details>
 
-    #### Venue Hire Page
-    Using images from Cloudinary had a big impact on Best Practices assessments as they are considered insecure requests. 
-    - <details >
-      <summary>mobile</summary>  
-
-      ![Venue Hire page](documentation/testing/lighthouse/screenshot_lighthouse_venuehire_mobile.png)
-      </details>
-    - <details >
-      <summary>mobile - details</summary>  
-
-      ![Venue Hire page](documentation/testing/lighthouse/screenshot_lighthouse_venuehire_bestpractices_issue.png)
-      </details> 
-    - <details >
-      <summary>desktop</summary>  
-
-      ![Venue Hire page](documentation/testing/lighthouse/screenshot_lighthouse_venuehire_desktop.png)
-      </details>
-
     #### About Page
-    - <details>
+    - <details >
       <summary>mobile</summary>  
 
       ![About page](documentation/testing/lighthouse/screenshot_lighthouse_about_mobile.png)
       </details>
-    - <details>
+    - <details >
       <summary>desktop</summary>  
 
       ![About page](documentation/testing/lighthouse/screenshot_lighthouse_about_desktop.png)
       </details>
+
+    #### Fellowships Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Fellowships page](documentation/testing/lighthouse/screenshot_lighthouse_fellowships_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Fellowships page](documentation/testing/lighthouse/screenshot_lighthouse_fellowships_desktop.png)
+      </details>
     
+    #### Mentoring Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Mentoring page](documentation/testing/lighthouse/screenshot_lighthouse_mentoring_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Mentoring page](documentation/testing/lighthouse/screenshot_lighthouse_mentoring_desktop.png)
+      </details>
+
+    #### Events Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Events page](documentation/testing/lighthouse/screenshot_lighthouse_events_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Events page](documentation/testing/lighthouse/screenshot_lighthouse_events_desktop.png)
+      </details>
+
     #### Contact Page
-    Best Practices assessment was affected by the Google Maps embed that I used in the contact information section.
     - <details>
       <summary>mobile</summary>  
 
@@ -396,103 +418,116 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
       ![Contact page](documentation/testing/lighthouse/screenshot_lighthouse_contact_desktop.png)
       </details>
-    - <details>
-      <summary>Best Practices detail - Google Maps</summary>  
 
-      ![Contact page](documentation/testing/lighthouse/screenshot_lighthouse_contact_bestpractices_issues.png)
-      </details>
-    #### Sign Up Page
+    #### Join Page
     - <details>
       <summary>mobile</summary>  
 
-      ![Register page](documentation/testing/lighthouse/screenshot_lighthouse_signup_mobile.png)
+      ![Join page](documentation/testing/lighthouse/screenshot_lighthouse_join_mobile.png)
       </details>
     - <details>
       <summary>desktop</summary>  
 
-      ![Register page](documentation/testing/lighthouse/screenshot_lighthouse_signout_desktop.png)
+      ![Join page](documentation/testing/lighthouse/screenshot_lighthouse_join_desktop.png)
       </details>
-    #### Sign in Page
+
+    #### Basket Page
     - <details>
       <summary>mobile</summary>  
 
-      ![Login page](documentation/testing/lighthouse/screenshot_lighthouse_signin_mobile.png)
+      ![Basket page](documentation/testing/lighthouse/screenshot_lighthouse_basket_mobile.png)
       </details>
     - <details>
       <summary>desktop</summary>  
 
-      ![Login page](documentation/testing/lighthouse/screenshot_lighthouse_signin_desktop.png)
+      ![Basket page](documentation/testing/lighthouse/screenshot_lighthouse_basket_desktop.png)
       </details>
-    
+
+    #### Checkout Page
+    Stripe's payment form greatly affected the load time of this page on both the mobile and desktop.
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Checkout page](documentation/testing/lighthouse/screenshot_lighthouse_checkout_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Checkout page](documentation/testing/lighthouse/screenshot_lighthouse_checkout_desktop.png)
+      </details>
+
+    #### Checkout Success Page
+    Stripe's payment form greatly affected the load time of this page on both the mobile and desktop.
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Checkout success page](documentation/testing/lighthouse/screenshot_lighthouse_checkout_success_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Checkout success page](documentation/testing/lighthouse/screenshot_lighthouse_checkout_success_desktop.png)
+      </details>
+
     #### Registered User Pages (Logged in)
-    #### Booking Dashboard page
+    #### Dashboard Page
     - <details>
       <summary>mobile</summary>  
 
-      ![Booking Dashboard page](documentation/testing/lighthouse/screenshot_lighthouse_bookingdashboard_mobile.png)
-      </details>
-    - <details>
-      <summary>desktop</summary>  
-
-      ![Booking Dashboard page](documentation/testing/lighthouse/screenshot_lighthouse_bookingdashboard_desktop.png)
-      </details>
-    
-    #### Request Booking page
-    - <details >
-      <summary>mobile</summary>  
-
-      ![Request Booking page](documentation/testing/lighthouse/screenshot_lighthouse_requestbooking_mobile.png)
-      </details>
-    - <details >
-      <summary>desktop</summary>  
-
-      ![Request Booking page](documentation/testing/lighthouse/screenshot_lighthouse_requestbooking_desktop.png)
-      </details>
-    
-    #### Edit Booking page
-    - <details >
-      <summary>mobile</summary>  
-
-      ![Edit Booking page](documentation/testing/lighthouse/screenshot_lighthouse_editbooking_mobile.png)
-      </details>
-    - <details >
-      <summary>desktop</summary>  
-
-      ![Edit Booking page](documentation/testing/lighthouse/screenshot_lighthouse_requestbooking_desktop.png)
-      </details>
-
-    #### Sign Out Page
-    - <details>
-      <summary>mobile</summary>  
-
-      ![Signout page](documentation/testing/lighthouse/screenshot_lighthouse_signout_mobile.png)
+      ![Dashboard page](documentation/testing/lighthouse/screenshot_lighthouse_dashboard_mobile.png)
       </details>
     - <details>
       <summary>desktop</summary>  
 
-      ![Signout page](documentation/testing/lighthouse/screenshot_lighthouse_signout_desktop.png)
+      ![Dashboard page](documentation/testing/lighthouse/screenshot_lighthouse_dashboard_desktop.png)
       </details>
-    
-    #### Custom Error Pages
-    - <details >
-      <summary>404 Error Page - mobile</summary>  
 
-      ![404 Error page](documentation/testing/lighthouse/screenshot_lighthouse_404error_mobile.png)
+    #### Purchase Receipts Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Purchase Receipts page](documentation/testing/lighthouse/screenshot_lighthouse_purchases_receipts_mobile.png)
       </details>
-    - <details >
-      <summary>404 Error Page - desktop</summary>  
+    - <details>
+      <summary>desktop</summary>  
 
-      ![404 Error page](documentation/testing/lighthouse/screenshot_lighthouse_404error_desktop.png)
+      ![Purchase Receipts page](documentation/testing/lighthouse/screenshot_lighthouse_purchases_receipts_desktop.png)
       </details>
-    - <details >
-      <summary>500 Error page - mobile</summary>  
 
-      ![500 page](documentation/testing/lighthouse/screenshot_lighthouse_500error_mobile.png)
+    #### Edit Account Info Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Edit Account Info page](documentation/testing/lighthouse/screenshot_lighthouse_edit_profile_mobile.png)
       </details>
-    - <details >
-      <summary>500 Error page - desktop</summary>  
+    - <details>
+      <summary>desktop</summary>  
 
-      ![500 page](documentation/testing/lighthouse/screenshot_lighthouse_500error_desktop.png)
+      ![Edit Account Info page](documentation/testing/lighthouse/screenshot_lighthouse_edit_profile_desktop.png)
+      </details>
+
+    #### Create Public Profile Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Create Public Profile page](documentation/testing/lighthouse/screenshot_lighthouse_create_public_profile_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Create Public Profile page](documentation/testing/lighthouse/screenshot_lighthouse_create_public_profile_desktop.png)
+      </details>
+
+    #### Member Directory Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Member Directory page](documentation/testing/lighthouse/screenshot_lighthouse_member_directory_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Member Directory page](documentation/testing/lighthouse/screenshot_lighthouse_member_directory_desktop.png)
       </details>
   
   
@@ -500,7 +535,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   I did not have the time write unit tests for this project.
 
   ### Manual Testing
-  Manual testing was performed on the website checking to ensure pages rendered correctly, input forms worked correctly, and a user was able to create, view, edit, and delete their bookings.
+  Manual testing was performed on the website checking to ensure pages rendered correctly, input forms worked correctly, and a user was able to register for an account, purchase a membership, and modify their account information from the member dashboard.
 
   #### Browsers
   Browser compatibility was checked on Google Chrome, Microsoft Edge, Brave, and Opera. For manual testing, the following browsers were used:
@@ -574,7 +609,6 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Sign out page | Does the Sign out page render correctly? | Yes |
   |  | Does the sign out page allow a user to sign out? | Yes |
   | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | Yes |
-  | 500 Error page | Does the 500 error page render correctly when there is a server error | --- |
   | Admin panel | Can only superusers access the admin panel? | Yes |
   
 
@@ -597,5 +631,6 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | The placeholder set on select option for the country field for the form caused an error. | checkout/checkout.html - line 95, checkout/checkout_existing_member.html - line 92 | This was bug was not resolved. Please see line above for reason. |
   | h1 tag with no content | checkout/checkout.html - line 131, checkout/checkout_existing_member.html - line 128 | The h1 tag is used to hold the loading spinner. This was loading spinner solution was derived from the Boutique Ado project, I chose to leave the code as it was and will resolve this in a future version.
   | There were a few places that were greater than the 79 character length max | checkout/views.py - 1, 75, 109, 111  | Was unable to shorten the lines to resolve as caused more errors when shortened |
-  | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
-  | HTML errors | account/signup.html | These html errors were inside the built in Django signup form |
+  | Bootstrap background color on drop down menu is blue | base.css | I had originally set the background color to white but when testing on the last day, I noticed that the visted background colour was blue behind the drop down item on the navigation. I attempted to override the Bootstrap styles with a class but could not get the desired white background. I was unable to resolve this in the time constraint that I had for this project. |
+  | When the toasts are closed, it leaves behind a small white circle on the top of the page which disappears upon refresh | Toasts | I attempted to find the root of this but was unable to figure out why this circle appears or how to remove it. | 
+  
