@@ -294,7 +294,7 @@ The Contact page features basic contact information for WIFT and telephone detai
 </details>
 
 ### Member Dashboard
-The Member Dashboard is special interface that members can view their membership details, edit personal details like their address, and create a public profile that displays in the Member Directory. At this time, the Member Directory is only accessible to members.The Member Dashboard features a dashboard navigation on the left that allows a member to navigate to view purchase receipts, edit their personal data, create/edit their public profile, view the membership directory, and log out of the membership dashboard. On the dashboards main page, the member can view their current personal details, their public profile details if they have one, and their most recent membership purchase.
+The Member Dashboard is a special interface that members can view their membership details, edit personal details like their address, and create a public profile that displays in the Member Directory. At this time, the Member Directory is only accessible to members.The Member Dashboard features a dashboard navigation on the left that allows a member to navigate to view purchase receipts, edit their personal data, create/edit their public profile, view the membership directory, and log out of the membership dashboard. On the dashboards main page, the member can view their current personal details, their public profile details if they have one, and their most recent membership purchase.
 <details>
 <summary>Member Dashboard</summary>
 
@@ -509,7 +509,7 @@ If the user attempts to navigate to a non-existing page, the 404 Error page will
   - Bootstrap documentation
   - https://developer.mozilla.org/
   - https://stackoverflow.com/
-  
+
   
 
 

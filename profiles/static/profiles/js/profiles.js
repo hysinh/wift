@@ -18,7 +18,6 @@ const deleteConfirm = document.getElementById("deleteConfirm");
 * the user for confirmation before deletion.
 */
 
-console.log("hello");
 for (let button of deleteButtons) {
   button.addEventListener("click", (e) => {
     let profileId = e.target.getAttribute("data-profile_id");

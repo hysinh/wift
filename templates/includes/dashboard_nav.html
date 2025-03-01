@@ -1,7 +1,6 @@
 <div class="container-dashboard-nav">
     <!-- Member's Profile Detail -->
     <div class="dashboard-nav-element dashboard-profile">
-        <!-- <div class="dashboard-profile-img">profile image</div> -->
         <div class="dashboard-member-name text-center">{{ member.default_firstname }} {{ member.default_lastname }}</div>
         <div class="text-muted text-center">{{ member.member.username }} </div>
         <div class="text-muted text-center">{{ member.member.email }} </div>
@@ -37,12 +36,6 @@
             Membership Directory
         </a>
     </div>
-    <!-- <div class="dashboard-nav-element">
-        <a href="#">
-            <span class="icon"><i class="fa-regular fa-calendar"></i></span>
-            Member Events
-        </a>
-    </div> -->
     <div class="dashboard-nav-element">
         <a href="{% url 'account_logout' %}">
             <span class="icon"><i class="fa-solid fa-right-from-bracket"></i></span>
