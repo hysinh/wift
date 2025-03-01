@@ -36,7 +36,7 @@ ALLOWED_HOSTS = [
     'localhost',
     'localhost:8000',
     '127.0.0.1:8000',
-    'wift-nsmith-c3ae5713a782.herokuapp.com', 
+    'wift-nsmith-c3ae5713a782.herokuapp.com',
 ]
 
 
