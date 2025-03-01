@@ -14,6 +14,8 @@ I was approached before I began this course by a similar organisation to WIFT. T
   * [Project Goals](#project-goals)
   * [User Stories](#user-stories)
   * [Site Admin Stories](#site-admin-stories)
+* [Marketing Plan](#marketing-plan)
+  * [Social Media](#social-media)
 * [Agile Methodology](#agile-methodology)
   * [Kanban Board](#kanban-board)
   * [UI Design](#design)
@@ -64,6 +66,21 @@ I chose this very specific idea because I was approached by a similar Irish orga
   3. As a Super User or Admin, I can access the admin panel/dashboard so that I can edit member information and make/edit/review/update/delete member data.
   4. As a Site admin, I can view messages sent to the organisaiton via the website contact form.
 
+
+## Marketing Plan
+WIFT is a non-profit organisation that focuses on the professional community of women who work in the film and television industry. The organisation provides professional development opportunities, networking, and support for women in the industry through coordination with other organisations and events.
+
+An organisation like WIFT is generally funded by grants and similar funding as well as annual membership fees/dues from their members. As such, to provide value to their members, WIFT organises activities such as promote the work of their members and provide opportunities for their members to network with each other and the greater film and television industry. WIFT continues to design dynamic program of high value to its members and the greater community and utilises these events and activities to promote membership to its niche target demographic.
+
+### Social Media
+As part of their marketing/public relations strategy, WIFT utilises social media like Facebook and Instagram to connect with members and the greater film and television community to promote events, member's work, and WIFT programming.
+
+<details >
+  <summary>Facebook</summary>  
+
+  ![color scheme](documentation/readme/facebook_mockup_wift.png)
+  </details>
+  
 
 ## Agile Methodology
 The Agile Methodology was the project management approach used for this project. I attempted to break the project into phases and followed a cycle of planning, executing, and evaluating. I struggled with how to organise this properly on our Portfolio Project #4. So, I hope I was more successful with my final project.
@@ -188,20 +205,6 @@ Custom models were created for Membership Purchases, Member Private Data, Member
 
 ![erd](documentation/readme/WIFT_ERD.drawio.png)
 </details>
-  
-## Marketing Plan
-WIFT is a non-profit organisation that focuses on the professional community of women who work in the film and television industry. The organisation provides professional development opportunities, networking, and support for women in the industry through coordination with other organisations and events.
-
-An organisation like WIFT is generally funded by grants and similar funding as well as annual membership fees/dues from their members. As such, to provide value to their members, WIFT organises activities such as promote the work of their members and provide opportunities for their members to network with each other and the greater film and television industry. WIFT continues to design dynamic program of high value to its members and the greater community and utilises these events and activities to promote membership to its niche target demographic.
-
-### Social Media
-As part of their marketing/public relations strategy, WIFT utilises social media like Facebook and Instagram to connect with members and the greater film and television community to promote events, member's work, and WIFT programming.
-
-<details >
-  <summary>Facebook</summary>  
-
-  ![color scheme](documentation/readme/facebook_mockup_wift.png)
-  </details>
 
 
 ## Features
@@ -399,16 +402,10 @@ If the user attempts to navigate to a non-existing page, the 404 Error page will
 ![404 Error](documentation/readme/features/screenshot_404error.png)
 </details>
 
-### 500 Error Page
-If there is a server error, a 500 Error page will display.
-<details>
-<summary>500 Error Page</summary>
-
-![500 Error](documentation/readme/features/screenshot_500error.png)
-</details>
 
 ### Future Development
-- text
+- For future development, I would like to allow users to upload an image to their profile. I also envisioned that their public profiles would be more comprehensive with potentially allowing other members to contact them. I think that there would also be value to having a listing of the member directory that public displays as motivation to potential members to access the full member directory once they purchase a membership.
+- Also due to time constraints, I was unable to create an app for the events section as I would like site admins to be able to add events to event tab that provide more comprehensive information and display a calendar of events for easy search. A member dashboard version would display events that are only open to members and potentially members at different membership levels to provide programming geared more specifically to women where at different levels of their professional journey.
 
 
 ## Technologies
@@ -448,16 +445,13 @@ If there is a server error, a 500 Error page will display.
   9. Once your app has been created, it directs you to a new screen.
   10. Navigate across the top of the screen and click on the "Settings" tab.
   11. Navigate down the page and click on the "Reveal Config Vars" button.
-  12. 
-  13. For the second key, type in "DATABASE_URL" and then type in your unique Postgres database url in its corresponding value.
-  14. Then in the third key, type in "SECRET_KEY" and your secret key in to the corresponding value.
-  15. Under Buildpacks, add the <b>python</b> buildpack. 
+  12. Add in the keys and values for all the database and stripe secret keys.
   16. After this is complete, navigate to the Deploy tab from the menu across the top of the page. Click on "GitHub" under Deployment method and provide the required access when prompted.
   17. Choose Automatic or Manual deployment.
   18. Click "Deploy" when ready to deploy.
 
 
-  #### How to clone the Wimpleton House Booking App & make changes:
+  #### How to clone the WIFT site & make changes:
   1. Open the [WIFT repository](https://github.com/hysinh/wift) on GitHub.
   2. Navigate to the CODE link on the navigation across the top.
   3. Then, navigate to the green CODE button on the right side and click.
@@ -475,15 +469,51 @@ If there is a server error, a 500 Error page will display.
   
 ## Credits
 ### Code
-- I reused the delete modal used in in the Code Institute Django Blog walk through project
+- I reused the delete modal used in in the Code Institute Django Blog walk through project.
+- I also reused some small portions of the Code Institute Django Boutique Ado walkthrough project such as the loading spinner and the toasts.
+- I used the Stripe.com code to set up the Stripe payment system.
+- https://www.xml-sitemaps.com/ for generating the sitemap.xml file.
+- [Bootstrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
 
 ### Content
 - https://fonts.google.com/
 - https://fontawesome.com/  
+
 - #### Images - [Pexels](https://www.pexels.com/) was my primary image source
-  - Photo by xx: link
+  - Photo by Alexander Suhorucov: https://www.pexels.com/photo/multiethnic-cheerful-colleagues-talking-about-job-and-working-with-documents-6457515/
+  - Photo by cottonbro studio: https://www.pexels.com/photo/a-woman-holding-a-camera-5265827/
+  - Photo by cottonbro studio: https://www.pexels.com/photo/woman-in-white-long-sleeve-shirt-sitting-beside-woman-in-blue-long-sleeve-shirt-5990042/
+  - Photo by cottonbro studio: https://www.pexels.com/photo/group-of-people-having-a-meeting-6896221/
+  - Photo by Daniel Xavier: https://www.pexels.com/photo/selective-focus-photography-of-woman-1239288/
+  - Photo by Christina Morillo: https://www.pexels.com/photo/two-woman-sitting-on-sofa-while-using-laptops-1181274/
+  - Photo by Christina Morillo: https://www.pexels.com/photo/woman-smiling-and-holding-teal-book-1181424/
+  - Photo by Following NYC: https://www.pexels.com/photo/video-tape-12004627/
+  - Photo by Dani Hart: https://www.pexels.com/photo/women-sitting-on-chairs-inside-a-room-3719037/
+  - Photo by Isaac Udoye: https://www.pexels.com/photo/close-up-shot-of-camera-screen-14121867/
+  - Photo by Jaycee300s : https://www.pexels.com/photo/female-fashion-model-posing-in-front-of-a-movie-camera-14783477/
+  - Photo by Lê Minh: https://www.pexels.com/photo/woman-in-black-top-and-black-cap-3062606/
+  - Photo by Lê Minh: https://www.pexels.com/photo/photo-of-man-holding-camrea-3062539/
+  - Photo by Ron Lach : https://www.pexels.com/photo/clapperboard-in-woman-hands-while-filming-in-bar-9810381/
+  - Photo by Andrea Piacquadio: https://www.pexels.com/photo/selective-photography-of-smiling-woman-948873/
+  - Photo by The OurWhisky Foundation 🥃: https://www.pexels.com/photo/female-whisky-drinkers-cocktails-friends-new-year-christmas-party-friends-8328-credit-ourwhisky-foundation_christina-kernohan-19095111/
+  - Photo by RF._.studio: https://www.pexels.com/photo/photo-of-women-at-the-meeting-3810792/
+  - Photo by Kathrine Joy Sorongon: https://www.pexels.com/photo/a-woman-wearing-headset-sitting-near-the-monitors-10188611/
   - 
+
 - #### Code resources
-  - code resources
+  - Django: multiple models in one template using forms: https://stackoverflow.com/questions/569468/django-multiple-models-in-one-template-using-forms
+  - Editing multiple objects in Django with forms: https://collingrady.wordpress.com/2008/02/18/editing-multiple-objects-in-django-with-newforms/
+  - Django documentation: exists(): https://docs.djangoproject.com/en/3.2/ref/models/querysets/#exists
+  - Remove the blue border outline from your webpage in Chrome with Bootstrap 4 / CSS: https://medium.com/@tina.gada7/remove-the-blue-border-outline-from-your-webpage-in-chrome-with-bootstrap-4-css-9dd3a2b77d41
+  - Stripe.com documentation
+  - Bootstrap documentation
+  - https://developer.mozilla.org/
+  - https://stackoverflow.com/
+  
+  
+
+
+
+
 
   
