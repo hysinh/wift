@@ -15,11 +15,16 @@
 <!doctype html>
 <html lang="en">
   <head>
-
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Meta tags for search engines -->
+    <title>WIFT - Guild of Women in Film & Television - Ireland {% block extra_title %}{% endblock %}</title>
+    <meta name="description"
+      content="WIFT - Guild of Women in Film & Television - Ireland - Organisation supporting the work and professional development of the women in the film and televisions in Ireland. Building a community based on supporting, educating, and empowering women.">
+    <meta name="keywords"
+      content="Women in Film, women in tv, women in television, female film networking, female film jobs, women in film and television, female cinematographers ireland, women in film and television UK Ireland, women in film and television jobs, women film jobs UK">
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/wift_favicon_32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/wift_favicon_16x16.png' %}">
@@ -52,8 +57,6 @@
 
     {% block extra_js %}
     {% endblock %}
-
-    <title>WIFT {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
     <!-- Navigation -->
