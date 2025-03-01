@@ -4,28 +4,33 @@ from membership.forms import RegistrationForm
 from .forms import ContactForm
 from django.contrib import messages
 
-# Create your views here.
 
+# Create your views here.
 # WIFT Public pages
 def index(request):
     """ A view to return the index page """
     return render(request, 'public/index.html')
 
+
 def about(request):
     """ A view to return the about page """
     return render(request, 'public/about.html')
+
 
 def fellowships(request):
     """ A view to return the Fellowships page """
     return render(request, 'public/fellowships.html')
 
+
 def mentoring(request):
     """ A view to return the Mentoring page """
     return render(request, 'public/mentoring.html')
 
+
 def events(request):
     """ A view to return the Events page """
     return render(request, 'public/events.html')
+
 
 def contact(request):
     """
@@ -41,9 +46,10 @@ def contact(request):
 
             messages.success(
                 request,
-                "Thank you for your message. Someone from our team with contact you shortly.",
+                "Thank you for your message. Someone from our\
+                      team with contact you shortly.",
             )
-            
+
             return redirect("contact")
 
         else:
@@ -56,18 +62,20 @@ def contact(request):
 
     return render(request, "public/contact.html", context)
 
+
 def join(request):
     """ A view to return the Join page """
     form = RegistrationForm()
     context = {}
-    
+
     categories = MembershipCategory.objects.all()
     context = {
         'form': form,
         'categories': categories,
     }
-    
+
     return render(request, 'public/join.html', context)
+
 
 def privacy_policy(request):
     """ A view to return the Privacy Policy page """

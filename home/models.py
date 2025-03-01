@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Contact(models.Model):
     """
@@ -13,6 +14,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"Contact Form Inquiry from {self.name}"
-    
+
     class Meta:
         verbose_name_plural = 'Messages from Website'
