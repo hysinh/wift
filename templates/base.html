@@ -61,7 +61,7 @@
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light">
-      <a class="navbar-brand" href="{% url 'home' %}">
+      <a class="navbar-brand" href="{% url 'home' %}" aria-label="Opens the WIFT Home page">
         <img src="{% static 'images/WIFT_logo.png' %}" height="50" alt="WIFT- Women in Film and Television Ireland">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -71,32 +71,32 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link {% if request.path == home %}active{% endif %}" href="{% url 'home' %}">home <span class="sr-only">(current)</span></a>
+              <a class="nav-link {% if request.path == home %}active{% endif %}" href="{% url 'home' %}" aria-label="Opens the WIFT Home page">home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == about %}active{% endif %}" href="{% url 'about' %}">about</a>
+              <a class="nav-link {% if request.path == about %}active{% endif %}" href="{% url 'about' %}" aria-label="Opens the WIFT About Page">about</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
                 programs
               </a>
               <div class="dropdown-menu">
-                <a class="dropdown-item {% if request.path == fellowships %}active{% endif %}" href="{% url 'fellowships' %}"><i class="fa-solid fa-caret-right"></i> fellowships</a>
-                <a class="dropdown-item {% if request.path == mentoring %}active{% endif %}" href="{% url 'mentoring' %}"><i class="fa-solid fa-caret-right"></i> mentor program</a>
+                <a class="dropdown-item {% if request.path == fellowships %}active{% endif %}" href="{% url 'fellowships' %}" aria-label="Opens the WIFT Fellowships Page"><i class="fa-solid fa-caret-right"></i> fellowships</a>
+                <a class="dropdown-item {% if request.path == mentoring %}active{% endif %}" href="{% url 'mentoring' %}" aria-label="Opens the WIFT Mentoring Page"><i class="fa-solid fa-caret-right"></i> mentor program</a>
               </div>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == events %}active{% endif %}" href="{% url 'events' %}">events</a>
+              <a class="nav-link {% if request.path == events %}active{% endif %}" href="{% url 'events' %}" aria-label="Opens the WIFT Events Page">events</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == contact %}active{% endif %}" href="{% url 'contact' %}">contact</a>
+              <a class="nav-link {% if request.path == contact %}active{% endif %}" href="{% url 'contact' %}" aria-label="Opens the WIFT Contact Page">contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link {% if request.path == join %}active{% endif %}" href="{% url 'join' %}">join WIFT</a>
+              <a class="nav-link {% if request.path == join %}active{% endif %}" href="{% url 'join' %}" aria-label="Opens the WIFT Join - Membership Page">join WIFT</a>
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-              <a class="nav-link {% if request.path == logout %}active{% endif %}" href="{% url 'account_logout' %}">log out</a>
+              <a class="nav-link {% if request.path == logout %}active{% endif %}" href="{% url 'account_logout' %}" aria-label="Opens the WIFT Log Out Page">log out</a>
             </li>
             <li class="nav-item nav-link text-blue">
               Logged in as {{ user }}
@@ -105,14 +105,12 @@
           </ul>
           {% if user.is_authenticated %}
           <div class="button-login">
-            <a href="{% url 'dashboard' request.user.id %}">Dashboard
-              <!-- <button class="button-login">Dashboard</button> -->
+            <a href="{% url 'dashboard' request.user.id %}" aria-label="Opens the WIFT Member Dashboard">Dashboard
             </a>
           </div>
           {% else %}
           <div class="button-login">
-            <a href="{% url 'account_login' %}" class="{% if request.path == login_url %} active{% endif %}">LOGIN
-              <!-- <button class="button-login">LOGIN</button> -->
+            <a href="{% url 'account_login' %}" class="{% if request.path == login_url %} active{% endif %}" aria-label="Opens the WIFT Login Page">LOGIN
             </a>
           </div>
           {% endif %}
