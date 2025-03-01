@@ -6,6 +6,8 @@
 ## Introduction
 The Guild of Women in Film & Television - Ireland, or WIFT, website is a full-stack, e-commerce-based, web application created with HTML, CSS, JS, Python, the Django web framework and the Bootstrap library. This website application allows user to view the programs and events available to the creater WIFT community and encourages women in the industry to join the organisation for access to it's networking opportunities and access to educational and mentoring opportunities. Visitors to the website are able to view events, programs, and membership opportunities on the website. If the user chooses to join, they can select a membership level, register as a site user, and purchase this membership online. This purchase and registration allows the user to access a member dashboard that allows them to manage their personal details, their public profile published in a member directory, and to view that member directory as well as past membership purchases.
 
+I was approached before I began this course by a similar organisation to WIFT. They requested a bid for the redesign of their current website. Although I ultimately declined to bid for the project, I wanted to use the idea for this project as the starting point for my own work to investigate how I would develop and code the backend of a similar project.
+
 ## CONTENTS  
   
 * [User Experience](#user-experience)
@@ -80,7 +82,7 @@ I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Cou
 
 - ### Issues
   I had 26 issues:
-  - 3 Epics:
+  - 4 Epics:
     - Epic 1:
       - Preliminary Work - Research / Planning for site development
     - Epic 2:
@@ -187,8 +189,20 @@ Custom models were created for Membership Purchases, Member Private Data, Member
 ![erd](documentation/readme/WIFT_ERD.drawio.png)
 </details>
   
-## Marketing / SEO
-text
+## Marketing Plan
+WIFT is a non-profit organisation that focuses on the professional community of women who work in the film and television industry. The organisation provides professional development opportunities, networking, and support for women in the industry through coordination with other organisations and events.
+
+An organisation like WIFT is generally funded by grants and similar funding as well as annual membership fees/dues from their members. As such, to provide value to their members, WIFT organises activities such as promote the work of their members and provide opportunities for their members to network with each other and the greater film and television industry. WIFT continues to design dynamic program of high value to its members and the greater community and utilises these events and activities to promote membership to its niche target demographic.
+
+### Social Media
+As part of their marketing/public relations strategy, WIFT utilises social media like Facebook and Instagram to connect with members and the greater film and television community to promote events, member's work, and WIFT programming.
+
+<details >
+  <summary>Facebook</summary>  
+
+  ![color scheme](documentation/readme/facebook_mockup_wift.png)
+  </details>
+
 
 ## Features
 ### Navbar - top navigation
