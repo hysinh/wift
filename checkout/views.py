@@ -15,6 +15,7 @@ import json
 
 
 @require_POST
+@login_required()
 def cache_checkout_data(request):
     """
     Adds basket and username information in the Stripe metadata
@@ -83,9 +84,12 @@ def checkout(request):
                 member_data = {
                     'default_firstname': request.POST["default_firstname"],
                     'default_lastname': request.POST["default_lastname"],
-                    'default_street_address1': request.POST["default_street_address1"],
-                    'default_street_address2': request.POST["default_street_address2"],
-                    'default_town_or_city': request.POST["default_town_or_city"],
+                    'default_street_address1':
+                        request.POST["default_street_address1"],
+                    'default_street_address2':
+                        request.POST["default_street_address2"],
+                    'default_town_or_city':
+                        request.POST["default_town_or_city"],
                     'default_county': request.POST["default_county"],
                     'default_postcode': request.POST["default_postcode"],
                     'default_country': request.POST["default_country"],

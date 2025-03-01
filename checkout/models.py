@@ -9,8 +9,10 @@ from datetime import timedelta
 
 class MembershipPurchase(models.Model):
 
-    purchase_number = models.CharField(max_length=32, null=False, editable=False)
-    member = models.ForeignKey(User, on_delete=models.RESTRICT, null=False, blank=False)
+    purchase_number = models.CharField(
+        max_length=32, null=False, editable=False)
+    member = models.ForeignKey(
+        User, on_delete=models.RESTRICT, null=False, blank=False)
     membership_purchased = models.ForeignKey(
         MembershipCategory, on_delete=models.RESTRICT, null=False, blank=False
     )
@@ -18,7 +20,8 @@ class MembershipPurchase(models.Model):
     purchase_total = models.DecimalField(
         max_digits=10, decimal_places=2, null=False, default=0
     )
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default="")
+    stripe_pid = models.CharField(
+        max_length=254, null=False, blank=False, default="")
 
     def _generate_purchase_number(self):
         """
@@ -28,7 +31,7 @@ class MembershipPurchase(models.Model):
 
     def save(self, *args, **kwargs):
         """
-        Override the original save method to set the order 
+        Override the original save method to set the order
         number if it hasn't been set already.
         """
         if not self.purchase_number:
@@ -40,7 +43,8 @@ class MembershipPurchase(models.Model):
         Updates the purchase total dependent on the
         membership level selected.
         """
-        self.purchase_total = Decimal(self.membership_purchased.new_member_price)
+        self.purchase_total = Decimal(
+            self.membership_purchased.new_member_price)
         self.save()
 
     def get_purchase_date(self):
