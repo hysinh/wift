@@ -2,20 +2,22 @@ from django import forms
 from .models import Member_Data_Private, Member_Data_Public
 from membership.models import MembershipCategory
 
+
 class RegistrationForm(forms.ModelForm):
     class Meta:
         model = Member_Data_Private
         fields = ['membership_level']
 
-    membership_level = forms.ModelChoiceField(queryset=MembershipCategory.objects.all(), label='Membership Level')
+    membership_level = forms.ModelChoiceField(
+        queryset=MembershipCategory.objects.all(), label='Membership Level')
 
 
 class MembershipPublicDataForm(forms.ModelForm):
     class Meta:
         model = Member_Data_Public
         fields = ['public_firstname', 'public_lastname', 'job_title',
-                  'company_name', 'website', 'imdb',]
-        
+                  'company_name', 'website', 'imdb']
+
     def __init__(self, *args, **kwargs):
         """ Add placesholders and classes, remove auto-generated
         labels and set autfocus on first field - Source Code Institute
@@ -33,7 +35,7 @@ class MembershipPublicDataForm(forms.ModelForm):
 
         self.fields['public_firstname'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            if field != 'country':   
+            if field != 'country':
                 if self.fields[field].required:
                     placeholder = f'{placeholders[field]} *'
                 else:
