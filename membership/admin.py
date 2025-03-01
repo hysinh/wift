@@ -3,7 +3,6 @@ from django_summernote.admin import SummernoteModelAdmin
 from .models import MembershipCategory
 
 
-
 @admin.register(MembershipCategory)
 class MembershipCategoryAdmin(SummernoteModelAdmin):
     list_display = ('name', 'new_member_price', 'status')
