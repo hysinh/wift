@@ -102,6 +102,33 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     ![ogout page](documentation/testing/html/screenshot_html_validation_signout.png)
     </details>    
 
+    #### Basket and Checkout Pages
+    <details >
+    <summary>Basket Page (basket.html)</summary>  
+
+    ![basket page](documentation/testing/html/screenshot_html_validation_basket.png)
+    </details>
+    <details >
+    <summary>Checkout Page (checkout.html)</summary>  
+
+    ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_error.png)
+    </details>
+    <details >
+    <summary>Checkout Existing Member Page (checkout_existing_member.html)</summary>  
+
+    ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_error.png)
+    </details>
+    <details >
+    <summary>Checkout Success Page (checkout_success.html)</summary>  
+
+    ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_success.png)
+    </details>
+    <details >
+    <summary>Checkout Renewal Success Page (checkout_success_renewal.html)</summary>  
+
+    ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_success.png)
+    </details>
+
     #### Registered User Pages (Logged in)
     <details >
     <summary>Member Dashboard page (dashboard.html)</summary>  
@@ -118,22 +145,22 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
     ![edit account page](documentation/testing/html/screenshot_html_validation_dashboard_edit_profile_error.png)
     </details>
-    <details>
-    <summary>Sign out page (signout.html)</summary>  
+    <details >
+    <summary>Create Public Profile page (create_public_data.html) </summary>  
 
-    ![Signout page](documentation/testing/html/screenshot_html_validation_signout.png)
+    ![create public data page](documentation/testing/html/screenshot_html_validation_dashboard_create_public_profile.png)
     </details>
+    <details >
+    <summary>Edit Public Profile page (edit_public_data.html) </summary>  
 
-    <details>
-    <summary>Sign up page (signup.html)</summary>  
-
-    ![Signup page](documentation/testing/html/screenshot_html_validation_signup.png)
+    ![edit public data page](documentation/testing/html/screenshot_html_validation_dashboard_edit_public_profile.png)
     </details>
-    <details>
-    <summary>Sign In page (signup.html)</summary>  
+    <details >
+    <summary>Member Directory page (member_directory.html) </summary>  
 
-    ![Signup page](documentation/testing/html/screenshot_html_validation_login.png)
+    ![member directory page](documentation/testing/html/screenshot_html_validation_dashboard_member_directory.png)
     </details>
+    
     
     #### Custom Error Pages
     <details >
@@ -448,6 +475,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Button element could not be a child of an < a > element | base.html | Reconfigure so that button was removed and styling applied to < a > to maintain look of button |
   | Extra div tag element | Member Directory page | Remove element |
   | Extra div tag element | Membership Purchase Receipts page | Remove element |
+  | A table row was 1 columns wide, which is less than the column count established by the first row | checkout_success.html, checkout_success_renewal.html | Add colspan attribute | 
 
   
   ### Unfixed Bugs
@@ -456,7 +484,9 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   ### Unresolved Linter Code Errors
   | Bug | Line | Unresolved Reason |
   | --- | ---- | --- |
-  | The placeholder set on select option for the country field for the form caused an error. | edit_private_data.html - line 197 | I attempted to remove the blank label from the country field in the Member Private Data model but it did not resolve the issue. I think that it is something that is part of dhango countrfield module that I could not resolve. This code was taken from the Boutique Ado walkthrough project. |
+  | The placeholder set on select option for the country field for the form caused an error. | edit_private_data.html - line 197 | I attempted to remove the blank label from the country field in the Member Private Data model but it did not resolve the issue. I think that it is something that is part of django countryfield module that I could not resolve. |
+  | The placeholder set on select option for the country field for the form caused an error. | checkout/checkout.html - line 95, checkout/checkout_existing_member.html - line 92 | This was bug was not resolved. Please see line above for reason. |
+  | h1 tag with no content | checkout/checkout.html - line 131, checkout/checkout_existing_member.html - line 128 | The h1 tag is used to hold the loading spinner. This was loading spinner solution was derived from the Boutique Ado project, I chose to leave the code as it was and will resolve this in a future version.
   | There were a few places that were greater than the 79 character length max | settings.py - line 129 | Was unable to resolve as caused more errors when shortened |
   | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
   | HTML errors | account/signup.html | These html errors were inside the built in Django signup form |
