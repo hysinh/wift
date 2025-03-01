@@ -16,31 +16,24 @@ import dj_database_url
 import environ
 
 
-# Initialise environment variables
-# if os.path.isfile('env.py'):
-#     import env
-
 env = environ.Env()
 environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 SECRET_KEY = env('DJANGO_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = 'DEVELOPMENT' in os.environ
-DEBUG = False
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = [
-    '127.0.0.1',  # local preview
-    'localhost',  # listen for stripe webhooks
+    '127.0.0.1',
+    'localhost',
     'localhost:8000',
     '127.0.0.1:8000',
     'wift-nsmith-c3ae5713a782.herokuapp.com', 
@@ -113,8 +106,6 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
@@ -132,16 +123,8 @@ WSGI_APPLICATION = 'wift.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        # 'default': dj_database_url.parse('DATABASE_URL')
         'default': dj_database_url.config(default="DATABASE_URL"),
     }
 else:
