@@ -11,7 +11,8 @@ def basket_contents(request):
 
     basket = request.session.get("basket", {})
 
-    existing_member = Member_Data_Private.objects.filter(member=request.user.id)
+    existing_member = Member_Data_Private.objects.filter(
+        member=request.user.id)
 
     if existing_member.exists():
         for category_id, quantity in basket.items():

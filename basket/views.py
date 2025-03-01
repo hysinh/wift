@@ -21,7 +21,8 @@ def view_basket(request):
 def add_to_basket(request, category_id):
     """Add an annual memebership to the basket"""
 
-    selected_membership_level = get_object_or_404(MembershipCategory, pk=category_id)
+    selected_membership_level = get_object_or_404(
+        MembershipCategory, pk=category_id)
     quantity = 1
     basket = request.session.get("basket", {})
 
@@ -46,7 +47,8 @@ def remove_from_basket(request, category_id):
         basket.pop(category_id)
         request.session["basket"] = basket
         messages.success(
-            request, f"{selected_membership_level} membership removed from your basket"
+            request, f"{selected_membership_level} membership removed \
+                from your basket"
         )
 
         return redirect("view_basket")

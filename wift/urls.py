@@ -41,4 +41,3 @@ handler404 = display_404
 
 # 500 custom error page
 handler500 = display_500
-

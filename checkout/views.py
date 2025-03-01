@@ -15,6 +15,7 @@ import json
 
 
 @require_POST
+@login_required()
 def cache_checkout_data(request):
     """
     Adds basket and username information in the Stripe metadata
