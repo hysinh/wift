@@ -124,7 +124,7 @@ a:hover {
 
 /* Home Page */
 .home-image {
-    background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right 0px/cover, #c68e07;
+    background: url("/static/images/wift_home_1067x600.webp") no-repeat bottom 0px right 0px/cover, #c68e07;
     height: 600px;
     width: 100%;
     position: relative;
@@ -184,7 +184,7 @@ a:hover {
 
 /* Home page subsection */
 .container-card h4 {
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 2.5rem;
     text-transform: uppercase;
     font-weight: normal;
@@ -219,36 +219,36 @@ a:hover {
 
 /* Featured Image section on each page */
 .about-image {
-    background: url("/static/images/wift_about_1067x350.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+    background: url("/static/images/wift_about_1067x350.webp") no-repeat bottom 0px right -100px/cover, #c68e07;
 }
 
 .fellowships-image {
-    background: url("/static/images/wift_fellowships_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+    background: url("/static/images/wift_fellowships_1067x600.webp") no-repeat bottom 0px right -100px/cover, #c68e07;
 }
 
 .mentoring-image {
-    background: url("/static/images/wift_mentoring_1067x600.png") no-repeat center/cover, #c68e07;
+    background: url("/static/images/wift_mentoring_1067x600.webp") no-repeat center/cover, #c68e07;
 }
 
 .events-image {
-    background: url("/static/images/wift_events_1067x600.png") no-repeat center/cover, #c68e07;
+    background: url("/static/images/wift_events_1067x600.webp") no-repeat center/cover, #c68e07;
 }
 
 .contact-image {
-    background: url("/static/images/wift_contact_1067x600.png") no-repeat right/cover, #c68e07;
+    background: url("/static/images/wift_contact_1067x600.webp") no-repeat right/cover, #c68e07;
 }
 
 .join-image {
-    background: url("/static/images/wift_join_1067x600.png") no-repeat center/cover, #c68e07;
+    background: url("/static/images/wift_join_1067x600.webp") no-repeat center/cover, #c68e07;
 }
 
 .registration-image {
-    background: url("/static/images/wift_registration_1067x600.png") no-repeat center/cover, #c68e07;
+    background: url("/static/images/wift_registration_1067x600.webp") no-repeat center/cover, #c68e07;
 }
 
 .overlay-text-featured-img h2 {
     background-color: rgb(6, 90, 101, .5);
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 3.0rem;
     text-transform: uppercase;
     font-weight: normal;
@@ -264,7 +264,7 @@ a:hover {
 
 .overlay-text-featured-img-join h2 {
     background-color: rgb(6, 90, 101, .75);
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-size: 3.0rem;
     text-transform: uppercase;
     font-weight: normal;
@@ -281,7 +281,7 @@ a:hover {
 /* Join page */
 .container-membership h5 {
     color: #065a65;
-    font-family: Bebas Neue, sans-serif;
+    font-family: "Bebas Neue", sans-serif;
     font-weight: bold;
     font-size: 2rem;
     text-transform: uppercase;
@@ -378,7 +378,7 @@ footer a:hover {
 @media screen and (min-width: 520px) {
     /* Fellowship page - Featured Image section */
     .fellowships-image {
-        background: url("/static/images/wift_fellowships_1067x600.png") center/cover, #c68e07;
+        background: url("/static/images/wift_fellowships_1067x600.webp") center/cover, #c68e07;
     }
 
     /* Basket page */
@@ -391,7 +391,7 @@ footer a:hover {
 @media screen and (min-width: 768px) {
     /* Home page */
     .home-image {
-        background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
+        background: url("/static/images/wift_home_1067x600.webp") no-repeat bottom 0px right -100px/cover, #c68e07;
     }
     
     .button-join-us {
@@ -430,7 +430,7 @@ footer a:hover {
 
     /* Home page */
     .home-image {
-        background-image: url("/static/images/wift_home_1600x900.png");
+        background-image: url("/static/images/wift_home_1600x900.webp");
     }
 
     .button-join-us {
@@ -459,27 +459,27 @@ footer a:hover {
 
     /* Featured images at the top of each page */
     .about-image {
-        background: url("/static/images/wift_about_1600x900.png") no-repeat top/cover;
+        background: url("/static/images/wift_about_1600x900.webp") no-repeat top/cover;
     }
 
     .fellowships-image {
-        background: url("/static/images/wift_fellowships_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+        background: url("/static/images/wift_fellowships_1600x900.webp") no-repeat 25% 35%/cover, #c68e07;
     }
 
     .mentoring-image {
-        background: url("/static/images/wift_mentoring_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+        background: url("/static/images/wift_mentoring_1600x900.webp") no-repeat 25% 35%/cover, #c68e07;
     }
 
     .events-image {
-        background: url("/static/images/wift_events_1600x900.png") no-repeat center/cover, #c68e07;
+        background: url("/static/images/wift_events_1600x900.webp") no-repeat center/cover, #c68e07;
     }
 
     .contact-image {
-        background: url("/static/images/wift_contact_1600x900.png") no-repeat 25% 35%/cover, #c68e07;
+        background: url("/static/images/wift_contact_1600x900.webp") no-repeat 25% 35%/cover, #c68e07;
     }
 
     .join-image {
-        background: url("/static/images/wift_join_1600x900.png") no-repeat center/cover, #c68e07;
+        background: url("/static/images/wift_join_1600x900.webp") no-repeat center/cover, #c68e07;
     }
 
 }
@@ -488,7 +488,7 @@ footer a:hover {
 @media screen and (min-width: 1280px) {
     /* Home page */
     .home-image {
-        background: url("/static/images/wift_home_1067x600.png") no-repeat center/cover, #c68e07;
+        background: url("/static/images/wift_home_1067x600.webp") no-repeat center/cover, #c68e07;
     }
 
     .button-join-us {
