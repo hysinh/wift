@@ -1,4 +1,4 @@
-# Wimpleton House Booking Application
+# WIFT - Guild of Women in Film and Television - Ireland Web Application
   Back to [README](https://github.com/hysinh/wift/blob/main/README.md)
 
 ## Testing Overview
@@ -125,14 +125,14 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     </details>
 
     <details>
-    <summary>Sign up page (signup.html) - ERRORS Detail - See error in Linter Error Table below</summary>  
+    <summary>Sign up page (signup.html)</summary>  
 
-    ![Signup page](documentation/testing/html/screenshot_html_signup.png)
+    ![Signup page](documentation/testing/html/screenshot_html_validation_signup.png)
     </details>
     <details>
-    <summary>Sign Up page (signup.html) - ERRORS Detail 2 - See error in Linter Error Table below</summary>  
+    <summary>Sign In page (signup.html)</summary>  
 
-    ![Signup page](documentation/testing/html/screenshot_html_signup_errors2.png)
+    ![Signup page](documentation/testing/html/screenshot_html_validation_login.png)
     </details>
     
     #### Custom Error Pages
@@ -361,19 +361,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   
   
   ### Unit Testing
-  I was able to successfully execute unit testing on the booking form and the email contact form. 
-
-  #### Unit Tests Run
-  - Forms: Test EmailForm .is_valid()
-  - Forms: Test EmailForm if no data
-  - Forms: Test BookingForm .is_valid()
-  - Forms: Test BookingForm if not data
-
-  <details><summary>Unit Testing Results</summary>
-  
-  ![unit testing](documentation/testing/unit_test/screenshot_unit_test.png)
-  </details>
-
+  I did not have the time write unit tests for this project.
 
   ### Manual Testing
   Manual testing was performed on the website checking to ensure pages rendered correctly, input forms worked correctly, and a user was able to create, view, edit, and delete their bookings.
@@ -392,55 +380,83 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | | Do all the footer links work? | Yes |
   | | Is the user able to see a notification in the navbar that they are currently logged in? | Yes |
   | Venue Hire page | Does the Venue Hire page render correctly? | Yes |
-  | | Do all the venues render correctly? | Yes |
-  | | Does the generic booking link take you the booking form page (or Sign in page if not signed in? | Yes |
-  | | Do each of the booking links at the bottom of each venue link correctly to the Booking form page and set the initial value for the venue in the form? | Yes |
+  | | Do all the member categories render correctly? | Yes |
+  | | Does the generic login link take you the member dashboard if user has an active membership or redirects to the join page to purchase a membership (or Sign in page if not signed in?) | Yes |
+  | | Do each of the membership category links add the correct membership and cost to the basket? | Yes |
   | About page | Does the About page render correctly? | Yes |
+  | Fellowships page | Does the Fellowships page render correctly? | Yes |
+  | Mentoring page | Does the Mentoring page render correctly? | Yes |
+  | Events page | Does the Events page render correctly? | Yes |
   | Contact page | Does the Contact page render correctly? | Yes |
   | | Does the Contact Email Contact form work correctly? | Yes |
   | | Does the Contact Email Contact form display error and confirmation messages appropriately? | Yes |
-  | Venue Bookings page | Does the Venue Booking page correctly render the Booking Dashboard | Yes |
-  | | Do approved, pending approval, and expired bookings display in the correct sections? | Yes |
-  | | Does the Request a booking button work correctly? | Yes |
-  | | Do the edit and delete bookings buttons work correctly? | Yes |
-  | Request Booking page | Does the Request Booking page render correctly? | Yes |
-  | | Does the Request Booking form work correctly and allow a user to request a booking? | Yes |
-  | | Do the form error messages display correctly? | Yes |
-  | | Does a successful request redirect correctly to the booking dashboard and display a success message? | Yes |
-  | | Does the event date input validated and display the correct error handling? | Yes |
-  | | Does the number of guests input validated and display the correct error handling? | Yes |
-  | Edit Booking page | Does the Edit booking page render correctly? | Yes |
+  | Join page | Does the Join page render correctly? | Yes |
+  | | Do each of the membership categories render correctly? | Yes |
+  | | Does the Join Us link at the top jump to the correct anchor point lower in the page? | Yes |
+  | | Do each of the membership level links correctly add the membership and directs the user to the basket? | Yes |
+  | | Does a message appear in the top corner when the user selects a membership to confirm it was added to their basket? | Yes |
+  | Basket page | Does the Shopping Basket page render correctly? | Yes |
+  | | Does the shopping basket display the user-selected membership level and it's corresponding annual cost? | Yes |
+  | | Does the empty basket link work correctly and display an empty basket? | Yes |
+  | | Does change selection link correctly send the user back to the Join page to make a different membership selection? | Yes |
+  | | If the user is already a member, are they directed to their member dashboard instead of the Checkout Page when they click on the "Secure Checkout" button? | Yes|
+  | Checkout page | Does the Checkout page correctly render? | Yes |
+  | | Does the user-selected membership level and cost display correctly at the top of the page? | Yes |
+  | | Does the Member Private Data form display correctly? | Yes |
+  | | Does the Stripe payment input form appear correctly? | Yes |
+  | | Do error message appear when the form entry is invalid for required fields? | Yes |
+  | | Does the form submit correctly and process the order in the database when user clicks on the "Purchase" button? | Yes |
+  | | Does the form submit the payment correctly to Stripe and correctly process the payment? | Yes |
+  | | Does the page correctly display a the renewal rate if the User already has a previous membership? | Yes |
+  | | Does the form correctly submit the renewal rate if the User is already a previous member? | Yes | 
+  | Purchase Success page | Does the Purchase Success page render correctly? | Yes |
+  | | Does the purchase information display correctly on the page? | Yes |
+  | | Does the renewal date display correctly? | Yes |
+  | | Does the "Dashboard" Button correctly direct the user to the Member Dashboard? | Yes |
+  | Dashboard Page | Does the Dashboard Page render correctly? | Yes |
+  | | Does the dashboard navigation display personalised information about the member? | Yes |
+  | | Does the dashboard display the correct member account details? | Yes |
+  | | Does the dashboard display the most recent membership purchase informaton? | Yes |
+  | | Does the dashboard dispaly the member's public profile if they have created one? | Yes |
+  | | Does each of the dashboard navigation direct the member to the correct page? | Yes |
+  | Dashboard - Purchase Receipts | Does the Purchase receipt page display all the membership purchases for the member? | Yes |
+  | | Does the purchase receipts display the correct purchase and renewal dates? | Yes |
+  | Dashboard - Edit Account Information | Does the Edit booking page render correctly? | Yes |
   | | Does the Edit booking page allow the user to edit a specific existing booking? | Yes |
+  | | Does the form display the correct member information? | Yes |
+  | | Is the member able to edit their account information and save it? | Yes |
   | | Is the input validated and display an error messages when not valid? | Yes |
-  | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | Yes |
-  | | Does the Delete booking button allow the user to delete a selected booking associated with that user? | Yes |
+  | Dashboard - Create/Edit Public Profile Page | Does the Create/Edit Public Profile page render correctly? | Yes |
+  | | Does the form validate the entries and display an error message for invalid entries? | Yes |
+  | | Does the Delete button open a delete modal to ensure the member is sure about deleting their data? | Yes |
+  | | Does the Delete button allow the member to delete their associated Public Profile data? | Yes |
+  | | Does the cancel button return the member to their member dashboard? | Yes |
+  | Dashboard - Member Directory | Does the Member Directory display correctly? | Yes |
+  | | Does the member directory display all of the public profiles of members alphabetically? | Yes |
   | Register page | Does the Register user page render correctly? | Yes |
   | | Does the Register user page allow a visitor to register as a user? | Yes |
   | Sign out page | Does the Sign out page render correctly? | Yes |
   |  | Does the sign out page allow a user to sign out? | Yes |
   | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | Yes |
-  | 500 Error page | Does the 500 error page render correctly when there is a server error | Yes |
-  | Admin panel | Can only access the admin panel if any authorised user? | Yes |
+  | 500 Error page | Does the 500 error page render correctly when there is a server error | --- |
+  | Admin panel | Can only superusers access the admin panel? | Yes |
   
 
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
-  | The placeholder placed on the country field in the mode | Edit Account Info page | Updated error message to be more appropriate |
-  | 500 Error message has wrong copy | 500 Error page | Updated error message to be more appropriate |
-  | Parse error | styles.css | Remove errant character |
-  | Family Name for font family | style.css | Add quotes around family name |
-  | One undefined variable | bookings.js | Add "globals bootstrap" to top of code to remove warning |
-  | Form method set to POST causing form errors on render | venue_list.html template | Change method to GET |
+  | Button element could not be a child of an < a > element | base.html | Reconfigure so that button was removed and styling applied to < a > to maintain look of button |
+  | Extra div tag element | Member Directory page | Remove element |
+  | Extra div tag element | Membership Purchase Receipts page | Remove element |
 
   
   ### Unfixed Bugs
-  - Although there were some spots where I could have found a better solution, there were no bugs that I was able to find that I could not resolve unless otherwise noted.
-  | The placeholder placed on the country field in the member private data model is not acceptable though it was something in the Boutique Ado walkthrough project. | Edit Account Info page | Updated error message to be more appropriate |
+  - text
   
   ### Unresolved Linter Code Errors
   | Bug | Line | Unresolved Reason |
   | --- | ---- | --- |
+  | The placeholder set on select option for the country field for the form caused an error. | edit_private_data.html - line 197 | I attempted to remove the blank label from the country field in the Member Private Data model but it did not resolve the issue. I think that it is something that is part of dhango countrfield module that I could not resolve. This code was taken from the Boutique Ado walkthrough project. |
   | There were a few places that were greater than the 79 character length max | settings.py - line 129 | Was unable to resolve as caused more errors when shortened |
   | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
   | HTML errors | account/signup.html | These html errors were inside the built in Django signup form |

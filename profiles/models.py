@@ -39,17 +39,12 @@ class Member_Data_Public(models.Model):
     member = models.ForeignKey(User, on_delete=models.RESTRICT)
     public_firstname = models.CharField(max_length=80, null=False, blank=False)
     public_lastname = models.CharField(max_length=80, null=False, blank=False)
-    # profile_image = CloudinaryField('image', default='placeholder')
     job_title = models.CharField(max_length=200, null=False, blank=False)
     company_name = models.CharField(max_length=200, null=True, blank=True)
-    # public_email = models.EmailField(max_length=254, null=True)
-    # public_telephone = 
     website = models.URLField(max_length=200, null=True, blank=True)
     imdb = models.URLField(max_length=200, null=True, blank=True)
-    # film_tv_credits = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
-
 
     def __str__(self):
         return self.member.username
