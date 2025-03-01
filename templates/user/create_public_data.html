@@ -35,7 +35,7 @@
               <form action="{% url 'create_public_data' member.member.id %}" method="POST" id="create-public-data-form">
                 {% csrf_token %}
                 {{ public_data_form | crispy }}
-                <a href="{% url 'dashboard' member.member.id %}" class="btn btn-outline-black rounded-0">
+                <a href="{% url 'dashboard' member.member.id %}" class="btn btn-outline-black rounded-0" aria-label="Returns to the WIFT Member Dashboard">
                   <span class="icon">
                       <i class="fa-solid fa-circle-chevron-left"></i>
                   </span>
