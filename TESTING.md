@@ -238,33 +238,106 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
   
 
-
     #### Checkout App
+    <details><summary>admin.py</summary>
+
+    ![admin.py](documentation/testing/python/screenshot_py_validation_checkout_admin.png)
+    </details>
+    <details><summary>forms.py</summary>
+
+    ![forms.py](documentation/testing/python/screenshot_py_validation_checkout_forms.png)
+    </details>
+    <details><summary>models.py</summary>
+
+    ![models.py](documentation/testing/python/screenshot_py_validation_checkout_models.png)
+    </details>
     <details><summary>urls.py</summary>
 
-    ![urls.py](documentation/testing/python/screenshot_python_booking_urls.png)
+    ![urls.py](documentation/testing/python/screenshot_py_validation_checkout_urls.png)
     </details>
+    <details><summary>views.py - ERRORS - See errors in the Unresolved Bugs Table below</summary>
+
+    ![views.py](documentation/testing/python/screenshot_py_validation_checkout_views.png)
+    </details>
+    <details><summary>webhook_handler.py</summary>
+
+    ![webhook_handler.py](documentation/testing/python/screenshot_py_validation_checkout_webhook_handler.png)
+    </details>
+    <details><summary>webhooks.py</summary>
+
+    ![webhooks.py](documentation/testing/python/screenshot_py_validation_checkout_webhooks.png)
+    </details>
+
     
 
     #### Home App
+    <details><summary>admin.py</summary>
+
+    ![admin.py](documentation/testing/python/screenshot_py_validation_home_admin.png)
+    </details>
+    <details><summary>forms.py</summary>
+
+    ![forms.py](documentation/testing/python/screenshot_py_validation_home_forms.png)
+    </details>
+    <details><summary>models.py</summary>
+
+    ![models.py](documentation/testing/python/screenshot_py_validation_home_models.png)
+    </details>
     <details><summary>urls.py</summary>
 
-    ![urls.py](documentation/testing/python/screenshot_python_booking_urls.png)
+    ![urls.py](documentation/testing/python/screenshot_py_validation_home_urls.png)
+    </details>
+    <details><summary>views.py</summary>
+
+    ![views.py](documentation/testing/python/screenshot_py_validation_home_views.png)
     </details>
 
 
     #### Membership App
+    <details><summary>admin.py</summary>
+
+    ![admin.py](documentation/testing/python/screenshot_py_validation_membership_admin.png)
+    </details>
+    <details><summary>forms.py</summary>
+
+    ![forms.py](documentation/testing/python/screenshot_py_validation_membership_forms.png)
+    </details>
+    <details><summary>models.py</summary>
+
+    ![models.py](documentation/testing/python/screenshot_py_validation_membership_models.png)
+    </details>
     <details><summary>urls.py</summary>
 
-    ![urls.py](documentation/testing/python/screenshot_python_booking_urls.png)
+    ![urls.py](documentation/testing/python/screenshot_py_validation_membership_urls.png)
+    </details>
+    <details><summary>views.py</summary>
+
+    ![views.py](documentation/testing/python/screenshot_py_validation_membership_views.png)
     </details>
 
 
     #### Profiles App
+    <details><summary>admin.py</summary>
+
+    ![admin.py](documentation/testing/python/screenshot_py_validation_profiles_admin.png)
+    </details>
+    <details><summary>forms.py</summary>
+
+    ![forms.py](documentation/testing/python/screenshot_py_validation_profiles_forms.png)
+    </details>
+    <details><summary>models.py</summary>
+
+    ![models.py](documentation/testing/python/screenshot_py_validation_profiles_models.png)
+    </details>
     <details><summary>urls.py</summary>
 
-    ![urls.py](documentation/testing/python/screenshot_python_booking_urls.png)
+    ![urls.py](documentation/testing/python/screenshot_py_validation_profiles_urls.png)
     </details>
+    <details><summary>views.py</summary>
+
+    ![views.py](documentation/testing/python/screenshot_py_validation_profiles_views.png)
+    </details>
+
 
   ### Search Engine Optimization, Accessibility, Best Practices, & Performance
   - #### Google Lighthouse Audits
@@ -523,6 +596,6 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | The placeholder set on select option for the country field for the form caused an error. | edit_private_data.html - line 197 | I attempted to remove the blank label from the country field in the Member Private Data model but it did not resolve the issue. I think that it is something that is part of django countryfield module that I could not resolve. |
   | The placeholder set on select option for the country field for the form caused an error. | checkout/checkout.html - line 95, checkout/checkout_existing_member.html - line 92 | This was bug was not resolved. Please see line above for reason. |
   | h1 tag with no content | checkout/checkout.html - line 131, checkout/checkout_existing_member.html - line 128 | The h1 tag is used to hold the loading spinner. This was loading spinner solution was derived from the Boutique Ado project, I chose to leave the code as it was and will resolve this in a future version.
-  | There were a few places that were greater than the 79 character length max | settings.py - line 129 | Was unable to resolve as caused more errors when shortened |
+  | There were a few places that were greater than the 79 character length max | checkout/views.py - 1, 75, 109, 111  | Was unable to shorten the lines to resolve as caused more errors when shortened |
   | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
   | HTML errors | account/signup.html | These html errors were inside the built in Django signup form |

@@ -4,6 +4,7 @@ from membership.models import MembershipCategory
 
 
 class RegistrationForm(forms.ModelForm):
+    """ User selects the desired membership level """
     class Meta:
         model = Member_Data_Private
         fields = ['membership_level']
@@ -13,6 +14,7 @@ class RegistrationForm(forms.ModelForm):
 
 
 class MembershipPublicDataForm(forms.ModelForm):
+    """ User inputs their public profile data """
     class Meta:
         model = Member_Data_Public
         fields = ['public_firstname', 'public_lastname', 'job_title',

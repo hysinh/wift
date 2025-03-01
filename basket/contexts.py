@@ -5,6 +5,7 @@ from profiles.models import Member_Data_Private
 
 
 def basket_contents(request):
+    """ Creates global dictionary of basket content """
     basket_items = []
     total = 0
     product_count = 0
@@ -14,6 +15,7 @@ def basket_contents(request):
     existing_member = Member_Data_Private.objects.filter(
         member=request.user.id)
 
+    # Check if user is existing member and apply renewal price to membership
     if existing_member.exists():
         for category_id, quantity in basket.items():
             selected_membership_level = get_object_or_404(
