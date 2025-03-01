@@ -162,35 +162,48 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     </details>
     
     
-    #### Custom Error Pages
+    #### Custom Error Page
     <details >
     <summary>404 Error Page (404.html)</summary>  
 
-    ![404 Error page](documentation/testing/html/screenshot_html_404page.png)
+    ![404 Error page](documentation/testing/html/screenshot_html_validation_404.png)
     </details>
-    <details >
-    <summary>500 Error page (500.html)</summary>  
 
-    ![500 page](documentation/testing/html/screenshot_html_404page.png)
-    </details>
     
   - #### CSS Validation
     I used the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) for CSS validation.
     <details >
-    <summary>CSS Validation</summary>  
+    <summary>base.css</summary>  
 
-    ![screenshot of CSS validation](documentation/testing/css/screenshot_css_validation.png)
+    ![base validation](documentation/testing/css/screenshot_css_validation_basecss.png)
     </details>
+    <details >
+    <summary>checkout.css</summary>  
+
+    ![checkout validation](documentation/testing/css/screenshot_css_validation_checkoutcss.png)
+    </details>
+    <details >
+    <summary>profiles.css</summary>  
+
+    ![profiles validation](documentation/testing/css/screenshot_css_validation_profilescss.png)
+    </details>
+
   - #### Javascript Validation
     I used the [Jshint Linter](https://jshint.com/) for Javascript code validation.
     <details >
-    <summary>Javascript Validation</summary>  
+    <summary>stripe_elements.js</summary>  
 
-    ![screenshot of Javascript code validation](documentation/testing/js/screenshot_javascript_validation.png)
+    ![stripe elements](documentation/testing/js/screenshot_js_validation_profiles.png)
     </details>
+    <details >
+    <summary>profiles.js</summary>  
+
+    ![profiles js validation](documentation/testing/js/screenshot_js_validation_profiles.png)
+    </details>
+
   - #### Python Validation
     I used the [Code Institute PEP8 Python Linter](https://pep8ci.herokuapp.com/) for code validation. Unresolved bugs are noted in the bug table.
-    #### Wimpleton Project
+    #### WIFT Project
     <details><summary>urls.py</summary>
 
     ![urls.py](documentation/testing/python/screenshot_python_wimpleton_urls.png)
