@@ -109,12 +109,12 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     ![basket page](documentation/testing/html/screenshot_html_validation_basket.png)
     </details>
     <details >
-    <summary>Checkout Page (checkout.html)</summary>  
+    <summary>Checkout Page (checkout.html) - ERROR Detail - See error in the Unresolved Bugs Table</summary>  
 
     ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_error.png)
     </details>
     <details >
-    <summary>Checkout Existing Member Page (checkout_existing_member.html)</summary>  
+    <summary>Checkout Existing Member Page (checkout_existing_member.html) - ERROR Detail - See error in the Unresolved Bugs Table</summary>  
 
     ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_error.png)
     </details>
@@ -126,7 +126,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     <details >
     <summary>Checkout Renewal Success Page (checkout_success_renewal.html)</summary>  
 
-    ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_success.png)
+    ![checkout page](documentation/testing/html/screenshot_html_validation_checkout_success_existing.png)
     </details>
 
     #### Registered User Pages (Logged in)
