@@ -124,7 +124,7 @@ a:hover {
 
 /* Home Page */
 .home-image {
-    background: url("/static/images/wift_home_1067x600.webp") no-repeat bottom 0px right 0px/cover, #c68e07;
+    background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right 0px/cover, #c68e07;
     height: 600px;
     width: 100%;
     position: relative;
@@ -391,7 +391,7 @@ footer a:hover {
 @media screen and (min-width: 768px) {
     /* Home page */
     .home-image {
-        background: url("/static/images/wift_home_1067x600.webp") no-repeat bottom 0px right -100px/cover, #c68e07;
+        background: url("/static/images/wift_home_1067x600.png") no-repeat bottom 0px right -100px/cover, #c68e07;
     }
     
     .button-join-us {
@@ -430,7 +430,7 @@ footer a:hover {
 
     /* Home page */
     .home-image {
-        background-image: url("/static/images/wift_home_1600x900.webp");
+        background-image: url("/static/images/wift_home_1600x900.jpg");
     }
 
     .button-join-us {
@@ -488,7 +488,7 @@ footer a:hover {
 @media screen and (min-width: 1280px) {
     /* Home page */
     .home-image {
-        background: url("/static/images/wift_home_1067x600.webp") no-repeat center/cover, #c68e07;
+        background: url("/static/images/wift_home_1600x900.jpg") no-repeat center/cover, #c68e07;
     }
 
     .button-join-us {

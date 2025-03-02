@@ -159,6 +159,7 @@ def checkout(request):
                 return render(request, template, context)
 
 
+@login_required()
 def checkout_existing_member(request):
     """
     Displays the checkout page and handles a membership purchase
@@ -267,6 +268,7 @@ def checkout_existing_member(request):
         return render(request, template, context)
 
 
+@login_required()
 def checkout_success(request, purchase_number):
     """ Handle successful checkouts for new members. """
     purchase = get_object_or_404(
@@ -288,6 +290,7 @@ def checkout_success(request, purchase_number):
     return render(request, template, context)
 
 
+@login_required()
 def checkout_success_renewal(request, purchase_number):
     """ Handle successful renewal checkouts for existing members """
     purchase = get_object_or_404(
