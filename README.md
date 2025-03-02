@@ -72,6 +72,8 @@ WIFT is a non-profit organisation that focuses on the professional community of 
 
 An organisation like WIFT is generally funded by grants and similar funding as well as annual membership fees/dues from their members. As such, to provide value to their members, WIFT organises activities such as promote the work of their members and provide opportunities for their members to network with each other and the greater film and television industry. WIFT continues to design dynamic program of high value to its members and the greater community and utilises these events and activities to promote membership to its niche target demographic.
 
+The goal of the WIFT website is primarily as at tool. The organisation will use it as a tool for outreach and providing information and connection with the community via events and programming. The member will utilise the website as a tool to connect with other individual members or to find opportunities for professional development via events, networking, and WIFT programs.
+
 ### Social Media
 As part of their marketing/public relations strategy, WIFT utilises social media like Facebook and Instagram to connect with members and the greater film and television community to promote events, member's work, and WIFT programming.
 
